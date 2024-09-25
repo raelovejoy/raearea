@@ -6,7 +6,6 @@
     <title>raearea.net</title>
     <meta name="description" content="Beep boop">
     <link rel="icon" type="image/png" href="/favicon.png">
-    <link rel="stylesheet" type="text/css" media="screen,print" href="index_files/index.css">
     <style>
         body {
             background: #0a0a0a; /* Dark background */
@@ -16,16 +15,14 @@
             text-align: center;
         }
         #body_content {
-            max-width: 750px; /* Make the container responsive */
+            max-width: 750px;
             margin: 0 auto;
             position: relative;
-            text-align: left;
+            text-align: center;
             padding: 0 20px; /* Add some padding for mobile */
         }
         .image-container {
-            position: relative;
-            top: 80px;
-            text-align: center;
+            margin: 30px 0; /* Added margin to separate sections */
         }
         .image-container img {
             height: 55px;
@@ -33,69 +30,64 @@
             border: none;
         }
         .links {
-            position: relative;
-            margin-top: 20px;
+            margin-top: 10px;
+            margin-bottom: 40px; /* Separate from logo */
             text-align: center;
             color: #bbbbbb; /* Slightly darker gray */
+            font-size: 0.9em; /* Adjust size to prevent overlap */
         }
         .links a {
-            color: #bbbbbb; /* Ensure links in this section match the text color */
+            color: #bbbbbb;
             text-decoration: none;
         }
         .page-links {
-            position: relative;
-            margin-top: 40px;
+            margin-top: 40px; /* Increased margin to create space from logo */
             text-align: center;
-            color: #fafafa; /* Lighter text color */
-            font-size: 1.2em; /* Make the text slightly larger */
+            color: #fafafa;
+            font-size: 1.2em;
         }
         .page-links a {
-            color: #fafafa; /* Ensure links in this section match the text color */
+            color: #fafafa;
             text-decoration: none;
         }
         a:visited {
-            color: #cfcfcf; /* Lighter gray for visited links */
+            color: #cfcfcf;
         }
         a:hover {
-            color: #ffffff; /* Brighter white on hover for emphasis */
+            color: #ffffff;
         }
         .spacer {
-            height: 200px; /* Reduced height for mobile */
+            height: 100px;
         }
 
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
             .image-container {
-                top: 50px; /* Reduce spacing on mobile */
+                margin-top: 50px;
             }
             .page-links {
-                font-size: 1.1em; /* Slightly smaller font size for mobile */
+                font-size: 1.1em;
             }
             .spacer {
-                height: 100px; /* Reduce spacer height on mobile */
+                height: 50px;
             }
         }
 
         @media (max-width: 480px) {
             body {
-                font-size: 16px; /* Reduce base font size for smaller screens */
+                font-size: 16px;
             }
             .page-links {
-                font-size: 1em; /* Smaller text for mobile */
+                font-size: 1em;
             }
             .spacer {
-                height: 80px; /* Even smaller spacer on very small screens */
+                height: 40px;
             }
         }
     </style>
 </head>
 <body>
     <div id="body_content">
-        <!-- Image Section -->
-        <div class="image-container">
-            <img src="index_files/rae.png" alt="rae logo" title="Rae">
-        </div>
-
         <!-- Social Links (Darker Section) -->
         <div class="links">
             <p>@ <a href="https://kolektiva.social/@rae" title="Mastodon profile">mastodon</a> / 
@@ -103,12 +95,17 @@
                <a href="https://github.com/raelovejoy" title="GitHub page">github</a></p>
         </div>
 
+        <!-- Image Section (Logo) -->
+        <div class="image-container">
+            <img src="index_files/rae.png" alt="rae logo" title="Rae">
+        </div>
+
         <!-- Page Links (Larger Text) -->
         <div class="page-links">
             <p><a href="https://raearea.net/blog" title="Blog">blog</a> / 
                <a href="https://raearea.net/media" title="Multimedia">multimedia</a> / 
                <a href="https://raearea.net/archive" title="Archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact">contact</a></p>
+               <a href="http://raearea.net/contact" title="Contact">contact</a></p>
         </div>
 
         <!-- Spacer -->
