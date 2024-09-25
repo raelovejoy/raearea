@@ -2,7 +2,7 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=750">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>raearea.net</title>
     <meta name="description" content="Beep boop">
     <link rel="icon" type="image/png" href="/favicon.png">
@@ -16,10 +16,11 @@
             text-align: center;
         }
         #body_content {
-            width: 750px;
+            max-width: 750px; /* Make the container responsive */
             margin: 0 auto;
             position: relative;
             text-align: left;
+            padding: 0 20px; /* Add some padding for mobile */
         }
         .image-container {
             position: relative;
@@ -27,15 +28,13 @@
             text-align: center;
         }
         .image-container img {
-            height: 75px;
+            height: 55px;
             width: auto;
             border: none;
         }
         .links {
-            position: absolute;
-            top: 210px;
-            left: 213px;
-            width: 323px;
+            position: relative;
+            margin-top: 20px;
             text-align: center;
             color: #bbbbbb; /* Slightly darker gray */
         }
@@ -44,10 +43,8 @@
             text-decoration: none;
         }
         .page-links {
-            position: absolute;
-            top: 164px;
-            left: 132px;
-            width: 485px;
+            position: relative;
+            margin-top: 40px;
             text-align: center;
             color: #fafafa; /* Lighter text color */
             font-size: 1.2em; /* Make the text slightly larger */
@@ -63,7 +60,32 @@
             color: #ffffff; /* Brighter white on hover for emphasis */
         }
         .spacer {
-            height: 400px;
+            height: 200px; /* Reduced height for mobile */
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            .image-container {
+                top: 50px; /* Reduce spacing on mobile */
+            }
+            .page-links {
+                font-size: 1.1em; /* Slightly smaller font size for mobile */
+            }
+            .spacer {
+                height: 100px; /* Reduce spacer height on mobile */
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px; /* Reduce base font size for smaller screens */
+            }
+            .page-links {
+                font-size: 1em; /* Smaller text for mobile */
+            }
+            .spacer {
+                height: 80px; /* Even smaller spacer on very small screens */
+            }
         }
     </style>
 </head>
@@ -86,7 +108,7 @@
             <p><a href="https://raearea.net/blog" title="Blog">blog</a> / 
                <a href="https://raearea.net/media" title="Multimedia">multimedia</a> / 
                <a href="https://raearea.net/archive" title="Archives">archive</a> / 
-               <a href="http://raearea.net/contact" title="Contact">contact</a></p>
+               <a href="https://raearea.net/contact" title="Contact">contact</a></p>
         </div>
 
         <!-- Spacer -->
