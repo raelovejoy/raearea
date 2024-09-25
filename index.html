@@ -11,6 +11,7 @@
             background: #0a0a0a; /* Dark background */
             color: #fafafa; /* Light text color */
             margin: 0;
+            padding-top: 60px; /* Added padding to the top of the page */
             font-family: Arial, sans-serif;
             text-align: center;
         }
@@ -19,7 +20,7 @@
             margin: 0 auto;
             position: relative;
             text-align: center;
-            padding: 0 20px; /* Add some padding for mobile */
+            padding: 0 20px;
         }
         .image-container {
             margin: 20px 0; /* Reduced margin to decrease space */
@@ -61,8 +62,8 @@
 
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
-            .image-container {
-                margin-top: 50px;
+            body {
+                padding-top: 40px; /* Less padding on smaller screens */
             }
             .page-links {
                 font-size: 1.1em;
@@ -75,6 +76,7 @@
         @media (max-width: 480px) {
             body {
                 font-size: 16px;
+                padding-top: 30px; /* Reduced padding on smaller screens */
             }
             .page-links {
                 font-size: 1em;
@@ -97,7 +99,7 @@
             <p><a href="https://raearea.net/blog" title="Blog">blog</a> / 
                <a href="https://raearea.net/media" title="Multimedia">multimedia</a> / 
                <a href="https://raearea.net/archive" title="Archives">archive</a> / 
-               <a href="http://raearea.net/contact" title="Contact">contact</a></p>
+               <a href="https://raearea.net/contact" title="Contact">contact</a></p>
         </div>
 
         <!-- Social Links (Darker Section) -->
