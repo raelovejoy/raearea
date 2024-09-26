@@ -38,17 +38,17 @@
             width: auto;
             border: none;
             outline: none;
-            transition: none; /* Disable any hover transition effects */
+            transition: none; /* Disable hover transition effects */
             background: none; /* Remove any background on hover */
             opacity: 1; /* Set opacity to full */
-            filter: none; /* Remove any filters applied to the image */
+            filter: none; /* Remove any filters */
         }
 
         /* Prevent hover effect from changing the logo */
         .logo-container a:hover img {
             opacity: 1 !important; /* Force logo to retain full opacity */
-            filter: none !important; /* Force no filter changes */
-            background: none !important; /* Remove any background effects */
+            filter: none !important; /* Remove any browser hover effects */
+            background: none !important; /* No background effects */
         }
 
         h1 {
@@ -117,7 +117,7 @@
         <!-- Clickable Logo Section -->
         <div class="logo-container">
             <a href="/" title="Back to Homepage">
-                <img src="index_files/rae.png" alt="rae logo" title="Rae">
+                <img src="index_files/rae.png" alt="rae logo">
             </a>
         </div>
 
