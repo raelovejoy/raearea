@@ -23,7 +23,8 @@
             padding: 0 20px;
         }
         .image-container {
-            margin: 10px 0; /* Reduced the margin to decrease space */
+            margin: 10px 0;
+            display: inline-block;
         }
 
         /* Default state: logo shows in its original colors */
@@ -32,16 +33,20 @@
             width: auto;
             border: none;
             filter: none; /* No inversion by default */
-            transition: filter 0.3s ease; /* Smooth transition for hover effect */
+            transition: filter 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
         }
 
-        /* Invert the logo colors on hover */
+        /* Invert the logo colors and change the background on hover */
+        .image-container a:hover {
+            background-color: #fff; /* Set background to white on hover */
+        }
+
         .image-container a:hover img {
             filter: invert(1); /* Invert the logo colors on hover */
         }
 
         .page-links {
-            margin-top: 10px; /* Reduced margin to decrease space */
+            margin-top: 10px;
             text-align: center;
             color: #fafafa;
             font-size: 1.2em;
@@ -52,7 +57,7 @@
             transition: color 0.3s ease;
         }
         .links {
-            margin-top: 5px; /* Reduced margin to decrease space */
+            margin-top: 5px;
             text-align: center;
             color: #bbbbbb;
             font-size: 0.9em;
@@ -69,17 +74,17 @@
             color: #ffffff;
         }
         .spacer {
-            height: 20px; /* Reduced spacer height */
+            height: 20px;
         }
 
         .animated-photo-container {
-            margin-top: 20px; /* Reduced space between content and image */
+            margin-top: 20px;
         }
 
         .animated-photo-container img {
-            max-width: 100%; /* Make sure image is responsive */
+            max-width: 100%;
             height: auto;
-            border-radius: 10px; /* Optional: for a modern look */
+            border-radius: 10px;
         }
 
         /* Media Queries for responsiveness */
@@ -91,7 +96,7 @@
                 font-size: 1.1em;
             }
             .spacer {
-                height: 10px; /* Reduced space on smaller screens */
+                height: 10px;
             }
         }
 
@@ -104,7 +109,7 @@
                 font-size: 1em;
             }
             .spacer {
-                height: 10px; /* Reduced space on smaller screens */
+                height: 10px;
             }
         }
     </style>
