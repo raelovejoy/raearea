@@ -157,7 +157,7 @@
 
         // Insert obfuscated email after page load
         document.addEventListener("DOMContentLoaded", function () {
-            var email = obfuscateEmail('rae', 'lvjy', 'xyz'); // Replace with your actual email user, domain, and TLD
+            var email = obfuscateEmail('rae', 'lvjy', 'xyz'); // Replace with actual email user, domain, and TLD
             document.getElementById('email-link').innerHTML = email;
             document.getElementById('email-link').setAttribute('href', 'mailto:' + email);
         });
