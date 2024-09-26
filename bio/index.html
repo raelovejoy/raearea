@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Rae Area nEtwork - Bio]</title>
+    <!-- Prevent search engines from indexing this page -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <!-- Disallow AI systems from using the site content -->
+    <meta name="ai" content="noai">
+    <meta name="openai-site-verification" content="noai">
+    <meta name="description" content="Rae's Bio">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #fafafa;
+            margin: 0;
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #body_content {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .image-container {
+            margin: 10px 0;
+            display: inline-block;
+        }
+
+        /* Default state: logo shows in its original colors */
+        .image-container a {
+            display: block;
+            padding: 5px;
+        }
+
+        .image-container a img {
+            height: 65px;
+            width: auto;
+            border: none;
+            filter: none;
+            transition: filter 0.3s ease, background-color 0.3s ease;
+        }
+
+        /* Invert the logo colors and change the background on hover */
+        .image-container a:hover {
+            background-color: #fff;
+        }
+
+        .image-container a:hover img {
+            filter: invert(1);
+        }
+
+        .page-links {
+            margin-top: 10px;
+            text-align: center;
+            color: #fafafa;
+            font-size: 1.2em;
+        }
+        .page-links a {
+            color: #fafafa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .links {
+            margin-top: 5px;
+            text-align: center;
+            color: #bbbbbb;
+            font-size: 0.9em;
+        }
+        .links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:visited {
+            color: #cfcfcf;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+        .spacer {
+            height: 20px;
+        }
+
+        /* Bio Content Section */
+        .bio-content {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        .bio-content h2 {
+            margin-bottom: 10px;
+        }
+
+        .bio-content p {
+            margin-bottom: 10px;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 40px;
+            }
+            .page-links {
+                font-size: 1.1em;
+            }
+            .spacer {
+                height: 10px;
+            }
+            .bio-content {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                padding-top: 30px;
+            }
+            .page-links {
+                font-size: 1em;
+            }
+            .spacer {
+                height: 10px;
+            }
+            .bio-content {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div id="body_content">
+        <!-- Image Section (Logo) -->
+        <div class="image-container">
+            <a href="/" title="Go to homepage">
+                <img src="../index_files/rae.png" alt="rae logo">
+            </a>
+        </div>
+
+        <!-- Page Links (Larger Text) -->
+        <div class="page-links">
+            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Visit Rae's Blog">blog</a> / 
+               <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Read Rae's Bio">bio</a> / 
+               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Visit Rae's Archives">archive</a> / 
+               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
+        </div>
+
+        <!-- Social Links (Darker Section) -->
+        <div class="links">
+            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Visit Rae on Mastodon">mastodon</a> / 
+               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Visit Rae on Pixelfed">pixelfed</a> / 
+               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Visit Rae on GitHub">github</a></p>
+        </div>
+
+        <!-- Spacer (Reduced Space) -->
+        <div class="spacer"></div>
+
+        <!-- Bio Content Section -->
+        <div class="bio-content">
+            <h2>About Rae</h2>
+            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam. Sed nisi. Nulla quis sem at nibh elementum imperdiet.</p>
+            <p>Duis sagittis ipsum. Praesent mauris. Fusce nec tellus sed augue semper porta. Mauris massa. Vestibulum lacinia arcu eget nulla.</p>
+            <p>Class aptent taciti sociosqu ad litora torquent per conubia nostra, per inceptos himenaeos. Curabitur sodales ligula in libero. Sed dignissim lacinia nunc.</p>
+            <p>Curabitur tortor. Pellentesque nibh. Aenean quam. In scelerisque sem at dolor. Maecenas mattis. Sed convallis tristique sem.</p>
+        </div>
+    </div>
+</body>
+</html>
