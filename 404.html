@@ -25,7 +25,7 @@
             margin-bottom: 20px;
         }
 
-        /* Remove all border, outline, and focus styles on the logo */
+        /* Ensure no hover effect causes logo to change */
         .logo-container a {
             display: inline-block;
             border: none;
@@ -36,24 +36,30 @@
         .logo-container a img {
             height: 75px;
             width: auto;
-            border: none;   /* Ensure no border on the image */
-            outline: none;  /* Remove any outline on the image */
+            border: none;
+            outline: none;
+            transition: none; /* Disable any hover transition effects */
+        }
+
+        .logo-container a:hover img {
+            opacity: 1; /* Ensure logo remains unchanged on hover */
+            filter: none; /* Remove any default browser hover filters */
         }
 
         h1 {
-            font-size: 2.5em; /* Reduced size of the 404 text */
+            font-size: 2.5em;
             margin-bottom: 10px;
         }
 
         p {
             font-size: 1.1em;
-            margin-bottom: 10px; /* Reduced space between the two paragraphs */
+            margin-bottom: 10px;
         }
 
         .redirect-text {
-            font-size: 0.9em; /* Slightly smaller font size for the redirect text */
-            color: #bbbbbb;  /* Slightly darker color for the redirect text */
-            margin-bottom: 30px; /* Added extra space after the redirect text */
+            font-size: 0.9em;
+            color: #bbbbbb;
+            margin-bottom: 30px;
         }
 
         a {
