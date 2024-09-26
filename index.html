@@ -26,18 +26,18 @@
             margin: 10px 0; /* Reduced the margin to decrease space */
         }
 
-        /* Force the image to start inverted */
+        /* Default state: logo shows in its original colors */
         .image-container a img {
             height: 65px;
             width: auto;
             border: none;
-            filter: invert(1); /* Start with the logo inverted */
-            transition: filter 0.3s ease; /* Smooth transition for the hover effect */
+            filter: none; /* No inversion by default */
+            transition: filter 0.3s ease; /* Smooth transition for hover effect */
         }
 
-        /* Revert the inversion on hover */
+        /* Invert the logo colors on hover */
         .image-container a:hover img {
-            filter: invert(0); /* Revert to original colors on hover */
+            filter: invert(1); /* Invert the logo colors on hover */
         }
 
         .page-links {
