@@ -8,10 +8,10 @@
     <link rel="icon" type="image/png" href="/favicon.png">
     <style>
         body {
-            background: #0a0a0a; /* Dark background */
-            color: #fafafa; /* Light text color */
+            background: #0a0a0a;
+            color: #fafafa;
             margin: 0;
-            padding-top: 60px; /* Added padding to the top of the page */
+            padding-top: 60px;
             font-family: Arial, sans-serif;
             text-align: center;
         }
@@ -23,7 +23,7 @@
             padding: 0 20px;
         }
         .image-container {
-            margin: 20px 0; /* Reduced margin to decrease space */
+            margin: 20px 0;
         }
         .image-container img {
             height: 65px;
@@ -31,7 +31,7 @@
             border: none;
         }
         .page-links {
-            margin-top: 20px; /* Reduced margin to decrease space */
+            margin-top: 20px;
             text-align: center;
             color: #fafafa;
             font-size: 1.2em;
@@ -39,16 +39,18 @@
         .page-links a {
             color: #fafafa;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         .links {
-            margin-top: 10px; /* Reduced margin to decrease space */
+            margin-top: 10px;
             text-align: center;
-            color: #bbbbbb; /* Slightly darker gray */
-            font-size: 0.9em; /* Slightly smaller text for social links */
+            color: #bbbbbb;
+            font-size: 0.9em;
         }
         .links a {
             color: #bbbbbb;
             text-decoration: none;
+            transition: color 0.3s ease;
         }
         a:visited {
             color: #cfcfcf;
@@ -57,13 +59,13 @@
             color: #ffffff;
         }
         .spacer {
-            height: 80px; /* Adjusted for better spacing */
+            height: 80px;
         }
 
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
             body {
-                padding-top: 40px; /* Less padding on smaller screens */
+                padding-top: 40px;
             }
             .page-links {
                 font-size: 1.1em;
@@ -76,7 +78,7 @@
         @media (max-width: 480px) {
             body {
                 font-size: 16px;
-                padding-top: 30px; /* Reduced padding on smaller screens */
+                padding-top: 30px;
             }
             .page-links {
                 font-size: 1em;
@@ -91,22 +93,24 @@
     <div id="body_content">
         <!-- Image Section (Logo) -->
         <div class="image-container">
-            <img src="index_files/rae.png" alt="rae logo" title="Rae">
+            <a href="/" title="Go to homepage">
+                <img src="index_files/rae.png" alt="rae logo" title="Rae">
+            </a>
         </div>
 
         <!-- Page Links (Larger Text) -->
         <div class="page-links">
-            <p><a href="https://raearea.net/blog" title="Blog">blog</a> / 
-               <a href="https://raearea.net/art" title="Art">art</a> / 
-               <a href="https://raearea.net/archive" title="Archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact">contact</a></p>
+            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Visit Rae's Blog">blog</a> / 
+               <a href="https://raearea.net/media" title="Visit Rae's Multimedia" aria-label="Visit Rae's Multimedia">multimedia</a> / 
+               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Visit Rae's Archives">archive</a> / 
+               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
         </div>
 
         <!-- Social Links (Darker Section) -->
         <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page">github</a></p>
+            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Visit Rae on Mastodon">Mastodon</a> / 
+               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Visit Rae on Pixelfed">Pixelfed</a> / 
+               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Visit Rae on GitHub">GitHub</a></p>
         </div>
 
         <!-- Spacer -->
