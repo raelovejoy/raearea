@@ -25,7 +25,7 @@
             margin-bottom: 20px;
         }
 
-        /* Ensure no hover effect causes logo to change */
+        /* Basic styles for the logo */
         .logo-container a {
             display: inline-block;
             border: none;
@@ -33,22 +33,19 @@
             text-decoration: none;
         }
 
+        /* Base state for the logo */
         .logo-container a img {
             height: 75px;
             width: auto;
             border: none;
             outline: none;
-            transition: none; /* Disable hover transition effects */
-            background: none; /* Remove any background on hover */
-            opacity: 1; /* Set opacity to full */
-            filter: none; /* Remove any filters */
+            filter: none;
+            transition: filter 0.3s ease; /* Smooth transition for the hover effect */
         }
 
-        /* Prevent hover effect from changing the logo */
+        /* Invert the logo colors on hover */
         .logo-container a:hover img {
-            opacity: 1 !important; /* Force logo to retain full opacity */
-            filter: none !important; /* Remove any browser hover effects */
-            background: none !important; /* No background effects */
+            filter: invert(1); /* Inverts the logo colors on hover */
         }
 
         h1 {
