@@ -25,15 +25,19 @@
             margin-bottom: 20px;
         }
 
+        /* Remove all border, outline, and focus styles on the logo */
         .logo-container a {
             display: inline-block;
+            border: none;
+            outline: none;
+            text-decoration: none;
         }
 
-        .logo-container img {
+        .logo-container a img {
             height: 75px;
             width: auto;
-            border: none;  /* Removes the border */
-            outline: none; /* Removes any outline around the image */
+            border: none;   /* Ensure no border on the image */
+            outline: none;  /* Remove any outline on the image */
         }
 
         h1 {
