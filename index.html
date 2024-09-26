@@ -26,7 +26,7 @@
             margin: 20px 0;
         }
         .image-container img {
-            height: 65px;
+            height: 55px;
             width: auto;
             border: none;
         }
@@ -62,6 +62,16 @@
             height: 80px;
         }
 
+        .animated-photo-container {
+            margin-top: 50px; /* Space between content and animated image */
+        }
+
+        .animated-photo-container img {
+            max-width: 100%; /* Make sure image is responsive */
+            height: auto;
+            border-radius: 10px; /* Optional: for a modern look */
+        }
+
         /* Media Queries for responsiveness */
         @media (max-width: 768px) {
             body {
@@ -94,14 +104,14 @@
         <!-- Image Section (Logo) -->
         <div class="image-container">
             <a href="/" title="Go to homepage">
-                <img src="index_files/rae.png" alt="rae logo" title="Welcome to Rae's website, raearea.net">
+                <img src="index_files/rae.png" alt="rae logo" title="Rae">
             </a>
         </div>
 
         <!-- Page Links (Larger Text) -->
         <div class="page-links">
             <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Visit Rae's Blog">blog</a> / 
-               <a href="https://raearea.net/media" title="Visit Rae's Art" aria-label="Visit Rae's random art stuff">art</a> / 
+               <a href="https://raearea.net/media" title="Visit Rae's Multimedia" aria-label="Visit Rae's Multimedia">art</a> / 
                <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Visit Rae's Archives">archive</a> / 
                <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
         </div>
@@ -115,6 +125,11 @@
 
         <!-- Spacer -->
         <div class="spacer"></div>
+
+        <!-- Animated Photo Section -->
+        <div class="animated-photo-container">
+            <img src="/index_files/rle.gif" alt="Animated glitch artwork">
+        </div>
     </div>
 </body>
 </html>
