@@ -1,0 +1,204 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>/contact [Rae Area nEtwork]</title>
+    <!-- Prevent search engines from indexing this page -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <meta name="ai" content="noai">
+    <meta name="openai-site-verification" content="noai">
+    <meta name="description" content="Contact Rae">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #fafafa;
+            margin: 0;
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        #body_content {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+        }
+        .image-container {
+            margin: 10px 0;
+            display: inline-block;
+        }
+        .image-container a {
+            display: block;
+            padding: 5px;
+        }
+        .image-container a img {
+            height: 65px;
+            width: auto;
+            border: none;
+            filter: none;
+            transition: filter 0.3s ease, background-color 0.3s ease;
+        }
+        .image-container a:hover {
+            background-color: #fff;
+        }
+        .image-container a:hover img {
+            filter: invert(1);
+        }
+        .page-links {
+            margin-top: 10px;
+            text-align: center;
+            color: #fafafa;
+            font-size: 1.2em;
+        }
+        .page-links a {
+            color: #fafafa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        .links {
+            margin-top: 5px;
+            text-align: center;
+            color: #bbbbbb;
+            font-size: 0.9em;
+        }
+        .links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+        a:visited {
+            color: #cfcfcf;
+        }
+        a:hover {
+            color: #ffffff;
+        }
+        .spacer {
+            height: 20px;
+        }
+
+        .contact-methods {
+            margin-top: 20px;
+            padding: 20px;
+            background-color: #1a1a1a;
+            border-radius: 10px;
+            text-align: left;
+            line-height: 1.6;
+            font-size: 1em;
+        }
+
+        .contact-methods h2 {
+            margin-bottom: 10px;
+        }
+
+        .contact-methods ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .contact-methods li {
+            margin-bottom: 15px;
+        }
+
+        .contact-methods a {
+            color: #bbbbbb; /* Same link color as the rest of the site */
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        .contact-methods a:visited {
+            color: #cfcfcf;
+        }
+
+        .contact-methods a:hover {
+            color: #ffffff;
+        }
+
+        /* Media Queries for responsiveness */
+        @media (max-width: 768px) {
+            body {
+                padding-top: 40px;
+            }
+            .page-links {
+                font-size: 1.1em;
+            }
+            .spacer {
+                height: 10px;
+            }
+            .contact-methods {
+                font-size: 0.9em;
+            }
+        }
+
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                padding-top: 30px;
+            }
+            .page-links {
+                font-size: 1em;
+            }
+            .spacer {
+                height: 10px;
+            }
+            .contact-methods {
+                font-size: 0.85em;
+            }
+        }
+    </style>
+
+    <script type="text/javascript">
+        // Function to obfuscate email
+        function obfuscateEmail(user, domain, tld) {
+            return user + '@' + domain + '.' + tld;
+        }
+
+        // Insert obfuscated email after page load
+        document.addEventListener("DOMContentLoaded", function () {
+            var email = obfuscateEmail('rae', 'example', 'com'); // Replace with your actual email user, domain, and TLD
+            document.getElementById('email-link').innerHTML = email;
+            document.getElementById('email-link').setAttribute('href', 'mailto:' + email);
+        });
+    </script>
+</head>
+<body>
+    <div id="body_content">
+        <!-- Image Section (Logo) -->
+        <div class="image-container">
+            <a href="/" title="Go to homepage">
+                <img src="../index_files/rae.png" alt="rae logo">
+            </a>
+        </div>
+
+        <!-- Page Links (Larger Text) -->
+        <div class="page-links">
+            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Visit Rae's Blog">blog</a> / 
+               <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Read Rae's Bio">bio</a> / 
+               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Visit Rae's Archives">archive</a> / 
+               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
+        </div>
+
+        <!-- Social Links (Darker Section) -->
+        <div class="links">
+            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Visit Rae on Mastodon">mastodon</a> / 
+               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Visit Rae on Pixelfed">pixelfed</a> / 
+               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Visit Rae on GitHub">github</a></p>
+        </div>
+
+        <!-- Spacer (Reduced Space) -->
+        <div class="spacer"></div>
+
+        <!-- Contact Methods Section -->
+        <div class="contact-methods">
+            <h2>Contact</h2>
+            <ul>
+                <li><strong>Email:</strong> <a id="email-link" href="#">[Email protected]</a></li>
+                <li><strong>Signal:</strong> <a href="https://signal.me/#eu/ahGySuqtsDk1qOHZg15BIJMlQBIermHIb43wGyZHE6hsTIbi_fhD4KP-MLpfdW3c" title="Message Rae on Signal">Message Rae on Signal</a></li>
+                <li><strong>PGP Key:</strong> <a href="../index_files/Rae_9AFEE525.asc" title="Download Rae's PGP key">Download PGP Key</a></li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
