@@ -25,11 +25,20 @@
         .image-container {
             margin: 10px 0; /* Reduced the margin to decrease space */
         }
-        .image-container img {
+
+        /* Add hover effect to invert logo colors */
+        .image-container a img {
             height: 65px;
             width: auto;
             border: none;
+            transition: filter 0.3s ease; /* Smooth transition for the hover effect */
         }
+
+        /* Invert the logo colors on hover */
+        .image-container a:hover img {
+            filter: invert(1); /* Inverts the logo colors */
+        }
+
         .page-links {
             margin-top: 10px; /* Reduced margin to decrease space */
             text-align: center;
@@ -104,7 +113,7 @@
         <!-- Image Section (Logo) -->
         <div class="image-container">
             <a href="/" title="Go to homepage">
-                <img src="index_files/rae.png" alt="rae logo" title="Rae">
+                <img src="index_files/rae.png" alt="rae logo">
             </a>
         </div>
 
