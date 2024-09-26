@@ -39,11 +39,16 @@
             border: none;
             outline: none;
             transition: none; /* Disable any hover transition effects */
+            background: none; /* Remove any background on hover */
+            opacity: 1; /* Set opacity to full */
+            filter: none; /* Remove any filters applied to the image */
         }
 
+        /* Prevent hover effect from changing the logo */
         .logo-container a:hover img {
-            opacity: 1; /* Ensure logo remains unchanged on hover */
-            filter: none; /* Remove any default browser hover filters */
+            opacity: 1 !important; /* Force logo to retain full opacity */
+            filter: none !important; /* Force no filter changes */
+            background: none !important; /* Remove any background effects */
         }
 
         h1 {
