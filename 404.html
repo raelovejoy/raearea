@@ -21,14 +21,35 @@
             flex-direction: column;
         }
 
+        .logo-container {
+            margin-bottom: 20px;
+        }
+
+        .logo-container a {
+            display: inline-block;
+        }
+
+        .logo-container img {
+            height: 75px;
+            width: auto;
+            border: none;  /* Removes the border */
+            outline: none; /* Removes any outline around the image */
+        }
+
         h1 {
-            font-size: 3em;
+            font-size: 2.5em; /* Reduced size of the 404 text */
             margin-bottom: 10px;
         }
 
         p {
-            font-size: 1.2em;
-            margin-bottom: 20px;
+            font-size: 1.1em;
+            margin-bottom: 10px; /* Reduced space between the two paragraphs */
+        }
+
+        .redirect-text {
+            font-size: 0.9em; /* Slightly smaller font size for the redirect text */
+            color: #bbbbbb;  /* Slightly darker color for the redirect text */
+            margin-bottom: 30px; /* Added extra space after the redirect text */
         }
 
         a {
@@ -51,11 +72,15 @@
         /* Responsive Design */
         @media (max-width: 768px) {
             h1 {
-                font-size: 2.5em;
+                font-size: 2em;
             }
 
             p {
                 font-size: 1em;
+            }
+
+            .redirect-text {
+                font-size: 0.8em;
             }
 
             a {
@@ -74,9 +99,17 @@
 </head>
 <body>
     <div id="body_content">
+        <!-- Clickable Logo Section -->
+        <div class="logo-container">
+            <a href="/" title="Back to Homepage">
+                <img src="index_files/rae.png" alt="rae logo" title="Rae">
+            </a>
+        </div>
+
+        <!-- 404 Text -->
         <h1>404</h1>
         <p>Oops! The page you're looking for doesn't exist.</p>
-        <p>You'll be redirected to the homepage in 10 seconds.</p>
+        <p class="redirect-text">You'll be redirected to the homepage in 10 seconds.</p>
         <a href="/" title="Back to Home">Go Back Home Now</a>
     </div>
 </body>
