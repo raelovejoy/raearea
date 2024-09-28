@@ -27,31 +27,38 @@
         }
 
         .logo-container {
-            margin-bottom: 20px;
-        }
+    margin-bottom: 20px;
+}
 
-        /* Basic styles for the logo */
-        .logo-container a {
-            display: inline-block;
-            border: none;
-            outline: none;
-            text-decoration: none;
-        }
+/* Basic styles for the logo */
+.logo-container a {
+    display: inline-block;
+    border: none;
+    outline: none;
+    text-decoration: none;
+    background-color: #ffffff; /* White background by default */
+    padding: 5px; /* Optional: Add padding for spacing */
+    transition: background-color 0.3s ease; /* Smooth transition for background */
+}
 
-        /* Base state for the logo */
-        .logo-container a img {
-            height: 75px;
-            width: auto;
-            border: none;
-            outline: none;
-            filter: none;
-            transition: filter 0.3s ease; /* Smooth transition for the hover effect */
-        }
+/* Base state for the logo */
+.logo-container a img {
+    height: 75px;
+    width: auto;
+    border: none;
+    outline: none;
+    filter: invert(1); /* Invert the logo colors by default */
+    transition: filter 0.3s ease, background-color 0.3s ease;
+}
 
-        /* Invert the logo colors on hover */
-        .logo-container a:hover img {
-            filter: invert(1); /* Inverts the logo colors on hover */
-        }
+/* When hovering, show the normal logo colors and remove background */
+.logo-container a:hover {
+    background-color: transparent; /* Remove background on hover */
+}
+
+.logo-container a:hover img {
+    filter: none; /* Reset the inversion */
+}
 
         h1 {
             font-size: 2.5em;
@@ -124,8 +131,8 @@
         </div>
 
         <!-- 404 Text -->
-        <h1>404</h1>
-        <p>Oops! The page you're looking for doesn't exist.</p>
+        <h1>Four zero four</h1>
+        <p>Oops! It seems the page you're looking for doesn't exist.</p>
         <p class="redirect-text">You'll be redirected to the homepage in 10 seconds.</p>
         <a href="/" title="Back to Home">Go Back Home Now</a>
     </div>
