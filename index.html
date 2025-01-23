@@ -96,31 +96,35 @@
         .animated-photo-container {
             position: relative;
             margin-top: 20px;
+            width: 600px; /* Fixed width to match GIF size */
+            max-width: 90%; /* Ensure responsiveness */
             display: inline-block;
-            max-width: 90%; /* GIF and overlay size adjustment */
         }
 
         .animated-photo-container img {
-            width: 100%; /* Ensure the GIF fills the container */
+            width: 100%; /* Ensure image scales with the container */
             height: auto;
             border-radius: 10px;
         }
 
         .overlay {
             position: absolute;
-            top: 50%; /* Center vertically */
-            left: 50%; /* Center horizontally */
-            transform: translate(-50%, -50%); /* Adjust for true center */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            top: 0; /* Start at the top of the GIF */
+            left: 0; /* Align with the left edge */
+            width: 100%; /* Match the GIF width */
+            height: 100%; /* Match the GIF height */
+            display: flex;
+            align-items: center; /* Center the text vertically */
+            justify-content: center; /* Center the text horizontally */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
             color: #fafafa; /* White text */
             font-family: "Courier New", Courier, monospace; /* Monospaced font */
-            font-size: 1.2em; /* Adjust font size for readability */
+            font-size: 1.1em; /* Adjust font size */
             font-weight: normal;
-            padding: 15px 20px; /* Maintain consistent padding */
-            border-radius: 8px; /* Slightly rounded edges */
             text-align: center;
-            max-width: 100%; /* Match overlay width to GIF */
-            line-height: 1.5; /* Maintain readability */
+            line-height: 1.5;
+            border-radius: 10px; /* Match GIF corners */
+            padding: 10px; /* Add spacing inside the overlay */
             box-sizing: border-box;
         }
 
@@ -138,8 +142,8 @@
             }
 
             .overlay {
-                font-size: 1.1em;
-                padding: 12px 18px;
+                font-size: 1em;
+                padding: 8px;
             }
         }
 
@@ -158,8 +162,8 @@
             }
 
             .overlay {
-                font-size: 1em;
-                padding: 10px 15px;
+                font-size: 0.9em;
+                padding: 6px;
             }
         }
     </style>
