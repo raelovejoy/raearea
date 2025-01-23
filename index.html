@@ -20,6 +20,7 @@
             font-family: Arial, sans-serif;
             text-align: center;
         }
+
         #body_content {
             max-width: 750px;
             margin: 0 auto;
@@ -27,32 +28,31 @@
             text-align: center;
             padding: 0 20px;
         }
+
         .image-container {
             margin: 10px 0;
             display: inline-block;
         }
 
-        /* Default state: logo shows in its original colors */
         .image-container a {
-            display: block; /* Ensure the link behaves like a block element */
-            padding: 5px;   /* Add padding around the logo */
+            display: block; 
+            padding: 5px;
         }
 
         .image-container a img {
             height: 65px;
             width: auto;
             border: none;
-            filter: none; /* No inversion by default */
-            transition: filter 0.3s ease, background-color 0.3s ease; /* Smooth transition for hover effect */
+            filter: none; 
+            transition: filter 0.3s ease, background-color 0.3s ease;
         }
 
-        /* Invert the logo colors and change the background on hover */
         .image-container a:hover {
-            background-color: #fff; /* Set background to white on hover */
+            background-color: #fff; 
         }
 
         .image-container a:hover img {
-            filter: invert(1); /* Invert the logo colors on hover */
+            filter: invert(1); 
         }
 
         .page-links {
@@ -61,34 +61,42 @@
             color: #fafafa;
             font-size: 1.2em;
         }
+
         .page-links a {
             color: #fafafa;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         .links {
             margin-top: 5px;
             text-align: center;
             color: #bbbbbb;
             font-size: 0.9em;
         }
+
         .links a {
             color: #bbbbbb;
             text-decoration: none;
             transition: color 0.3s ease;
         }
+
         a:visited {
             color: #cfcfcf;
         }
+
         a:hover {
             color: #ffffff;
         }
+
         .spacer {
             height: 20px;
         }
 
         .animated-photo-container {
+            position: relative;
             margin-top: 20px;
+            display: inline-block;
         }
 
         .animated-photo-container img {
@@ -97,7 +105,22 @@
             border-radius: 10px;
         }
 
-        /* Media Queries for responsiveness */
+        .overlay {
+            position: absolute;
+            bottom: 10px; /* Close to the bottom of the image */
+            left: 50%;
+            transform: translateX(-50%); /* Center text horizontally */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
+            color: #fafafa; /* White text */
+            font-family: "Courier New", Courier, monospace; /* Monospaced font */
+            font-size: 1em;
+            padding: 5px 10px;
+            border-radius: 5px; /* Slightly rounded edges for the caption */
+            text-align: center;
+            max-width: 90%; /* Prevent text overflow on smaller screens */
+            box-sizing: border-box;
+        }
+
         @media (max-width: 768px) {
             body {
                 padding-top: 40px;
@@ -107,6 +130,10 @@
             }
             .spacer {
                 height: 10px;
+            }
+            .overlay {
+                font-size: 0.9em;
+                padding: 4px 8px;
             }
         }
 
@@ -120,6 +147,10 @@
             }
             .spacer {
                 height: 10px;
+            }
+            .overlay {
+                font-size: 0.85em;
+                padding: 3px 6px;
             }
         }
     </style>
@@ -151,9 +182,12 @@
         <!-- Spacer (Reduced Space) -->
         <div class="spacer"></div>
 
-        <!-- Animated Photo Section -->
+        <!-- Animated Photo Section with Caption -->
         <div class="animated-photo-container">
             <img src="index_files/rle.gif" alt="Animated illustration">
+            <div class="overlay">
+                Creative IT professional, versatile maker, curious generalist, writer, explorer of issues and ideas around tech, philosophy, art, & nature.
+            </div>
         </div>
     </div>
 </body>
