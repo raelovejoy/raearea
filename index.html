@@ -97,10 +97,11 @@
             position: relative;
             margin-top: 20px;
             display: inline-block;
+            max-width: 90%; /* GIF and overlay size adjustment */
         }
 
         .animated-photo-container img {
-            max-width: 90%;
+            width: 100%; /* Ensure the GIF fills the container */
             height: auto;
             border-radius: 10px;
         }
@@ -113,12 +114,12 @@
             background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             color: #fafafa; /* White text */
             font-family: "Courier New", Courier, monospace; /* Monospaced font */
-            font-size: 1.2em; /* Slightly larger font size */
+            font-size: 1.2em; /* Adjust font size for readability */
             font-weight: normal;
             padding: 15px 20px; /* Maintain consistent padding */
             border-radius: 8px; /* Slightly rounded edges */
             text-align: center;
-            max-width: 85%; /* Prevent text overflow */
+            max-width: 100%; /* Match overlay width to GIF */
             line-height: 1.5; /* Maintain readability */
             box-sizing: border-box;
         }
@@ -127,12 +128,15 @@
             body {
                 padding-top: 40px;
             }
+
             .page-links {
                 font-size: 1.1em;
             }
+
             .spacer {
                 height: 10px;
             }
+
             .overlay {
                 font-size: 1.1em;
                 padding: 12px 18px;
@@ -144,12 +148,15 @@
                 font-size: 16px;
                 padding-top: 30px;
             }
+
             .page-links {
                 font-size: 1em;
             }
+
             .spacer {
                 height: 10px;
             }
+
             .overlay {
                 font-size: 1em;
                 padding: 10px 15px;
