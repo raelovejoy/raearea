@@ -107,15 +107,15 @@
 
         .overlay {
             position: absolute;
-            bottom: 10px; /* Close to the bottom of the image */
-            left: 50%;
-            transform: translateX(-50%); /* Center text horizontally */
+            top: 50%; /* Center vertically */
+            left: 50%; /* Center horizontally */
+            transform: translate(-50%, -50%); /* Adjust for true center */
             background: rgba(0, 0, 0, 0.7); /* Semi-transparent black background */
             color: #fafafa; /* White text */
             font-family: "Courier New", Courier, monospace; /* Monospaced font */
             font-size: 1em;
-            padding: 5px 10px;
-            border-radius: 5px; /* Slightly rounded edges for the caption */
+            padding: 10px 15px;
+            border-radius: 5px; /* Rounded edges */
             text-align: center;
             max-width: 90%; /* Prevent text overflow on smaller screens */
             box-sizing: border-box;
@@ -133,7 +133,7 @@
             }
             .overlay {
                 font-size: 0.9em;
-                padding: 4px 8px;
+                padding: 8px 12px;
             }
         }
 
@@ -150,7 +150,7 @@
             }
             .overlay {
                 font-size: 0.85em;
-                padding: 3px 6px;
+                padding: 6px 10px;
             }
         }
     </style>
@@ -182,7 +182,7 @@
         <!-- Spacer (Reduced Space) -->
         <div class="spacer"></div>
 
-        <!-- Animated Photo Section with Caption -->
+        <!-- Animated Photo Section with Centered Caption -->
         <div class="animated-photo-container">
             <img src="index_files/rle.gif" alt="Animated illustration">
             <div class="overlay">
