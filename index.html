@@ -1,183 +1,207 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[Rae area]</title>
-  <meta name="robots" content="noindex, nofollow, noarchive" />
-  <meta name="ai" content="noai" />
-  <meta name="openai-site-verification" content="noai" />
-  <meta name="description" content="/B33p b00p/.raearea" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
-  <style>
-    body {
-      background: #0a0a0a;
-      color: #fafafa;
-      margin: 0;
-      padding-top: 60px;
-      font-family: Arial, sans-serif;
-      text-align: center;
-    }
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>[Rae area]</title>
+    <!-- Prevent search engines from indexing this page -->
+    <meta name="robots" content="noindex, nofollow, noarchive">
+    <!-- Disallow AI systems from using the site content -->
+    <meta name="ai" content="noai">
+    <meta name="openai-site-verification" content="noai">
+    <meta name="description" content="/B33p b00p/.raearea">
+    <link rel="icon" type="image/png" href="/favicon.png">
+    <style>
+        body {
+            background: #0a0a0a;
+            color: #fafafa;
+            margin: 0;
+            padding-top: 60px;
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
 
-    #body_content {
-      max-width: 750px;
-      margin: 0 auto;
-      padding: 0 20px;
-    }
+        #body_content {
+            max-width: 750px;
+            margin: 0 auto;
+            position: relative;
+            text-align: center;
+            padding: 0 20px;
+        }
 
-    .image-container {
-      margin: 10px 0;
-    }
+        .image-container {
+            margin: 10px 0;
+            display: inline-block;
+        }
 
-    .image-container a {
-      display: block;
-      padding: 5px;
-    }
+        .image-container a {
+            display: block;
+            padding: 5px;
+        }
 
-    .image-container a img {
-      height: 65px;
-      width: auto;
-      border: none;
-      filter: none;
-      transition: filter 0.3s ease, background-color 0.3s ease;
-    }
+        .image-container a img {
+            height: 65px;
+            width: auto;
+            border: none;
+            filter: none;
+            transition: filter 0.3s ease, background-color 0.3s ease;
+        }
 
-    .image-container a:hover {
-      background-color: #fff;
-    }
+        .image-container a:hover {
+            background-color: #fff;
+        }
 
-    .image-container a:hover img {
-      filter: invert(1);
-    }
+        .image-container a:hover img {
+            filter: invert(1);
+        }
 
-    .page-links {
-      margin-top: 10px;
-      font-size: 1.2em;
-    }
+        .page-links {
+            margin-top: 10px;
+            text-align: center;
+            color: #fafafa;
+            font-size: 1.2em;
+        }
 
-    .page-links a {
-      color: #fafafa;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        .page-links a {
+            color: #fafafa;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    .links {
-      margin-top: 5px;
-      color: #bbbbbb;
-      font-size: 0.9em;
-    }
+        .links {
+            margin-top: 5px;
+            text-align: center;
+            color: #bbbbbb;
+            font-size: 0.9em;
+        }
 
-    .links a {
-      color: #bbbbbb;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
+        .links a {
+            color: #bbbbbb;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
 
-    a:visited {
-      color: #cfcfcf;
-    }
+        a:visited {
+            color: #cfcfcf;
+        }
 
-    a:hover {
-      color: #ffffff;
-    }
+        a:hover {
+            color: #ffffff;
+        }
 
-    .spacer {
-      height: 20px;
-    }
+        .spacer {
+            height: 20px;
+        }
 
-    .animated-photo-container {
-      margin-top: 30px;
-    }
+        .animated-photo-container {
+            position: relative;
+            margin-top: 20px;
+            width: 600px; /* Fixed width to match GIF size */
+            max-width: 90%; /* Ensure responsiveness */
+            display: inline-block;
+        }
 
-    .animated-photo-container img {
-      width: 50%;
-      max-width: 300px;
-      height: auto;
-      border-radius: 10px;
-      display: block;
-      margin: 0 auto;
-    }
+        .animated-photo-container img {
+            width: 100%; /* Ensure image scales with the container */
+            height: auto;
+            border-radius: 10px;
+        }
 
-    .caption {
-      font-family: "Courier New", Courier, monospace;
-      font-size: 0.95em;
-      color: #fafafa;
-      line-height: 1.6;
-      margin-top: 20px;
-      margin-left: auto;
-      margin-right: auto;
-      max-width: 300px;
-    }
+        .overlay {
+            position: absolute;
+            top: 0; /* Start at the top of the GIF */
+            left: 0; /* Align with the left edge */
+            width: 100%; /* Match the GIF width */
+            height: 100%; /* Match the GIF height */
+            display: flex;
+            align-items: center; /* Center the text vertically */
+            justify-content: center; /* Center the text horizontally */
+            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
+            color: #fafafa; /* White text */
+            font-family: "Courier New", Courier, monospace; /* Monospaced font */
+            font-size: 1.1em; /* Adjust font size */
+            font-weight: normal;
+            text-align: center;
+            line-height: 1.5;
+            border-radius: 10px; /* Match GIF corners */
+            padding: 10px; /* Add spacing inside the overlay */
+            box-sizing: border-box;
+        }
 
-    @media (max-width: 768px) {
-      body {
-        padding-top: 40px;
-      }
+        @media (max-width: 768px) {
+            body {
+                padding-top: 40px;
+            }
 
-      .page-links {
-        font-size: 1.1em;
-      }
+            .page-links {
+                font-size: 1.1em;
+            }
 
-      .spacer {
-        height: 10px;
-      }
-    }
+            .spacer {
+                height: 10px;
+            }
 
-    @media (max-width: 480px) {
-      body {
-        font-size: 16px;
-        padding-top: 30px;
-      }
+            .overlay {
+                font-size: 1em;
+                padding: 8px;
+            }
+        }
 
-      .page-links {
-        font-size: 1em;
-      }
+        @media (max-width: 480px) {
+            body {
+                font-size: 16px;
+                padding-top: 30px;
+            }
 
-      .spacer {
-        height: 10px;
-      }
-    }
-  </style>
+            .page-links {
+                font-size: 1em;
+            }
+
+            .spacer {
+                height: 10px;
+            }
+
+            .overlay {
+                font-size: 0.9em;
+                padding: 6px;
+            }
+        }
+    </style>
 </head>
 <body>
-  <div id="body_content">
-    <!-- Logo -->
-    <div class="image-container">
-      <a href="/" title="Go to homepage">
-        <img src="index_files/raearea.png" alt="rae area logo" />
-      </a>
-    </div>
+    <div id="body_content">
+        <!-- Image Section (Logo) -->
+        <div class="image-container">
+            <a href="/" title="Go to homepage">
+                <img src="index_files/raearea.png" alt="rae area logo">
+            </a>
+        </div>
 
-    <!-- Nav Links -->
-    <div class="page-links">
-      <p>
-        <a href="https://raearea.net/blog">blog</a> /
-        <a href="https://raearea.net/bio">bio</a> /
-        <a href="https://raearea.net/archive">archive</a> /
-        <a href="https://raearea.net/contact">contact</a>
-      </p>
-    </div>
+        <!-- Page Links (Larger Text) -->
+        <div class="page-links">
+            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a> / 
+               <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Rae's bio">bio</a> / 
+               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
+               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
+        </div>
 
-    <!-- Social Links -->
-    <div class="links">
-      <p>
-        @
-        <a rel="me" href="https://kolektiva.social/@rae">mastodon</a> /
-        <a href="https://pixelfed.social/raelovejoy">pixelfed</a> /
-        <a href="https://github.com/raelovejoy">github</a>
-      </p>
-    </div>
+        <!-- Social Links (Darker Section) -->
+        <div class="links">
+            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
+               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
+               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
+        </div>
 
-    <!-- Spacer -->
-    <div class="spacer"></div>
+        <!-- Spacer (Reduced Space) -->
+        <div class="spacer"></div>
 
-    <!-- Image + Caption -->
-    <div class="animated-photo-container">
-      <img src="index_files/your-image-name.jpg" alt="Glitched image of Rae" />
+        <!-- Animated Photo Section with Centered Caption -->
+        <div class="animated-photo-container">
+            <img src="index_files/rle.gif" alt="Animated illustration">
+            <div class="overlay">
+                IT professional, curious generalist, connecting ideas and issues across tech, philosophy, art, and nature through creative exploration and experimentation.
+            </div>
+        </div>
     </div>
-    <div class="caption">
-      IT professional, curious generalist, connecting ideas and issues across tech, philosophy, art, and nature through creative exploration and experimentation.
-    </div>
-  </div>
 </body>
 </html>
