@@ -4,9 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>[Rae area]</title>
-    <!-- Prevent search engines from indexing this page -->
     <meta name="robots" content="noindex, nofollow, noarchive">
-    <!-- Disallow AI systems from using the site content -->
     <meta name="ai" content="noai">
     <meta name="openai-site-verification" content="noai">
     <meta name="description" content="/B33p b00p/.raearea">
@@ -24,8 +22,6 @@
         #body_content {
             max-width: 750px;
             margin: 0 auto;
-            position: relative;
-            text-align: center;
             padding: 0 20px;
         }
 
@@ -57,7 +53,6 @@
 
         .page-links {
             margin-top: 10px;
-            text-align: center;
             color: #fafafa;
             font-size: 1.2em;
         }
@@ -70,7 +65,6 @@
 
         .links {
             margin-top: 5px;
-            text-align: center;
             color: #bbbbbb;
             font-size: 0.9em;
         }
@@ -94,38 +88,26 @@
         }
 
         .animated-photo-container {
-            position: relative;
             margin-top: 20px;
-            width: 600px; /* Fixed width to match GIF size */
-            max-width: 90%; /* Ensure responsiveness */
+            width: 600px;
+            max-width: 90%;
             display: inline-block;
         }
 
         .animated-photo-container img {
-            width: 100%; /* Ensure image scales with the container */
+            width: 100%;
             height: auto;
             border-radius: 10px;
+            display: block;
         }
 
-        .overlay {
-            position: absolute;
-            top: 0; /* Start at the top of the GIF */
-            left: 0; /* Align with the left edge */
-            width: 100%; /* Match the GIF width */
-            height: 100%; /* Match the GIF height */
-            display: flex;
-            align-items: center; /* Center the text vertically */
-            justify-content: center; /* Center the text horizontally */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            color: #fafafa; /* White text */
-            font-family: "Courier New", Courier, monospace; /* Monospaced font */
-            font-size: 1.1em; /* Adjust font size */
-            font-weight: normal;
-            text-align: center;
-            line-height: 1.5;
-            border-radius: 10px; /* Match GIF corners */
-            padding: 10px; /* Add spacing inside the overlay */
-            box-sizing: border-box;
+        .bio-caption {
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1em;
+            color: #fafafa;
+            margin-top: 15px;
+            line-height: 1.6;
+            padding: 0 10px;
         }
 
         @media (max-width: 768px) {
@@ -141,9 +123,9 @@
                 height: 10px;
             }
 
-            .overlay {
-                font-size: 1em;
-                padding: 8px;
+            .bio-caption {
+                font-size: 0.95em;
+                padding: 0 8px;
             }
         }
 
@@ -161,46 +143,45 @@
                 height: 10px;
             }
 
-            .overlay {
+            .bio-caption {
                 font-size: 0.9em;
-                padding: 6px;
+                padding: 0 6px;
             }
         }
     </style>
 </head>
 <body>
     <div id="body_content">
-        <!-- Image Section (Logo) -->
+        <!-- Logo -->
         <div class="image-container">
             <a href="/" title="Go to homepage">
                 <img src="index_files/raearea.png" alt="rae area logo">
             </a>
         </div>
 
-        <!-- Page Links (Larger Text) -->
+        <!-- Nav Links -->
         <div class="page-links">
-            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a> / 
-               <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Rae's bio">bio</a> / 
-               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
+            <p><a href="https://raearea.net/blog">blog</a> / 
+               <a href="https://raearea.net/bio">bio</a> / 
+               <a href="https://raearea.net/archive">archive</a> / 
+               <a href="https://raearea.net/contact">contact</a></p>
         </div>
 
-        <!-- Social Links (Darker Section) -->
+        <!-- Social Links -->
         <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
+            <p>@ <a rel="me" href="https://kolektiva.social/@rae">mastodon</a> / 
+               <a href="https://pixelfed.social/raelovejoy">pixelfed</a> / 
+               <a href="https://github.com/raelovejoy">github</a></p>
         </div>
 
-        <!-- Spacer (Reduced Space) -->
         <div class="spacer"></div>
 
-        <!-- Animated Photo Section with Centered Caption -->
+        <!-- Image + Caption -->
         <div class="animated-photo-container">
-            <img src="index_files/r43_1.jpg" alt="">
-            <div class="overlay">
+            <img src="index_files/r43_1.jpg" alt="rae portrait">
+            <p class="bio-caption">
                 IT professional, curious generalist, connecting ideas and issues across tech, philosophy, art, and nature through creative exploration and experimentation.
-            </div>
+            </p>
         </div>
     </div>
 </body>
