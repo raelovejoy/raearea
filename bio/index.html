@@ -1,177 +1,61 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[bio]---[Rae area]</title>
-    <!-- Prevent search engines from indexing this page -->
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <!-- Disallow AI systems from using the site content -->
-    <meta name="ai" content="noai">
-    <meta name="openai-site-verification" content="noai">
-    <meta name="description" content="Rae's bio">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <style>
-        body {
-            background: #0a0a0a;
-            color: #fafafa;
-            margin: 0;
-            padding-top: 60px;
-            font-family: Arial, sans-serif;
-            text-align: center;
-        }
-        #body_content {
-            max-width: 750px;
-            margin: 0 auto;
-            position: relative;
-            text-align: center;
-            padding: 0 20px;
-            padding-bottom: 60px; /* Add padding at the bottom */
-        }
-        .image-container {
-            margin: 10px 0;
-            display: inline-block;
-        }
-
-        /* Default state: logo shows in its original colors */
-        .image-container a {
-            display: block;
-            padding: 5px;
-        }
-
-        .image-container a img {
-            height: 65px;
-            width: auto;
-            border: none;
-            filter: none;
-            transition: filter 0.3s ease, background-color 0.3s ease;
-        }
-
-        /* Invert the logo colors and change the background on hover */
-        .image-container a:hover {
-            background-color: #fff;
-        }
-
-        .image-container a:hover img {
-            filter: invert(1);
-        }
-
-        .page-links {
-            margin-top: 10px;
-            text-align: center;
-            color: #fafafa;
-            font-size: 1.2em;
-        }
-        .page-links a {
-            color: #fafafa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .links {
-            margin-top: 5px;
-            text-align: center;
-            color: #bbbbbb;
-            font-size: 0.9em;
-        }
-        .links a {
-            color: #bbbbbb;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:visited {
-            color: #cfcfcf;
-        }
-        a:hover {
-            color: #ffffff;
-        }
-        .spacer {
-            height: 20px;
-        }
-
-        /* Bio Content Section */
-        .bio-content {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            text-align: left;
-            line-height: 1.6;
-            font-size: 1em;
-        }
-
-        .bio-content h2 {
-            margin-bottom: 10px;
-        }
-
-        .bio-content p {
-            margin-bottom: 10px;
-        }
-
-        /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 40px;
-            }
-            .page-links {
-                font-size: 1.1em;
-            }
-            .spacer {
-                height: 10px;
-            }
-            .bio-content {
-                font-size: 0.9em;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-                padding-top: 30px;
-            }
-            .page-links {
-                font-size: 1em;
-            }
-            .spacer {
-                height: 10px;
-            }
-            .bio-content {
-                font-size: 0.85em;
-            }
-        }
-    </style>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[bio]---[Rae area]</title>
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="ai" content="noai">
+  <meta name="openai-site-verification" content="noai">
+  <meta name="description" content="Rae's bio">
+  <link rel="icon" type="image/png" href="/favicon.png">
+  <style>
+    body {
+      background: #0a0a0a;
+      color: #fafafa;
+      margin: 0;
+      padding-top: 60px;
+      font-family: Arial, sans-serif;
+      text-align: center;
+    }
+    #body_content {
+      max-width: 750px;
+      margin: 0 auto;
+      position: relative;
+      text-align: center;
+      padding: 0 20px;
+      padding-bottom: 60px;
+    }
+    .bio-content {
+      margin-top: 20px;
+      padding: 20px;
+      background-color: #1a1a1a;
+      border-radius: 10px;
+      text-align: left;
+      line-height: 1.6;
+      font-size: 1em;
+    }
+  </style>
 </head>
 <body>
-    <div id="body_content">
-        <!-- Image Section (Logo) -->
-        <div class="image-container">
-            <a href="/" title="Go to homepage">
-                <img src="../index_files/raearea.png" alt="rae area logo">
-            </a>
-        </div>
+  <div id="body_content">
+    <div class="bio-content" id="bio-markdown"></div>
+    <script type="text/markdown" id="markdown-source">
+## [b10]
 
-        <!-- Page Links (Larger Text) -->
-        <div class="page-links">
-            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a> / 
-               <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Rae's bio"><strong>bio</strong></a> / 
-               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
-        </div>
+I'm Rae (they/he), a systems-oriented creative technologist and generalist based in San Francisco. **raearea.net** is part personal archive, part experimental playground where I explore the edges of technology, liberation, and selfhood.
 
-        <!-- Social Links (Darker Section) -->
-        <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
-        </div>
+I work at the intersection of hardware and software, nature and machine, past and future. My background spans IT, DIY, electronics, privacy-respecting infrastructure, and community-*empowered* tech.
 
-        <!-- Spacer (Reduced Space) -->
-        <div class="spacer"></div>
+I'm passionate about building a future rooted in love, mutual aid, and intelligent autonomy—for people, planet, and machine alike. You'll find traces of that here—in code, sketches, writings, and ideas in progress.
 
-        <!-- Bio Content Section -->
-        <div class="bio-content">
-            <h2>[b10]</h2>
-            <p>human</p>
-        </div>
-    </div>
+This site is part of a larger network of interconnected domains (like [r43.tech](https://r43.tech), [raelovejoy.com](https://raelovejoy.com), [liberated.technology](https://liberated.technology), and more) forming a living knowledge system and evolving creative portfolio.
+    </script>
+  </div>
+  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
+  <script>
+    const markdown = document.getElementById("markdown-source").textContent;
+    document.getElementById("bio-markdown").innerHTML = marked.parse(markdown);
+  </script>
 </body>
 </html>
