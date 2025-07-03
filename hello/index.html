@@ -20,6 +20,13 @@
     .hello {
       max-width: 640px;
     }
+    a {
+      color: #58a6ff;
+      text-decoration: none;
+    }
+    a:hover {
+      text-decoration: underline;
+    }
     .wave {
       animation: wave 2s infinite;
       display: inline-block;
@@ -38,7 +45,7 @@
 </head>
 <body>
   <div class="hello">
-    <h1><span class="wave">👋</span> hello, world</h1>
+    <h1><span class="wave" aria-hidden="true">👋</span> hello, world</h1>
     <p>This is not just a “hello world” in the programming sense.</p>
     <p>This is a hello to <em>the</em> world. To <em>every</em> world.<br>
     To the you I don’t yet know, and the us we could still become.</p>
@@ -52,6 +59,11 @@
     <p>It starts small. It starts now.<br>
     With a hello.</p>
     <p>— someone who believes in you</p>
+    <p>
+      <a href="https://github.com/raelovejoy/root-sequence/blob/main/hello.md" target="_blank" rel="noopener noreferrer">
+        → View this hello on GitHub
+      </a>
+    </p>
   </div>
 </body>
 </html>
