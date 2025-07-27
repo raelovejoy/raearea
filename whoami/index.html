@@ -7,7 +7,7 @@
   <link rel="icon" href="/favicon.png" type="image/x-icon">
   <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=VT323&display=swap" rel="stylesheet">
   <style>
-    :root {
+  :root {
       --background: linear-gradient(135deg, #14082d, #231047, #2f1140);
       --text-color: #e6f8ff;
       --highlight: #ff66cc;
@@ -19,16 +19,23 @@
       box-sizing: border-box;
     }
 
-    html, body {
-      margin: 0;
-      padding: env(safe-area-inset-top) env(safe-area-inset-right) env(safe-area-inset-bottom) env(safe-area-inset-left);
-      background: var(--background);
-      color: var(--text-color);
-      line-height: 1.6;
-      font-size: 1rem;
-      font-family: 'IBM Plex Mono', monospace;
-      min-height: 100vh;
-    }
+  html {
+  background: linear-gradient(135deg, #14082d, #231047, #2f1140);
+  background-attachment: fixed;
+  background-size: cover;
+  background-repeat: no-repeat;
+  ...
+  }
+
+  body {
+  background: transparent;
+  color: var(--text-color);
+  font-family: 'IBM Plex Mono', monospace;
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 0;
+  min-height: 100vh;
+}
 
 
     header {
