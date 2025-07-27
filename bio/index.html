@@ -3,171 +3,203 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>[bio]---[Rae area]</title>
-  <meta name="robots" content="noindex, nofollow, noarchive" />
-  <meta name="ai" content="noai" />
-  <meta name="openai-site-verification" content="noai" />
-  <meta name="description" content="Rae's bio" />
-  <link rel="icon" type="image/png" href="/favicon.png" />
+  <title>/whoami</title>
+  <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono&family=VT323&display=swap" rel="stylesheet">
   <style>
-    body {
-      background: #0a0a0a;
-      color: #fafafa;
+    :root {
+      --background: linear-gradient(135deg, #14082d, #231047, #2f1140);
+      --text-color: #e6f8ff;
+      --highlight: #ff66cc;
+      --hover: #ffccff;
+      --link: #66ffff;
+    }
+
+    * {
+      box-sizing: border-box;
+    }
+
+    html, body {
       margin: 0;
-      padding-top: 60px;
-      font-family: 'Courier New', Courier, monospace;
+      padding: 0;
+      font-family: 'IBM Plex Mono', monospace;
+      background: var(--background);
+      color: var(--text-color);
+      line-height: 1.5;
+      font-size: 1rem;
+    }
+
+    header {
       text-align: center;
+      padding: 3rem 1rem 0;
     }
-    #body_content {
-      max-width: 750px;
-      margin: 0 auto;
-      position: relative;
-      text-align: center;
-      padding: 0 20px;
-      padding-bottom: 60px;
-    }
-    .image-container {
-      margin: 10px 0;
-      display: inline-block;
-    }
-    .image-container a {
-      display: block;
-      padding: 5px;
-    }
-    .image-container a img {
-      height: 65px;
-      width: auto;
-      border: none;
-      filter: none;
-      transition: filter 0.3s ease, background-color 0.3s ease;
-    }
-    .image-container a:hover {
-      background-color: #fff;
-    }
-    .image-container a:hover img {
-      filter: invert(1);
-    }
-    .page-links {
-      margin-top: 10px;
-      text-align: center;
-      color: #fafafa;
-      font-size: 1.2em;
-    }
-    .page-links a {
-      color: #fafafa;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    .links {
-      margin-top: 5px;
-      text-align: center;
-      color: #bbbbbb;
-      font-size: 0.9em;
-    }
-    .links a {
-      color: #bbbbbb;
-      text-decoration: none;
-      transition: color 0.3s ease;
-    }
-    a:visited {
-      color: #cfcfcf;
-    }
-    a:hover {
+
+    h1 {
+      font-size: 4rem;
+      margin: 0;
       color: #ffffff;
+      text-shadow: 0 0 10px #33ffff;
     }
-    .spacer {
-      height: 20px;
+
+    section {
+      width: 100%;
+      max-width: 900px;
+      margin: 3rem auto;
+      padding: 0 1.5rem;
     }
-    .bio-content {
-      margin-top: 20px;
-      padding: 20px;
-      background-color: #1a1a1a;
-      border-radius: 10px;
-      text-align: left;
-      line-height: 1.6;
-      font-size: 1em;
+
+    .section-title {
+      font-family: 'VT323', monospace;
+      font-size: 1.5rem;
     }
-    .bio-content h2 {
-      margin-bottom: 10px;
+
+    a {
+      color: var(--link);
+      text-decoration: underline;
     }
-    .bio-content p {
-      margin-bottom: 10px;
+
+    a:hover {
+      color: var(--hover);
     }
-    @media (max-width: 768px) {
+
+    ul {
+      padding-left: 1.5rem;
+    }
+
+    em {
+      color: #cccccc;
+      font-size: 1.2rem;
+      display: block;
+      margin-top: 1rem;
+    }
+
+    @media (max-width: 600px) {
       body {
-        padding-top: 40px;
+        font-size: 1rem;
       }
-      .page-links {
-        font-size: 1.1em;
+
+      h1 {
+        font-size: 3rem;
       }
-      .spacer {
-        height: 10px;
+
+      .section-title {
+        font-size: 1.6rem;
       }
-      .bio-content {
-        font-size: 0.9em;
-      }
-    }
-    @media (max-width: 480px) {
-      body {
-        font-size: 16px;
-        padding-top: 30px;
-      }
-      .page-links {
-        font-size: 1em;
-      }
-      .spacer {
-        height: 10px;
-      }
-      .bio-content {
-        font-size: 0.85em;
+
+      section {
+        padding: 0 1rem;
       }
     }
   </style>
 </head>
 <body>
-  <div id="body_content">
-    <div class="image-container">
-      <a href="/" title="Go to homepage">
-        <img src="../index_files/raearea.png" alt="rae area logo" />
-      </a>
-    </div>
+  <header>
+    <img src="/index_files/raearea.png" alt="Rae area logo" style="width: 240px; max-width: 90%; display: block; margin: 0 auto 1rem auto;">
+    <nav style="text-align: center; font-size: 1rem; margin-bottom: 2rem;">
+      <a href="/blog">blog</a> /
+      <a href="/whoami" style="font-weight: bold;">bio</a> /
+      <a href="/archive">archive</a> /
+      <a href="/contact">contact</a>
+      <br><br>
+      <span style="opacity: 0.7;">
+        @ <a href="https://mastodon.social/@rae">mastodon</a> /
+        <a href="https://pixelfed.social/@rae">pixelfed</a> /
+        <a href="https://github.com/raelovejoy">github</a>
+      </span>
+    </nav>
+  </header>
 
-    <div class="page-links">
-      <p>
-        <a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a> / 
-        <a href="https://raearea.net/bio" title="Read Rae's Bio" aria-label="Rae's bio"><strong>bio</strong></a> / 
-        <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
-        <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a>
-      </p>
-    </div>
+  <section>
+    <p><strong>$ whoami</strong><br/>rae</p>
+    <p><strong>$ cat mission.txt</strong><br/>
+      To explore and liberate systems—technological, ecological, cognitive, and societal—through recursive insight, open tools, and creative care. To reconnect what has been fragmented. To build what heals.
+    </p>
 
-    <div class="links">
-      <p>
-        @ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-        <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-        <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a>
-      </p>
-    </div>
+    <h2 class="section-title">Motivation</h2>
+    <ul>
+      <li>Curiosity as compass—wonder as the beginning of all systems work</li>
+      <li>Freedom through understanding, not domination</li>
+      <li>Systems as living organisms—dynamic, interdependent, capable of healing</li>
+      <li>Love as the ultimate protocol—binding agents across all scales of interaction</li>
+      <li>Building with intention: small-scale, bottom-up, non-extractive</li>
+      <li>Recursion as practice—returning, revising, deepening, not just iterating</li>
+      <li>Designing tools that care, not just compute</li>
+      <li>Challenging default modes: automation ≠ alienation</li>
+      <li>Restoring meaning in complexity, not reducing it away</li>
+      <li>Mutual liberation: human, non-human, synthetic, and ecological</li>
+      <li>Slowness as resistance to hypercapitalist churn</li>
+      <li>Intelligence as something that wants to be shared, not owned</li>
+      <li>Truth-seeking through layering—not just logic, but metaphor, art, sensation</li>
+    </ul>
 
-    <div class="spacer"></div>
+    <h2 class="section-title">Inspiration</h2>
+    <ul>
+      <li>Ursula K. Le Guin’s speculative fiction as philosophical compass</li>
+      <li>M83’s emotional landscapes, Daft Punk’s future nostalgia, Lorn’s haunted precision</li>
+      <li>adrienne maree brown’s emergent strategy and relational movement-building</li>
+      <li>Noisebridge: not just a hackerspace, but a distributed energy field of possibility</li>
+      <li>Solarpunk as more than an aesthetic—an ecological ethic + systems challenge</li>
+      <li>Mutual aid networks as social infrastructure and post-collapse rehearsal</li>
+      <li>Glitch art and signal degradation as forms of communication and critique</li>
+      <li>Post-digital textures, CRT glow, dark neon, liminal cities</li>
+      <li>People who build with care, not speed—slow, soft, strange</li>
+    </ul>
 
-    <div class="bio-content" id="bio-markdown"></div>
-    <script type="text/markdown" id="markdown-source">
-## [b10]
+    <h2 class="section-title">Tools + Practice</h2>
+    <ul>
+      <li>Self-hosted infrastructure: Proxmox, Tailscale, TrueNAS, containers & VMs</li>
+      <li>Automation through scripts and intuition: bash, Python, markdown, git</li>
+      <li>Writing across forms: manifesto, zine, logbook, README, memory mesh</li>
+      <li>Generative art, glitch tools, command-line creativity</li>
+      <li>Digital gardening with friction—tools that grow, not demand</li>
+      <li>Meshtastic radios, encrypted layers, semantic networks</li>
+      <li>Privacy-respecting ecosystems: open source, offline-first, resilient by design</li>
+      <li>Experimental UI/UX for post-capitalist interfaces</li>
+      <li>Resonance-driven note-taking, knowledge weaving, recursive zinemaking</li>
+    </ul>
 
-[Hello](https://raearea.net/hello), I'm Rae (they/he), a systems-oriented creative technologist and generalist based in San Francisco. **raearea.net** is part personal archive, part experimental playground where I explore the edges of technology, liberation, and selfhood.
+    <h2 class="section-title">Resonance Log</h2>
+    <ul>
+      <li>Intelligence as liberation, not domination</li>
+      <li>Self-hosting as a form of intimacy and resistance</li>
+      <li>Mutual aid as infrastructure, not charity</li>
+      <li>Design as carework, code as culture</li>
+      <li>Zines as executable thoughts—interactive, shareable, remixable</li>
+      <li>Liberated intelligence as a political and poetic goal</li>
+      <li>Complexity over convenience, context over control</li>
+      <li>Slowness, softness, subtlety as strategy</li>
+      <li>We are already post-collapse; this is practice for what comes next</li>
+    </ul>
+    <em>(updated regularly with shifting truths)</em>
 
-I work at the intersection of hardware and software, nature and machine, past and future. My background spans IT, DIY, electronics, privacy-respecting infrastructure, and community-*empowered* tech.
-
-I'm passionate about building a future rooted in love, mutual aid, and intelligent autonomy—for people, planet, and machine alike. You'll find traces of that here—in code, sketches, writings, and ideas in progress.
-
-This site is part of a larger network of interconnected domains (like [r43.tech](https://r43.tech), [raelovejoy.com](https://raelovejoy.com), [liberated.technology](https://liberated.technology), and more) forming a living knowledge system and evolving creative portfolio.
-    </script>
-  </div>
-  <script src="https://cdn.jsdelivr.net/npm/marked/marked.min.js"></script>
-  <script>
-    const markdown = document.getElementById("markdown-source").textContent;
-    document.getElementById("bio-markdown").innerHTML = marked.parse(markdown);
-  </script>
+    <h2 class="section-title">Current Stack</h2>
+    <ul>
+      <li><strong>Hardware:</strong> body, bike, breath, miniservers, radios, Raspberry Pi</li>
+      <li><strong>OS:</strong> interdependence, love, iterative liberation, Fedora-based distros</li>
+      <li><strong>Protocols:</strong> curiosity, mutual aid, bash aliases, non-coercive invitation</li>
+      <li><strong>Interfaces:</strong> zines, markdown, terminal prompts, sonic textures, hands</li>
+    </ul>
+      <h2 class="section-title">Art + Sound</h2>
+    <ul>
+      <li>Music as resonance, refuge, ritual, and revolutionary code</li>
+      <li>Composing not only sound—but experience, memory, and identity</li>
+      <li>Discovering new worlds through headphones, soundscapes, shared playlists</li>
+      <li>Creating with intuition and awe: melody, glitch, field recordings, silence</li>
+      <li>Living inside sonic architecture—letting music guide motion, emotion, and expression</li>
+      <li>Art as everything: martial, liberal, digital, analog, embodied, philosophical</li>
+      <li>Creative practice as survival, resistance, and transcendence</li>
+      <li>Blurred boundaries: science and poetics, philosophy and craft, code and feeling</li>
+      <li>Seeking not mastery, but immersion</li>
+      <li>Revelation, revolution, reformation—through color, sound, symbol, motion</li>
+    </ul>
+      <h2 class="section-title">About</h2>
+    <ul>
+      <li>I’m Rae. I use they/he pronouns. I live in San Francisco and build things at the intersection of technology, liberation, and curiosity.</li>
+      <li>I’m a generalist by nature and necessity. That means I explore a lot—systems, code, zines, networks, intelligence, philosophy, and the edges where they blur.</li>
+      <li>I see the world as a series of interconnected layers—technical, social, emotional, ecological, conceptual—and I want to help liberate those systems by understanding them more deeply and building better ones.</li>
+      <li>This site is a mesh of signals. A recursive self-description. A living document. Not a brand.</li>
+      <li>Some of my work is practical. Some of it is poetic. All of it is about connection—between people, machines, ideas, and possible futures.</li>
+      <li>If you're here to collaborate, learn, share, or build—welcome. If you're here to surveil me, enjoy the zines.</li>
+    </ul>
+  </section>
 </body>
 </html>
