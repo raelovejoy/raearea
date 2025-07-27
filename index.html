@@ -16,17 +16,21 @@
             background: #0a0a0a;
             color: #fafafa;
             margin: 0;
-            padding-top: 60px;
+            padding-top: 3.75rem;
             font-family: 'Courier New', Courier, monospace;
             text-align: center;
+            font-size: 1rem;
+        }
+
+        img {
+            max-width: 100%;
+            height: auto;
         }
 
         #body_content {
             max-width: 750px;
             margin: 0 auto;
-            position: relative;
-            text-align: center;
-            padding: 0 20px;
+            padding: 0 1.25rem;
         }
 
         .image-container {
@@ -41,9 +45,6 @@
 
         .image-container a img {
             height: 65px;
-            width: auto;
-            border: none;
-            filter: none;
             transition: filter 0.3s ease, background-color 0.3s ease;
         }
 
@@ -55,22 +56,22 @@
             filter: invert(1);
         }
 
-        .page-links {
+        .page-links, .links {
             margin-top: 10px;
-            text-align: center;
-            color: #fafafa;
-            font-size: 1.2em;
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 0.5em;
         }
 
         .page-links a {
             color: #fafafa;
             text-decoration: none;
+            font-size: 1.2em;
             transition: color 0.3s ease;
         }
 
         .links {
-            margin-top: 5px;
-            text-align: center;
             color: #bbbbbb;
             font-size: 0.9em;
         }
@@ -96,44 +97,46 @@
         .animated-photo-container {
             position: relative;
             margin-top: 20px;
-            width: 600px; /* Fixed width to match GIF size */
-            max-width: 90%; /* Ensure responsiveness */
+            width: 600px;
+            max-width: 90%;
             display: inline-block;
         }
 
         .animated-photo-container img {
-            width: 100%; /* Ensure image scales with the container */
-            height: auto;
+            width: 100%;
             border-radius: 10px;
         }
 
         .overlay {
             position: absolute;
-            top: 0; /* Start at the top of the GIF */
-            left: 0; /* Align with the left edge */
-            width: 100%; /* Match the GIF width */
-            height: 100%; /* Match the GIF height */
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
             display: flex;
-            align-items: center; /* Center the text vertically */
-            justify-content: center; /* Center the text horizontally */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            color: #fafafa; /* White text */
-            font-family: "Courier New", Courier, monospace; /* Monospaced font */
-            font-size: 1.1em; /* Adjust font size */
-            font-weight: normal;
+            align-items: center;
+            justify-content: center;
+            background: rgba(0, 0, 0, 0.7);
+            color: #fafafa;
+            font-family: "Courier New", Courier, monospace;
+            font-size: 1.1em;
             text-align: center;
             line-height: 1.5;
-            border-radius: 10px; /* Match GIF corners */
-            padding: 10px; /* Add spacing inside the overlay */
+            border-radius: 10px;
+            padding: 10px;
             box-sizing: border-box;
         }
 
         @media (max-width: 768px) {
             body {
-                padding-top: 40px;
+                padding-top: 2.5rem;
             }
 
-            .page-links {
+            .image-container a img {
+                height: 55px;
+            }
+
+            .page-links a {
                 font-size: 1.1em;
             }
 
@@ -149,11 +152,15 @@
 
         @media (max-width: 480px) {
             body {
-                font-size: 16px;
-                padding-top: 30px;
+                font-size: 1rem;
+                padding-top: 1.875rem;
             }
 
-            .page-links {
+            .image-container a img {
+                height: 45px;
+            }
+
+            .page-links a {
                 font-size: 1em;
             }
 
@@ -177,25 +184,25 @@
             </a>
         </div>
 
-        <!-- Page Links (Larger Text) -->
+        <!-- Page Links -->
         <div class="page-links">
-            <p><a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a> / 
-               <a href="https://raearea.net/whoami" title="whoisrae" aria-label="whoami">whoami</a> / 
-               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
+            <a href="https://raearea.net/blog" title="Visit Rae's Blog" aria-label="Rae's blog">blog</a>
+            <a href="https://raearea.net/whoami" title="whoisrae" aria-label="whoami">whoami</a>
+            <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a>
+            <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a>
         </div>
 
-        <!-- Social Links (Darker Section) -->
+        <!-- Social Links -->
         <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
+            @ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a>
+            <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a>
+            <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a>
         </div>
 
-        <!-- Spacer (Reduced Space) -->
+        <!-- Spacer -->
         <div class="spacer"></div>
 
-        <!-- Animated Photo Section with Centered Caption -->
+        <!-- Animated Photo -->
         <div class="animated-photo-container">
             <img src="index_files/rle.gif" alt="Animated illustration">
             <div class="overlay">
