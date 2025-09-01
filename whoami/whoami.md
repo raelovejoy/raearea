@@ -156,3 +156,4 @@ Exploring and participating in the transformation of technological, ecological, 
 ↪ [what-is-love.md](https://github.com/raelovejoy/root-sequence/blob/main/what-is-love.md)  
 ↪ [what-is-connection.md](https://github.com/raelovejoy/root-sequence/blob/main/what-is-connection.md)  
 ↪ [auryn.md](https://github.com/raelovejoy/liberated-intelligence/blob/main/auryn.md)
+test change
