@@ -1,2 +1,22 @@
-echo -e "#!/usr/bin/env bash\nnpm run build && git add whoami/index.html" > .husky/pre-commit
-chmod +x .husky/pre-commit
+#!/usr/bin/env bash
+set -euo pipefail
+
+echo "[husky] rebuilding whoami page before commit..."
+
+# Path to your host Node (from `which node`)
+NODE="/home/linuxbrew/.linuxbrew/bin/node"
+
+# If we're inside a Flatpak app (e.g., GitHub Desktop/VS Code), use host tools.
+if command -v flatpak-spawn >/dev/null 2>&1; then
+  CMD="flatpak-spawn --host $NODE"
+else
+  CMD="$NODE"
+fi
+
+# Run the build with Node directly (avoid npm)
+$CMD whoami/build.js
+
+# Stage the generated HTML
+git add whoami/index.html
+
+echo "[husky] whoami/index.html staged ✔"

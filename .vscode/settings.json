@@ -1,0 +1,11 @@
+{
+  "emeraldwalk.runonsave": {
+    "commands": [
+      {
+        "match": "^whoami\\/whoami\\.md$",
+        "cmd": "flatpak-spawn --host /home/linuxbrew/.linuxbrew/bin/node whoami/build.js",
+        "runIn": "workspace"
+      }
+    ]
+  }
+}
