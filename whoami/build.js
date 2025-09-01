@@ -3,7 +3,7 @@ import fs from "fs";
 import path from "path";
 import { marked } from "marked";
 
-// --- format today's date in America/Los_Angeles ---
+// format today's date in America/Los_Angeles
 const today = new Intl.DateTimeFormat("en-US", {
   timeZone: "America/Los_Angeles",
   year: "numeric",
@@ -26,10 +26,12 @@ const htmlBody = marked.parse(mdWithDate, { mangle: false, headerIds: true });
 // load template
 const tpl = fs.readFileSync(tplPath, "utf8");
 
-// add a build stamp so the HTML always changes
-const stamp = `\n<!-- built: ${new Date().toISOString()} -->\n`;
-const out = tpl.replace("<!--CONTENT-->", htmlBody + stamp);
+// add a build stamp so bytes always change (time + nonce)
+const stamp = `\n<!-- built: ${new Date().toISOString()} • nonce:${Math.random()
+  .toString(36)
+  .slice(2)} -->\n`;
 
-// write final HTML
+// inject and write final HTML
+const out = tpl.replace("<!--CONTENT-->", htmlBody + stamp);
 fs.writeFileSync(outPath, out);
 console.log("[whoami] built", outPath, "with date", today);
