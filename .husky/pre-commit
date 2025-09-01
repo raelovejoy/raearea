@@ -1,22 +1,19 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-echo "[husky] rebuilding whoami page before commit..."
+# Rebuild ONLY if whoami.md is in the staged set
+if git diff --name-only --cached | grep -q '^whoami/whoami\.md$'; then
+  echo "[husky] rebuilding whoami because whoami.md changed…"
 
-# Path to your host Node (from `which node`)
-NODE="/home/linuxbrew/.linuxbrew/bin/node"
+  NODE="/home/linuxbrew/.linuxbrew/bin/node"
+  if command -v flatpak-spawn >/dev/null 2>&1; then
+    flatpak-spawn --host "$NODE" whoami/build.js
+  else
+    "$NODE" whoami/build.js
+  fi
 
-# If we're inside a Flatpak app (e.g., GitHub Desktop/VS Code), use host tools.
-if command -v flatpak-spawn >/dev/null 2>&1; then
-  CMD="flatpak-spawn --host $NODE"
+  git add whoami/index.html
+  echo "[husky] whoami/index.html staged ✔"
 else
-  CMD="$NODE"
+  echo "[husky] skip rebuild (whoami.md not staged)"
 fi
-
-# Run the build with Node directly (avoid npm)
-$CMD whoami/build.js
-
-# Stage the generated HTML
-git add whoami/index.html
-
-echo "[husky] whoami/index.html staged ✔"
