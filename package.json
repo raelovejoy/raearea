@@ -1,0 +1,27 @@
+{
+  "name": "raearea",
+  "version": "1.0.0",
+  "description": "More of a placeholder website until I build something better.",
+  "main": "index.js",
+  "scripts": {
+    "build": "node whoami/build.js",
+    "watch": "chokidar 'whoami/whoami.md' -c 'node whoami/build.js'",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/raelovejoy/raearea.git"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "type": "module",
+  "bugs": {
+    "url": "https://github.com/raelovejoy/raearea/issues"
+  },
+  "homepage": "https://github.com/raelovejoy/raearea#readme",
+  "devDependencies": {
+    "chokidar-cli": "^3.0.0",
+    "marked": "^16.2.1"
+  }
+}
