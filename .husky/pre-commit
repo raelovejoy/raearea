@@ -1,0 +1,2 @@
+echo -e "#!/usr/bin/env bash\nnpm run build && git add whoami/index.html" > .husky/pre-commit
+chmod +x .husky/pre-commit

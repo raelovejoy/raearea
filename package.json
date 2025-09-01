@@ -6,7 +6,8 @@
   "scripts": {
     "build": "node whoami/build.js",
     "watch": "chokidar 'whoami/whoami.md' -c 'node whoami/build.js'",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "prepare": "husky"
   },
   "repository": {
     "type": "git",
@@ -22,6 +23,7 @@
   "homepage": "https://github.com/raelovejoy/raearea#readme",
   "devDependencies": {
     "chokidar-cli": "^3.0.0",
+    "husky": "^9.1.7",
     "marked": "^16.2.1"
   }
 }
