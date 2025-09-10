@@ -1,7 +1,7 @@
 #!/usr/bin/env bash
 set -euo pipefail
 
-# Rebuild ONLY if whoami.md is in the staged set
+# Rebuild ONLY if whoami.md is staged
 if git diff --name-only --cached | grep -q '^whoami/whoami\.md$'; then
   echo "[husky] rebuilding whoami because whoami.md changed…"
 
