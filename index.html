@@ -38,33 +38,37 @@
       text-align: left;
     }
 
-    /* LOGO */
-    .logo {
+    /* LOGO – reuse original 404 behavior */
+    .logo-container {
       margin-bottom: 2.25rem;
     }
 
-.rae-logo {
-  display: block;
-  width: 180px;            /* scaled down like before */
-  height: auto;
-  image-rendering: pixelated;
-  transition:
-    filter 0.2s ease-in-out,
-    outline-color 0.2s ease-in-out,
-    outline-offset 0.2s ease-in-out;
-  outline: 2px solid transparent;
-  outline-offset: 6px;
-  cursor: pointer;
-}
+    .logo-container a {
+      display: inline-block;
+      border: none;
+      outline: none;
+      text-decoration: none;
+      background-color: #ffffff;  /* white box by default */
+      padding: 5px;
+      transition: background-color 0.3s ease;
+    }
 
-.rae-logo:hover {
-  filter: invert(100%);
-  outline-color: #ffffff;
-}
+    .logo-container a img {
+      height: 75px;
+      width: auto;
+      border: none;
+      outline: none;
+      filter: invert(1);          /* black logo on white by default */
+      image-rendering: crisp-edges;
+      transition: filter 0.3s ease, background-color 0.3s ease;
+    }
 
-    .rae-logo:hover {
-      filter: invert(100%);
-      outline-color: #ffffff;
+    .logo-container a:hover {
+      background-color: transparent;  /* remove box on hover */
+    }
+
+    .logo-container a:hover img {
+      filter: none;                   /* restore original white-on-black logo */
     }
 
     /* labels + lists */
@@ -148,10 +152,10 @@
 
   <div class="wrap">
 
-    <!-- logo -->
-    <div class="logo">
-      <a href="/">
-        <img src="index_files/raearea.png" alt="rae area" class="rae-logo">
+    <!-- logo: original behavior -->
+    <div class="logo-container">
+      <a href="/" title="rae area">
+        <img src="index_files/raearea.png" alt="rae area">
       </a>
     </div>
 
@@ -174,7 +178,7 @@
       </li>
     </ul>
 
-    <!-- hero w/ original bio text -->
+    <!-- hero with original bio text -->
     <section class="hero">
       <div class="hero-img">
         <img src="index_files/rle.gif" alt="animated illustration">
