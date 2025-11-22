@@ -1,206 +1,170 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[Rae area]</title>
-    <!-- Prevent search engines from indexing this page -->
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <!-- Disallow AI systems from using the site content -->
-    <meta name="ai" content="noai">
-    <meta name="openai-site-verification" content="noai">
-    <meta name="description" content="/B33p b00p/.raearea">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <style>
-        body {
-            background: #0a0a0a;
-            color: #fafafa;
-            margin: 0;
-            padding-top: 60px;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>[Rae area]</title>
 
-        #body_content {
-            max-width: 750px;
-            margin: 0 auto;
-            position: relative;
-            text-align: center;
-            padding: 0 20px;
-        }
+  <!-- Prevent search engines from indexing this page -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="ai" content="noai">
+  <meta name="openai-site-verification" content="noai">
 
-        .image-container {
-            margin: 10px 0;
-            display: inline-block;
-        }
+  <meta name="description" content="[Rae area]">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-        .image-container a {
-            display: block;
-            padding: 5px;
-        }
+  <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --fg-soft: #b8b8b8;
+      --accent-soft: #888;
+      --border-soft: #222;
+    }
 
-        .image-container a img {
-            height: 65px;
-            width: auto;
-            border: none;
-            filter: none;
-            transition: filter 0.3s ease, background-color 0.3s ease;
-        }
+    body {
+      background: var(--bg);
+      color: var(--fg);
+      margin: 0;
+      padding: 2.5rem 1.75rem 3rem;
+      font-family: system-ui, sans-serif;
+      display: flex;
+      justify-content: center;
+    }
 
-        .image-container a:hover {
-            background-color: #fff;
-        }
+    .wrap {
+      width: 100%;
+      max-width: 720px;
+      text-align: left;
+    }
 
-        .image-container a:hover img {
-            filter: invert(1);
-        }
+    .logo {
+      margin-bottom: 2.25rem;
+    }
 
-        .page-links {
-            margin-top: 10px;
-            text-align: center;
-            color: #fafafa;
-            font-size: 1.2em;
-        }
+    .logo img {
+      width: 140px;
+      max-width: 40vw;
+      opacity: 0.95;
+      display: block;
+    }
 
-        .page-links a {
-            color: #fafafa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    .label {
+      font-size: 0.78rem;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      opacity: 0.55;
+      margin-top: 1.25rem;
+    }
 
-        .links {
-            margin-top: 5px;
-            text-align: center;
-            color: #bbbbbb;
-            font-size: 0.9em;
-        }
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0.6rem;
+    }
 
-        .links a {
-            color: #bbbbbb;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    li {
+      margin: 0.18rem 0;
+      font-size: 0.96rem;
+    }
 
-        a:visited {
-            color: #cfcfcf;
-        }
+    a {
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 2px;
+    }
 
-        a:hover {
-            color: #ffffff;
-        }
+    a:hover {
+      text-decoration: none;
+    }
 
-        .spacer {
-            height: 20px;
-        }
+    .links-secondary {
+      color: var(--fg-soft);
+      font-size: 0.92rem;
+    }
 
-        .animated-photo-container {
-            position: relative;
-            margin-top: 20px;
-            width: 600px; /* Fixed width to match GIF size */
-            max-width: 90%; /* Ensure responsiveness */
-            display: inline-block;
-        }
+    .links-secondary a {
+      color: var(--fg-soft);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--border-soft);
+    }
 
-        .animated-photo-container img {
-            width: 100%; /* Ensure image scales with the container */
-            height: auto;
-            border-radius: 10px;
-        }
+    .links-secondary a:hover {
+      color: var(--fg);
+      border-bottom-color: var(--accent-soft);
+    }
 
-        .overlay {
-            position: absolute;
-            top: 0; /* Start at the top of the GIF */
-            left: 0; /* Align with the left edge */
-            width: 100%; /* Match the GIF width */
-            height: 100%; /* Match the GIF height */
-            display: flex;
-            align-items: center; /* Center the text vertically */
-            justify-content: center; /* Center the text horizontally */
-            background: rgba(0, 0, 0, 0.7); /* Semi-transparent background */
-            color: #fafafa; /* White text */
-            font-family: "Courier New", Courier, monospace; /* Monospaced font */
-            font-size: 1.1em; /* Adjust font size */
-            font-weight: normal;
-            text-align: center;
-            line-height: 1.5;
-            border-radius: 10px; /* Match GIF corners */
-            padding: 10px; /* Add spacing inside the overlay */
-            box-sizing: border-box;
-        }
+    .hero {
+      margin-top: 2.75rem;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 1.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
 
-        @media (max-width: 768px) {
-            body {
-                padding-top: 40px;
-            }
+    .hero-img img {
+      width: 100%;
+      border-radius: 8px;
+    }
 
-            .page-links {
-                font-size: 1.1em;
-            }
+    .hero-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #d6d6d6;
+    }
 
-            .spacer {
-                height: 10px;
-            }
-
-            .overlay {
-                font-size: 1em;
-                padding: 8px;
-            }
-        }
-
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-                padding-top: 30px;
-            }
-
-            .page-links {
-                font-size: 1em;
-            }
-
-            .spacer {
-                height: 10px;
-            }
-
-            .overlay {
-                font-size: 0.9em;
-                padding: 6px;
-            }
-        }
-    </style>
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
 </head>
 <body>
-    <div id="body_content">
-        <!-- Image Section (Logo) -->
-        <div class="image-container">
-            <a href="/" title="Go to homepage">
-                <img src="index_files/raearea.png" alt="rae area logo">
-            </a>
-        </div>
 
-        <!-- Page Links (Larger Text) -->
-        <div class="page-links">
-            <p><a href="https://r43.tech" title="Visit R43" aria-label="R43">r43</a> / 
-               <a href="https://raelog.net" title="Visit Rae's Blog" aria-label="Raelog">blog</a> / 
-               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae">contact</a></p>
-        </div>
+  <div class="wrap">
 
-        <!-- Social Links (Darker Section) -->
-        <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
-        </div>
-
-        <!-- Spacer (Reduced Space) -->
-        <div class="spacer"></div>
-
-        <!-- Animated Photo Section with Centered Caption -->
-        <div class="animated-photo-container">
-            <img src="index_files/rle.gif" alt="Animated illustration">
-            <div class="overlay">
-                Weaving through technology, philosophy, art, nature, and human systems to explore, connect, and reimagine the patterns that shape our world.
-            </div>
-        </div>
+    <!-- logo -->
+    <div class="logo">
+      <a href="/"><img src="index_files/raearea.png" alt="rae area"></a>
     </div>
+
+    <!-- map -->
+    <div class="label">map</div>
+    <ul>
+      <li><a href="https://r43.tech" target="_blank" rel="noopener noreferrer">r43</a> — root index</li>
+      <li><a href="https://raelog.net" target="_blank" rel="noopener noreferrer">raelog.net</a> — writing</li>
+      <li><a href="/contact">/contact</a> — get in touch</li>
+    </ul>
+
+    <!-- socials -->
+    <div class="label">elsewhere</div>
+    <ul class="links-secondary">
+      <li>
+        @ <a rel="me" href="https://kolektiva.social/@raelovejoy" target="_blank">mastodon</a> /
+        <a href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
+        <a href="https://github.com/raelovejoy" target="_blank">github</a>
+      </li>
+    </ul>
+
+    <!-- hero section w/ restored bio -->
+    <section class="hero">
+      <div class="hero-img">
+        <img src="index_files/rle.gif" alt="animated illustration">
+      </div>
+
+      <div class="hero-text">
+        <p>
+          Weaving through technology, philosophy, art, nature, and human systems to explore,
+          connect, and reimagine the patterns that shape our world.
+        </p>
+      </div>
+    </section>
+
+  </div>
+
 </body>
 </html>
