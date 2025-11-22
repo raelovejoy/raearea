@@ -43,19 +43,24 @@
       margin-bottom: 2.25rem;
     }
 
-    .rae-logo {
-      display: block;
-      width: auto;
-      height: auto;
-      max-width: none; /* preserve exact size */
-      image-rendering: crisp-edges;
-      transition:
-        filter 0.2s ease-in-out,
-        outline-color 0.2s ease-in-out,
-        outline-offset 0.2s ease-in-out;
-      outline: 2px solid transparent;
-      outline-offset: 6px;
-    }
+.rae-logo {
+  display: block;
+  width: 180px;            /* scaled down like before */
+  height: auto;
+  image-rendering: pixelated;
+  transition:
+    filter 0.2s ease-in-out,
+    outline-color 0.2s ease-in-out,
+    outline-offset 0.2s ease-in-out;
+  outline: 2px solid transparent;
+  outline-offset: 6px;
+  cursor: pointer;
+}
+
+.rae-logo:hover {
+  filter: invert(100%);
+  outline-color: #ffffff;
+}
 
     .rae-logo:hover {
       filter: invert(100%);
