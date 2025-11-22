@@ -2,99 +2,83 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[rae area]</title>
-
-  <!-- prevent indexing -->
-  <meta name="robots" content="noindex, nofollow, noarchive">
-  <meta name="ai" content="noai">
-  <meta name="openai-site-verification" content="noai">
-
-  <meta name="description" content="rae area — systems, networks, and humane infrastructure.">
-  <link rel="icon" type="image/png" href="/favicon.png">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>[Rae area]</title>
 
   <style>
-    :root {
-      --bg: #0a0a0a;
-      --fg: #f5f5f5;
-      --fg-soft: #b8b8b8;
-      --accent-soft: #888;
-      --border-soft: #222;
-    }
-
     body {
-      background: var(--bg);
-      color: var(--fg);
       margin: 0;
-      padding: 2.5rem 1.75rem 3rem;
+      padding: 2rem 1.5rem;
+      background: #0b0b0b;
+      color: #f0f0f0;
       font-family: system-ui, sans-serif;
+      line-height: 1.65;
       display: flex;
-      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      min-height: 100vh;
     }
 
-    .wrap {
-      width: 100%;
+    main {
       max-width: 720px;
-      text-align: left;
+      width: 100%;
     }
 
-    /* LOGO – reuse original 404 behavior */
+    /* --- LOGO --- */
+
     .logo-container {
-      margin-bottom: 2.25rem;
+      margin-bottom: 2.5rem;
     }
 
+    /* default: black logo on transparent bg */
     .logo-container a {
       display: inline-block;
-      border: none;
-      outline: none;
+      padding: 0;
+      background-color: transparent;
+      transition: background-color 0.25s ease, padding 0.25s ease;
       text-decoration: none;
-      background-color: #ffffff;  /* white box by default */
-      padding: 5px;
-      transition: background-color 0.3s ease;
     }
 
     .logo-container a img {
       height: 75px;
       width: auto;
-      border: none;
-      outline: none;
-      filter: invert(1);          /* black logo on white by default */
+      filter: none;  /* black logo */
       image-rendering: crisp-edges;
-      transition: filter 0.3s ease, background-color 0.3s ease;
+      transition: filter 0.25s ease;
+      display: block;
     }
 
+    /* hover: white logo inside white box */
     .logo-container a:hover {
-      background-color: transparent;  /* remove box on hover */
+      background: #ffffff;
+      padding: 6px;
     }
 
     .logo-container a:hover img {
-      filter: none;                   /* restore original white-on-black logo */
+      filter: invert(1); /* white logo */
     }
 
-    /* labels + lists */
-    .label {
-      font-size: 0.78rem;
+    /* --- TEXT SECTIONS --- */
+
+    h1 {
+      font-size: 1.15rem;
+      margin: 0 0 1.5rem;
+      opacity: 0.65;
       text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.55;
-      margin-top: 1.25rem;
+      letter-spacing: 0.12em;
     }
 
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.2rem 0 0.6rem;
+    p {
+      margin: 1rem 0 2rem;
+      font-size: 1.1rem;
+      opacity: 0.9;
     }
 
-    li {
-      margin: 0.18rem 0;
-      font-size: 0.96rem;
-    }
-
+    /* links */
     a {
-      color: var(--fg);
+      color: #f0f0f0;
       text-decoration: underline;
-      text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
 
@@ -102,97 +86,26 @@
       text-decoration: none;
     }
 
-    .links-secondary {
-      color: var(--fg-soft);
-      font-size: 0.92rem;
-    }
-
-    .links-secondary a {
-      color: var(--fg-soft);
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border-soft);
-    }
-
-    .links-secondary a:hover {
-      color: var(--fg);
-      border-bottom-color: var(--accent-soft);
-    }
-
-    /* hero section */
-    .hero {
-      margin-top: 2.75rem;
-      border-top: 1px solid var(--border-soft);
-      padding-top: 1.75rem;
-      display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
-      gap: 1.5rem;
-      align-items: center;
-    }
-
-    .hero-img img {
-      width: 100%;
-      border-radius: 8px;
-    }
-
-    .hero-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #d6d6d6;
-    }
-
-    @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
-    }
-
   </style>
 </head>
 <body>
 
-  <div class="wrap">
+  <main>
 
-    <!-- logo: original behavior -->
+    <!-- LOGO -->
     <div class="logo-container">
-      <a href="/" title="rae area">
-        <img src="index_files/raearea.png" alt="rae area">
+      <a href="/" title="[Rae area]">
+        <img src="/index_files/raearea.png" alt="[Rae area] logo">
       </a>
     </div>
 
-    <!-- map -->
-    <div class="label">map</div>
-    <ul>
-      <li><a href="https://r43.tech" target="_blank" rel="noopener noreferrer">r43</a> — root index</li>
-      <li><a href="/whoami">/whoami</a> — profile & work</li>
-      <li><a href="https://raelog.net" target="_blank" rel="noopener noreferrer">raelog.net</a> — writing</li>
-      <li><a href="/contact">/contact</a> — get in touch</li>
-    </ul>
+    <!-- BIO / TAGLINE -->
+    <p>
+      Weaving through technology, philosophy, art, nature, and human systems  
+      to explore, connect, and reimagine the patterns that shape our world.
+    </p>
 
-    <!-- socials -->
-    <div class="label">elsewhere</div>
-    <ul class="links-secondary">
-      <li>
-        @ <a rel="me" href="https://kolektiva.social/@raelovejoy" target="_blank">mastodon</a> /
-        <a href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
-        <a href="https://github.com/raelovejoy" target="_blank">github</a>
-      </li>
-    </ul>
-
-    <!-- hero with original bio text -->
-    <section class="hero">
-      <div class="hero-img">
-        <img src="index_files/rle.gif" alt="animated illustration">
-      </div>
-
-      <div class="hero-text">
-        <p>
-          Weaving through technology, philosophy, art, nature, and human systems to explore,
-          connect, and reimagine the patterns that shape our world.
-        </p>
-      </div>
-    </section>
-
-  </div>
+  </main>
 
 </body>
 </html>
