@@ -2,83 +2,76 @@
 <html lang="en">
 <head>
   <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>[Rae area]</title>
 
+  <!-- Prevent search engines from indexing this page -->
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="ai" content="noai">
+  <meta name="openai-site-verification" content="noai">
+
+  <meta name="description" content="[Rae area]">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
   <style>
+    :root {
+      --bg: #0a0a0a;
+      --fg: #f5f5f5;
+      --fg-soft: #b8b8b8;
+      --accent-soft: #888;
+      --border-soft: #222;
+    }
+
     body {
+      background: var(--bg);
+      color: var(--fg);
       margin: 0;
-      padding: 2rem 1.5rem;
-      background: #0b0b0b;
-      color: #f0f0f0;
+      padding: 2.5rem 1.75rem 3rem;
       font-family: system-ui, sans-serif;
-      line-height: 1.65;
       display: flex;
-      flex-direction: column;
-      align-items: center;
-      text-align: center;
-      min-height: 100vh;
+      justify-content: center;
     }
 
-    main {
-      max-width: 720px;
+    .wrap {
       width: 100%;
+      max-width: 720px;
+      text-align: left;
     }
 
-    /* --- LOGO --- */
-
-    .logo-container {
-      margin-bottom: 2.5rem;
+    .logo {
+      margin-bottom: 2.25rem;
     }
 
-    /* default: black logo on transparent bg */
-    .logo-container a {
-      display: inline-block;
-      padding: 0;
-      background-color: transparent;
-      transition: background-color 0.25s ease, padding 0.25s ease;
-      text-decoration: none;
-    }
-
-    .logo-container a img {
-      height: 75px;
-      width: auto;
-      filter: none;  /* black logo */
-      image-rendering: crisp-edges;
-      transition: filter 0.25s ease;
+    .logo img {
+      width: 140px;
+      max-width: 40vw;
+      opacity: 0.95;
       display: block;
     }
 
-    /* hover: white logo inside white box */
-    .logo-container a:hover {
-      background: #ffffff;
-      padding: 6px;
-    }
-
-    .logo-container a:hover img {
-      filter: invert(1); /* white logo */
-    }
-
-    /* --- TEXT SECTIONS --- */
-
-    h1 {
-      font-size: 1.15rem;
-      margin: 0 0 1.5rem;
-      opacity: 0.65;
+    .label {
+      font-size: 0.78rem;
       text-transform: uppercase;
-      letter-spacing: 0.12em;
+      letter-spacing: 0.18em;
+      opacity: 0.55;
+      margin-top: 1.25rem;
     }
 
-    p {
-      margin: 1rem 0 2rem;
-      font-size: 1.1rem;
-      opacity: 0.9;
+    ul {
+      list-style: none;
+      padding: 0;
+      margin: 0.2rem 0 0.6rem;
     }
 
-    /* links */
+    li {
+      margin: 0.18rem 0;
+      font-size: 0.96rem;
+    }
+
     a {
-      color: #f0f0f0;
+      color: var(--fg);
       text-decoration: underline;
+      text-decoration-thickness: 1px;
       text-underline-offset: 2px;
     }
 
@@ -86,26 +79,93 @@
       text-decoration: none;
     }
 
+    .links-secondary {
+      color: var(--fg-soft);
+      font-size: 0.92rem;
+    }
+
+    .links-secondary a {
+      color: var(--fg-soft);
+      text-decoration: none;
+      border-bottom: 1px dotted var(--border-soft);
+    }
+
+    .links-secondary a:hover {
+      color: var(--fg);
+      border-bottom-color: var(--accent-soft);
+    }
+
+    .hero {
+      margin-top: 2.75rem;
+      border-top: 1px solid var(--border-soft);
+      padding-top: 1.75rem;
+      display: grid;
+      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      gap: 1.5rem;
+      align-items: center;
+    }
+
+    .hero-img img {
+      width: 100%;
+      border-radius: 8px;
+    }
+
+    .hero-text {
+      font-size: 0.98rem;
+      line-height: 1.7;
+      color: #d6d6d6;
+    }
+
+    @media (max-width: 720px) {
+      .hero {
+        grid-template-columns: 1fr;
+      }
+    }
   </style>
 </head>
 <body>
 
-  <main>
+  <div class="wrap">
 
-    <!-- LOGO -->
-    <div class="logo-container">
-      <a href="/" title="[Rae area]">
-        <img src="/index_files/raearea.png" alt="[Rae area] logo">
-      </a>
+    <!-- logo -->
+    <div class="logo">
+      <a href="/"><img src="index_files/raearea.png" alt="[Rae area]"></a>
     </div>
 
-    <!-- BIO / TAGLINE -->
-    <p>
-      Weaving through technology, philosophy, art, nature, and human systems  
-      to explore, connect, and reimagine the patterns that shape our world.
-    </p>
+    <!-- map -->
+    <div class="label">map</div>
+    <ul>
+      <li><a href="https://r43.tech" target="_blank" rel="noopener noreferrer">r43</a> — root index</li>
+      <li><a href="/whoami">/whoami</a> — profile & work</li>
+      <li><a href="https://raelog.net" target="_blank" rel="noopener noreferrer">raelog.net</a> — writing</li>
+      <li><a href="/contact">/contact</a> — get in touch</li>
+    </ul>
 
-  </main>
+    <!-- socials -->
+    <div class="label">elsewhere</div>
+    <ul class="links-secondary">
+      <li>
+        @ <a rel="me" href="https://kolektiva.social/@raelovejoy" target="_blank">mastodon</a> /
+        <a href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
+        <a href="https://github.com/raelovejoy" target="_blank">github</a>
+      </li>
+    </ul>
+
+    <!-- hero section w/ restored bio -->
+    <section class="hero">
+      <div class="hero-img">
+        <img src="index_files/rle.gif" alt="animated illustration">
+      </div>
+
+      <div class="hero-text">
+        <p>
+          Weaving through technology, philosophy, art, nature, and human systems to explore,
+          connect, and reimagine the patterns that shape our world.
+        </p>
+      </div>
+    </section>
+
+  </div>
 
 </body>
 </html>
