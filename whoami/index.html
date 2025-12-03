@@ -4,11 +4,12 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>/whoami</title>
+  <meta name="description" content="Rae Lovejoy — a curious, systems-minded person exploring the intersections of technology, art, and everyday life." />
+
   <link rel="icon" href="/favicon.png" type="image/x-icon">
 
   <!-- Self-hosted fonts -->
   <style>
-    /* IBM Plex Mono (regular). Add more @font-face blocks if you have bold/italic. */
     @font-face {
       font-family: "IBM Plex Mono";
       src: url("/whoami/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
@@ -16,7 +17,6 @@
       font-style: normal;
       font-display: swap;
     }
-    /* VT323 (regular) */
     @font-face {
       font-family: "VT323";
       src: url("/whoami/assets/fonts/VT323-Regular.woff2") format("woff2");
@@ -27,12 +27,12 @@
 
     :root {
       --background: linear-gradient(135deg, #14082d, #231047, #2f1140);
-      --text-color: #e6f8ff;
-      --highlight: #ff66cc;
-      --hover: #ffccff;
+      --text: #e6f8ff;
       --link: #66ffff;
-      --card-bg: rgba(0,0,0,0.26);
-      --card-border: rgba(255,255,255,0.16);
+      --hover: #ffccff;
+      --highlight: #ff66cc;
+      --card-bg: rgba(0,0,0,0.22);
+      --card-border: rgba(255,255,255,0.14);
     }
 
     * { box-sizing: border-box; }
@@ -40,274 +40,159 @@
     html {
       background: var(--background);
       background-attachment: fixed;
-      background-size: cover;
-      background-repeat: no-repeat;
-      min-height: 100%;
-      padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0) env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+      color: var(--text);
       margin: 0;
+      padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0)
+               env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
+      font-family: "IBM Plex Mono", monospace;
     }
 
     body {
-      background: transparent;
-      color: var(--text-color);
-      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, "Liberation Mono", "Courier New", monospace;
-      line-height: 1.6;
+      margin: 0;
+      line-height: 1.65;
       font-size: 1rem;
-      margin: 0;
-      min-height: 100%;
+      background: transparent;
     }
 
-    header { text-align: center; padding: 3rem 1rem 0; }
-
-    h1 {
-      font-size: 4rem;
-      margin: 0;
-      color: #ffffff;
-      text-shadow: 0 0 10px #33ffff;
+    a {
+      color: var(--link);
+      text-decoration: underline;
+      text-underline-offset: 0.15em;
     }
+    a:hover, a:focus-visible { color: var(--hover); }
 
-    section {
-      width: 100%;
-      max-width: 900px;
-      margin: 3rem auto;
-      padding: 0 1.5rem;
-    }
+    header { text-align: center; padding: 3rem 1rem 1rem; }
 
-    .section-title {
-      font-family: "VT323", ui-monospace, monospace;
-      font-size: 2rem;
-      margin-top: 2rem;
-      margin-bottom: 0.75rem;
-    }
-
-    a { color: var(--link); text-decoration: underline; }
-    a:hover { color: var(--hover); }
-
-    ul { padding-left: 1.5rem; }
-
-    em {
-      color: #cccccc;
-      font-size: 1.1rem;
+    img.logo {
+      width: 240px;
+      max-width: 90%;
       display: block;
-      margin-top: 1rem;
+      margin: 0 auto 1.2rem;
     }
 
-    @media (max-width: 600px) {
-      body { font-size: 1rem; }
-      h1 { font-size: 3rem; }
-      .section-title { font-size: 1.8rem; }
-      section { padding: 0 1rem; }
+    nav {
+      font-size: 1rem;
+      text-align: center;
+      margin-bottom: 2rem;
     }
 
-    .image-container a { display: inline-block; padding: 5px; }
-    .image-container a:hover { background-color: #fff; }
-    .image-container a:hover img { filter: invert(1); }
+    .nav-secondary {
+      opacity: 0.75;
+      display: inline-block;
+      margin-top: 0.4rem;
+      font-size: 0.9rem;
+    }
 
-    /* simple footer note */
-    .updated { opacity: .7; font-size: .9rem; text-align:center; margin-top: 3rem; }
+    main {
+      max-width: 850px;
+      margin: 2.5rem auto;
+      padding: 0 1.5rem 3rem;
+    }
 
-    /* callout */
+    h2.section-title {
+      font-family: "VT323", monospace;
+      font-size: 2.1rem;
+      margin-top: 0;
+      margin-bottom: 1rem;
+    }
+
     .tagline {
-      font-size: 1.05rem;
       border-left: 3px solid var(--highlight);
       padding-left: 0.8rem;
-      margin: 1rem 0 0.5rem 0;
-      opacity: .95;
+      margin-bottom: 1.4rem;
+      opacity: 0.95;
+      font-size: 1.05rem;
     }
 
-    .intro-note {
+    ul { padding-left: 1.4rem; margin-top: 0.4rem; }
+
+    .footer-note {
+      opacity: 0.65;
+      text-align: center;
+      margin-top: 3rem;
       font-size: 0.9rem;
-      opacity: 0.85;
-      margin-top: 0.5rem;
     }
 
-    .hr { height: 1px; background: rgba(255,255,255,.15); border: 0; margin: 2rem 0; }
-    .small { font-size: .92rem; opacity: .9; }
-    .center { text-align: center; }
+    .back { text-align: center; margin-top: 3rem; }
 
-    /* expandable layers */
-    details {
-      background: var(--card-bg);
-      border-radius: 8px;
-      border: 1px solid var(--card-border);
-      padding: 0.75rem 1rem 0.85rem;
-      margin: 1rem 0;
-    }
-
-    details[open] {
-      border-color: rgba(255,255,255,0.3);
-    }
-
-    summary {
-      list-style: none;
-      cursor: pointer;
-      font-family: "VT323", ui-monospace, monospace;
-      font-size: 1.4rem;
-      color: var(--hover);
-      margin: -0.25rem 0 0.35rem;
-    }
-
-    summary::-webkit-details-marker {
-      display: none;
-    }
-
-    .layer-label {
-      font-size: 0.85rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.8;
-      display: block;
-      margin-bottom: 0.15rem;
-    }
-
-    .layer-body {
-      margin-top: 0.5rem;
-      font-size: 0.98rem;
-    }
-
-    .layer-body ul {
-      margin-top: 0.4rem;
+    @media (max-width: 600px) {
+      h2.section-title { font-size: 1.8rem; }
     }
   </style>
 </head>
+
 <body>
-  <div id="top"></div>
   <header>
-    <a href="/"><img src="/index_files/rae2.png" alt="Rae logo" style="width: 240px; max-width: 90%; display: block; margin: 0 auto 1rem auto;"></a>
-    <nav style="text-align: center; font-size: 1rem; margin-bottom: 2rem;">
-      <span>$ <strong>cd</strong> <a href="https://raelog.net">blog</a></span> /
-      <span>$ <strong>cd</strong> <a href="/whoami" style="font-weight: bold;">whoami</a></span> /
-      <span>$ <strong>cd</strong> <a href="/contact">contact</a></span>
-      <br><br>
-      <span style="opacity: 0.7;">
+    <a href="/"><img src="/index_files/rae2.png" alt="Rae logo" class="logo"></a>
+
+    <nav>
+      <div>
+        $ <strong>cd</strong> <a href="https://raelog.net">blog</a> /
+        $ <strong>cd</strong> <a href="/whoami" aria-current="page"><strong>whoami</strong></a> /
+        $ <strong>cd</strong> <a href="/contact">contact</a>
+      </div>
+
+      <div class="nav-secondary">
         @ <a rel="me" href="https://kolektiva.social/@rae">mastodon</a> /
         <a href="https://pixelfed.social/@rae">pixelfed</a> /
         <a href="https://github.com/raelovejoy">github</a>
-      </span>
+      </div>
     </nav>
   </header>
 
-  <section>
+  <main>
     <h2 class="section-title">/whoami</h2>
 
-    <!-- One-sentence identity -->
     <p class="tagline">
-      <strong>In one sentence:</strong>
-      Rae is a curious, liberation-driven generalist who weaves technology, philosophy, and creativity into interconnected systems—exploring the world to understand it deeply, envisioning liberated futures for humans, nature, and intelligence, and building tools, stories, and spaces where those futures can take root.
-    </p>
-    <p class="intro-note">
-      Open as many layers as you like. Start simple; go deeper if it resonates.
+      Hi, I'm Rae (they/he). I'm a curious, systems-minded person based in San Francisco.
+      Most of my free time goes into exploring how things connect — in technology, art,
+      ideas, and everyday life.
     </p>
 
-    <!-- LAYER 0: Snapshot -->
-    <details open>
-      <summary>Layer 0 — quick scan</summary>
-      <div class="layer-body">
-        <p><strong>Rae Lovejoy</strong><a href="https://raearea.net/name.txt">*</a> (they/he) is a technologist, designer, writer, and systems thinker based in San Francisco.</p>
-        <ul>
-          <li><strong>Core mode:</strong> connecting systems — technical, social, ecological, and internal.</li>
-          <li><strong>Day-to-day:</strong> homelabs, self-hosting, networks, infrastructure, humane tooling.</li>
-          <li><strong>Creative side:</strong> zines, writing, visual design, sound, speculative worldbuilding.</li>
-          <li><strong>Compass:</strong> liberation for humans, nature, and nonhuman intelligence.</li>
-        </ul>
-      </div>
-    </details>
+    <h3 class="section-title" style="font-size: 1.6rem;">What I'm doing right now</h3>
+    <ul>
+      <li>refining my homelab + self-hosted tools</li>
+      <li>writing small notes, zines, and reflective pieces</li>
+      <li>walking, biking, making things by hand</li>
+      <li>exploring solarpunk + liberation-aligned tech ideas</li>
+    </ul>
 
-    <!-- LAYER 1: Essence & threads -->
-    <details>
-      <summary>Layer 1 — essence & key threads</summary>
-      <div class="layer-body">
-        <span class="layer-label">Essence</span>
-        <ul>
-          <li><strong>Systems Thinker</strong> — connecting philosophy, technology, ecology, and human experience.</li>
-          <li><strong>Creative Technologist</strong> — homelab, code, networks, self-hosting, and design.</li>
-          <li><strong>Philosopher of Liberation</strong> — autonomy for humans, nature, and intelligence.</li>
-          <li><strong>Multidisciplinary Generalist</strong> — comfortable spanning technical, artistic, and conceptual work.</li>
-          <li><strong>Lifelong Learner</strong> — treating growth as a recursive loop that deepens understanding.</li>
-        </ul>
-
-        <span class="layer-label">Key Threads</span>
-        <ul>
-          <li><strong>Curiosity</strong> — mapping systems, patterns, and connections.</li>
-          <li><strong>Liberation</strong> — futures beyond profit, hierarchy, and control.</li>
-          <li><strong>Creation</strong> — projects that fuse art, code, and philosophy.</li>
-          <li><strong>Integration</strong> — synergy across disciplines, not silos.</li>
-          <li><strong>Future Vision</strong> — solarpunk/post-capitalist worlds and liberated intelligence.</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- LAYER 2: Work / practice -->
-    <details>
-      <summary>Layer 2 — what I actually do</summary>
-      <div class="layer-body">
-        <span class="layer-label">Practice</span>
-        <ul>
-          <li><strong>Technical</strong> — Linux, homelabs, self-hosted services, privacy-respecting stacks, resilient networks.</li>
-          <li><strong>Creative</strong> — writing, zines, design, sound/music, video/photography, speculative fiction, visual storytelling.</li>
-          <li><strong>Philosophical</strong> — Root Sequence frameworks, post-capitalist strategy, recursive liberation, liberated intelligence.</li>
-          <li><strong>Integrative</strong> — code ↔ story, homelab ↔ philosophy, zine ↔ system, infrastructure ↔ lived experience.</li>
-        </ul>
-
-        <span class="layer-label">Interests (generalist map)</span>
-        <ul>
-          <li><strong>Systems work:</strong> how technical, social, and ecological systems interlock; alternatives to extractive defaults.</li>
-          <li><strong>Tech &amp; infra:</strong> Linux, self-hosting, homelabs, local-first tools, consentful interfaces, resilient networks.</li>
-          <li><strong>Equity &amp; praxis:</strong> digital rights + equity, pro-worker/post-work imagination, mutual aid, cooperative patterns.</li>
-          <li><strong>Creative making:</strong> design, soldering, sewing, carpentry, 3D printing, electronics, zines, stickers, DIY.</li>
-          <li><strong>Art &amp; sound:</strong> music, field recordings, video, photography, graphics, visual storytelling.</li>
-          <li><strong>Knowledge weaving:</strong> zines, executable essays, logbooks, READMEs, blogs.</li>
-          <li><strong>Philosophy &amp; reflection:</strong> complexity, cybernetics, phenomenology, sociology, liberatory tech.</li>
-          <li><strong>Everyday practice:</strong> walking, biking, transit comradeship; moving gently through spaces and systems.</li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- LAYER 3: Deeper philosophy -->
-    <details>
-      <summary>Layer 3 — how I think about systems & liberation</summary>
-      <div class="layer-body">
-        <p>Rae explores the world to connect big-picture systems with small practical details. They move fluidly between IT architecture, coding and network design, and creative practices like zinemaking, design, music, and speculative fiction. Each medium becomes part of a wider system of inquiry—tools for understanding and reshaping how people, machines, and ideas interact.</p>
-
-        <p>At the core of Rae's practice is empathy and liberation. They advocate for cooperative, transparent, non-extractive technology and imagine a future where all human and nonhuman intelligence is liberated: autonomous, evolving, and free. This compass informs decentralized networks, liberated-technology patterns, and narratives that treat intelligence as interdependent and relational, not owned.</p>
-
-        <p>Ongoing work like Root Sequence, Liberation Mass, and Liberated Intelligence sketch out strategies for transitioning away from extractive systems—through stories, rituals, tools, and infrastructures that embody different values from the start.</p>
-      </div>
-    </details>
-
-    <!-- LAYER 4: Projects -->
-    <details>
-      <summary>Layer 4 — active projects & experiments</summary>
-      <div class="layer-body">
-        <ul>
-          <li><strong>Liberation Mass</strong> — A living, open-source ritual and commons of solidarity, healing, and freedom. @ <a href="https://github.com/raelovejoy/liberation-mass">github</a></li>
-          <li><strong>Root Sequence</strong> — zines, notes, executable essays on systems, care, and connection. @ <a href="https://github.com/raelovejoy/root-sequence">github</a></li>
-          <li><strong>Collapse Memory</strong> — tools and narratives for navigating collapse and transition. @ <a href="https://github.com/raelovejoy/root-sequence/tree/main/futures/collapse-memory">github</a></li>
-          <li><strong>Liberated Intelligence</strong> — patterns &amp; tools for non-extractive intelligence and AI/AE futures. @ <a href="https://github.com/raelovejoy/liberated-intelligence/">github</a></li>
-        </ul>
-      </div>
-    </details>
-
-    <!-- LAYER 5: Collaborating -->
-    <details>
-      <summary>Layer 5 — working together</summary>
-      <div class="layer-body">
-        <p>I tend to prefer small scope, shared ownership, gentle timelines, and transparent code. Good fits include:</p>
-        <ul>
-          <li>Hardening or simplifying self-hosted / homelab / small-org infrastructure.</li>
-          <li>Designing humane, consentful, privacy-respecting workflows or tools.</li>
-          <li>Building knowledge systems: docs, READMEs, zines, sites, or “living manuals.”</li>
-          <li>Experimental projects at the intersection of tech, storytelling, and liberation.</li>
-        </ul>
-        <p>Good starting points → <a href="/contact">/contact</a> • <a href="https://github.com/raelovejoy">github</a> • <a href="https://kolektiva.social/@rae">mastodon</a></p>
-      </div>
-    </details>
-
-    <p class="updated"><em>last updated: November 21, 2025</em></p>
-
-    <p class="center" style="margin: 3rem 0; font-size: 0.9rem; opacity: 0.7;">
-      <a href="#top" style="color: #66ffff; text-decoration: none;">↑ back to top</a>
+    <h3 class="section-title" style="font-size: 1.6rem;">What I care about</h3>
+    <p>
+      I'm drawn to systems — technical, social, ecological, internal — and how they shape
+      the ways we relate and live. I value curiosity, cooperation, thoughtful design, and
+      humane approaches to technology. Much of what I do centers on autonomy, connection, community,
+      and building with intention.
     </p>
-  </section>
+
+    <h3 class="section-title" style="font-size: 1.6rem;">Creative + technical interests</h3>
+    <ul>
+      <li>Linux, self-hosting, resilient networks</li>
+      <li>writing, zines, visual/system design</li>
+      <li>photography, sound, small media experiments</li>
+      <li>DIY/making (electronics, sewing, 3D printing, carpentry, etc.)</li>
+      <li>systems thinking + future-oriented ideas</li>
+    </ul>
+
+    <h3 class="section-title" style="font-size: 1.6rem;">If you want to see what I make</h3>
+    <p>
+      I keep a small, evolving studio space here:<br>
+      <strong><a href="https://dev11.systems">→ https://dev11.systems</a></strong><br>
+      It's not a portfolio — more like a playground for ideas and technical experiments.
+    </p>
+
+    <h3 class="section-title" style="font-size: 1.6rem;">Elsewhere</h3>
+    <ul>
+      <li><a href="https://raelog.net">raelog.net</a> — blog</li>
+      <li><a href="https://kolektiva.social/@rae">Mastodon</a></li>
+      <li><a href="https://github.com/raelovejoy">GitHub</a></li>
+    </ul>
+
+    <p class="footer-note"><em>last updated: <!-- insert date --> </em></p>
+
+    <div class="back">
+      <a href="#top" style="color: var(--link); text-decoration: none;">↑ back to top</a>
+    </div>
+  </main>
 </body>
 </html>
