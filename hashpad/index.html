@@ -1,0 +1,1062 @@
+<!DOCTYPE html>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>#hashpad</title>
+
+<style>
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  html {
+    color-scheme: light dark;
+    background-color: #fff;
+    color: #161616;
+  }
+  @media (prefers-color-scheme: dark) {
+    html { background-color: #000; color: #fff; }
+  }
+
+  body { min-height: 100vh; }
+
+  #bar {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+    padding: 10px max(18px, calc(50vw - 420px));
+    font: 12px/1.3 system-ui;
+    background: color-mix(in oklab, Canvas, transparent 15%);
+    border-bottom: 1px solid color-mix(in oklab, CanvasText, transparent 85%);
+    display: flex;
+    gap: 10px;
+    align-items: center;
+    flex-wrap: wrap;
+    user-select: none;
+  }
+
+  #status { font-weight: 600; }
+  #meta { opacity: 0.75; }
+  .spacer { flex: 1 1 auto; }
+
+  #bar button {
+    font: inherit;
+    padding: 5px 10px;
+    border-radius: 8px;
+    border: 1px solid color-mix(in oklab, CanvasText, transparent 70%);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+  #bar button:hover { opacity: 0.85; }
+  #bar button:active { transform: translateY(1px); }
+
+  /* Editor only (IMPORTANT: do not style all <article> tags) */
+  #editor {
+    outline: none;
+    padding: 18px max(18px, calc(50vw - 420px));
+    width: 100%;
+    min-height: calc(100vh - 52px);
+    font: 18px/1.55 system-ui;
+    tab-size: 4;
+    -webkit-font-smoothing: antialiased;
+    text-rendering: optimizeLegibility;
+    white-space: pre-wrap;
+    overflow-wrap: break-word;
+  }
+
+  /* ---- Overlay base ---- */
+  .overlay {
+    position: fixed;
+    inset: 0;
+    background: color-mix(in oklab, Canvas, transparent 10%);
+    backdrop-filter: blur(6px);
+    z-index: 100;
+    overflow: auto;
+  }
+
+  .overlay-inner {
+    max-width: 720px;
+    margin: 40px auto;
+    padding: 24px;
+    background: Canvas;
+    color: CanvasText;
+    border-radius: 12px;
+    box-shadow: 0 20px 60px rgba(0,0,0,0.3);
+  }
+
+  .overlay-inner button {
+    font: inherit;
+    padding: 6px 10px;
+    border-radius: 8px;
+    border: 1px solid color-mix(in oklab, CanvasText, transparent 70%);
+    background: transparent;
+    color: inherit;
+    cursor: pointer;
+  }
+
+  #about-close {
+    float: right;
+  }
+
+  #about-content {
+    font: 16px/1.6 system-ui;
+  }
+
+  /* Typography spacing inside About */
+  #about-content p,
+  #about-content ul,
+  #about-content ol {
+    margin: 12px 0;
+  }
+
+  #about-content h1,
+  #about-content h2,
+  #about-content h3 {
+    margin: 18px 0 10px;
+  }
+
+  #about-content li {
+    margin: 6px 0;
+  }
+
+  #about-content hr {
+    margin: 24px 0;
+    opacity: 0.3;
+  }
+
+  #about-content .dim {
+    opacity: 0.7;
+  }
+
+  #resume-actions {
+    display: flex;
+    gap: 10px;
+    margin-top: 16px;
+    flex-wrap: wrap;
+  }
+</style>
+
+<div id="bar">
+  <span id="status">Loading…</span>
+  <span id="meta"></span>
+
+  <span class="spacer"></span>
+
+  <button id="about-open" title="About #hashpad">About</button>
+  <button id="copy-link" title="Copy current URL">Copy link</button>
+  <button id="export-txt" title="Download as .txt">Export .txt</button>
+  <button id="export-md" title="Download as .md">Export .md</button>
+  <button id="encrypt-share" title="Encrypt content and put ciphertext in the URL (share key separately)">Encrypt & share</button>
+  <button id="decrypt-open" title="If you're on an encrypted link and it didn't prompt, decrypt it">Decrypt</button>
+</div>
+
+<article id="editor" contenteditable="plaintext-only" spellcheck="true"></article>
+
+<!-- ================= RESUME ================= -->
+<div id="resume" class="overlay" hidden>
+  <div class="overlay-inner">
+    <h2>Resume last note?</h2>
+    <p>You were working on a note previously. What would you like to do?</p>
+    <div id="resume-actions">
+      <button id="resume-yes">Resume last note</button>
+      <button id="resume-no">Start a new note</button>
+    </div>
+    <p class="dim" style="margin-top:12px; opacity:0.7;">
+      Tip: if you choose 'new', you can still recover the old link via browser history.
+    </p>
+  </div>
+</div>
+
+<!-- ================= ABOUT ================= -->
+<div id="about" class="overlay" hidden>
+  <div class="overlay-inner">
+    <button id="about-close">Close</button>
+    <article id="about-content">
+      <h1>#hashpad</h1>
+
+      <p>
+        <strong>#hashpad</strong> is a plain-text notepad where the document lives in
+        the <code>#hash</code> part of the URL.
+      </p>
+
+      <p>
+        What you write is saved automatically, compressed, and stored directly in
+        the link. Copy the URL and you've copied the note.
+      </p>
+
+      <hr>
+
+      <h2>How it works</h2>
+      <ul>
+        <li>You type into a plain-text editor.</li>
+        <li>The text saves automatically as you type.</li>
+        <li>When possible, the entire note is stored in the URL.</li>
+        <li>Sharing the link shares the note.</li>
+      </ul>
+
+      <p>
+        There is no server, no account, and no backend.
+        Everything happens locally in your browser.
+      </p>
+
+      <hr>
+
+      <h2>Saving modes</h2>
+
+      <h3>Shareable (URL)</h3>
+      <p>
+        If the note is small enough, it is fully stored in the URL.
+        This is the default and most portable mode.
+      </p>
+
+      <h3>Local-only</h3>
+      <p>
+        If the note becomes too large for a URL, #hashpad switches to local-only mode.
+        The content is stored in your browser and the URL contains a short ID instead.
+      </p>
+
+      <p>
+        Local-only notes cannot be shared unless exported.
+      </p>
+
+      <h3>Encrypted</h3>
+      <p>
+        You can optionally encrypt a note before sharing it.
+        Encrypted links store only ciphertext in the URL.
+      </p>
+
+      <ul>
+        <li>AES-GCM encryption</li>
+        <li>The passphrase is not stored or included in the link</li>
+        <li>You must share the passphrase separately</li>
+      </ul>
+
+      <hr>
+
+      <h2>Starting a new note</h2>
+      <ul>
+        <li>Open the base URL (no <code>#</code>) to start fresh.</li>
+        <li><code>Ctrl/Cmd+N</code> clears the editor and starts a new note.</li>
+        <li>Notes live in links. If you want the previous note, use its URL (or your browser history).</li>
+      </ul>
+
+      <hr>
+
+      <h2>Tab titles</h2>
+      <ul>
+        <li>If your first line is <code># Title</code>, that becomes the tab title.</li>
+        <li>Otherwise, #hashpad uses your first non-empty line (trimmed).</li>
+      </ul>
+
+      <hr>
+
+      <h2>Keyboard shortcuts</h2>
+      <ul>
+        <li><code>Ctrl/Cmd+S</code> save now</li>
+        <li><code>Ctrl/Cmd+K</code> copy link</li>
+        <li><code>Ctrl/Cmd+Z</code> panic undo (local history)</li>
+        <li><code>Ctrl/Cmd+N</code> new note</li>
+        <li><code>?</code> open About</li>
+        <li><code>Escape</code> close About</li>
+      </ul>
+
+      <hr>
+
+      <h2>Exporting</h2>
+      <ul>
+        <li><code>.txt</code> for plain text</li>
+        <li><code>.md</code> for Markdown</li>
+      </ul>
+
+      <p>Exporting is recommended for long-term storage.</p>
+
+      <hr>
+
+      <h2>Privacy notes</h2>
+      <ul>
+        <li>Shareable links are readable by anyone with the URL.</li>
+        <li>Encrypted links are unreadable without the passphrase.</li>
+        <li>Local-only notes live only in your browser.</li>
+      </ul>
+
+      <p class="dim">#hashpad — plain text • no server • no account</p>
+    </article>
+  </div>
+</div>
+
+<script>
+  const editor = document.querySelector("#editor");
+  const statusEl = document.querySelector("#status");
+  const metaEl = document.querySelector("#meta");
+
+  const btnAboutOpen = document.querySelector("#about-open");
+  const btnAboutClose = document.querySelector("#about-close");
+  const about = document.querySelector("#about");
+
+  const btnCopy = document.querySelector("#copy-link");
+  const btnTxt = document.querySelector("#export-txt");
+  const btnMd = document.querySelector("#export-md");
+  const btnEnc = document.querySelector("#encrypt-share");
+  const btnDec = document.querySelector("#decrypt-open");
+
+  const resume = document.querySelector("#resume");
+  const resumeYes = document.querySelector("#resume-yes");
+  const resumeNo = document.querySelector("#resume-no");
+
+  // ---- Config ----
+  const DEBOUNCE_MS = 500;
+  const MAX_HASH_LEN_SOFT = 6500; // practical warning limit; varies by environment
+  const HISTORY_MAX = 30;
+
+  const LS = {
+    lastHash: "hashpad:lastHash",
+    localNotes: "hashpad:localNotes",
+    history: "hashpad:history",
+    dirty: "hashpad:dirty"
+  };
+
+  // ---- State ----
+  let dirty = false;
+  let saving = false;
+  let ignoreInput = false;
+  let lastSavedSig = "";
+  let mode = "hash"; // "hash" | "local" | "enc"
+  let currentLocalId = null;
+  let currentEncHint = null;
+
+  // ---- Overlay wiring ----
+  btnAboutOpen.onclick = () => { about.hidden = false; };
+  btnAboutClose.onclick = () => { about.hidden = true; };
+
+  function promptResumeChoice() {
+    return new Promise((resolve) => {
+      resume.hidden = false;
+
+      resumeYes.onclick = () => {
+        resume.hidden = true;
+        resolve("resume");
+      };
+
+      resumeNo.onclick = () => {
+        resume.hidden = true;
+        resolve("new");
+      };
+    });
+  }
+
+  // ---- Events / init ----
+  function init() {
+    editor.addEventListener("input", debounce(DEBOUNCE_MS, () => save(false)));
+    addEventListener("hashchange", load);
+
+    // In some setups (cached BFCache restores, etc.) DOMContentLoaded can be missed.
+    // So: if DOM is already ready, load immediately.
+    if (document.readyState === "loading") {
+      addEventListener("DOMContentLoaded", load, { once: true });
+    } else {
+      load();
+    }
+  }
+
+  // Surface errors instead of silently freezing on "Loading…"
+  addEventListener("error", (e) => {
+    try {
+      setStatus("JS error");
+      setMeta(e?.message || "(see console)");
+    } catch (_) {}
+  });
+
+  addEventListener("unhandledrejection", (e) => {
+    try {
+      setStatus("JS error");
+      setMeta(String(e?.reason?.message || e?.reason || "(see console)"));
+    } catch (_) {}
+  });
+
+  init();
+
+  // Force plain-text paste (helps when plaintext-only isn't enforced)
+  editor.addEventListener("paste", (e) => {
+    e.preventDefault();
+    const text = (e.clipboardData || window.clipboardData).getData("text/plain");
+    insertTextAtCursor(text);
+  });
+
+  // Buttons
+  btnCopy.addEventListener("click", async () => {
+    await save(true);
+    await copyLink(location.href);
+  });
+
+  btnTxt.addEventListener("click", () => exportFile("txt", editor.textContent));
+  btnMd.addEventListener("click", () => exportFile("md", editor.textContent));
+
+  btnEnc.addEventListener("click", async () => {
+    await encryptAndShare();
+  });
+
+  btnDec.addEventListener("click", async () => {
+    await decryptIfNeeded(true);
+  });
+
+  // Keyboard shortcuts
+  addEventListener("keydown", async (e) => {
+    const mod = e.metaKey || e.ctrlKey;
+
+    // About toggle: ?
+    if (!mod && e.key === "?" && about.hidden) {
+      about.hidden = false;
+      e.preventDefault();
+      return;
+    }
+
+    // Close overlays
+    if (e.key === "Escape") {
+      if (!about.hidden) { about.hidden = true; e.preventDefault(); return; }
+      if (!resume.hidden) { resume.hidden = true; e.preventDefault(); return; }
+    }
+
+    // New note
+    if (mod && e.key.toLowerCase() === "n") {
+      e.preventDefault();
+      newNote();
+      return;
+    }
+
+    if (mod && e.key.toLowerCase() === "s") {
+      e.preventDefault();
+      await save(true);
+      return;
+    }
+
+    if (mod && e.key.toLowerCase() === "k") {
+      e.preventDefault();
+      await save(true);
+      await copyLink(location.href);
+      return;
+    }
+
+    // Panic-undo from local history (does not block native undo)
+    if (mod && e.key.toLowerCase() === "z") {
+      setTimeout(() => undoFromHistory(), 0);
+    }
+  });
+
+  // Warn if dirty
+  addEventListener("beforeunload", (e) => {
+    if (!dirty) return;
+    e.preventDefault();
+    e.returnValue = "";
+  });
+
+  function setStatus(text) {
+    statusEl.textContent = text;
+  }
+
+  function setMeta(text) {
+    metaEl.textContent = text ? text : "";
+  }
+
+  function updateUiMeta() {
+    const text = editor.textContent || "";
+    const words = text.trim() ? text.trim().split(/\s+/).length : 0;
+
+    let modeLabel = "shareable";
+    if (mode === "local") modeLabel = "local-only";
+    if (mode === "enc") modeLabel = "encrypted";
+
+    const extra = [];
+    extra.push(modeLabel);
+    if (mode === "local" && currentLocalId) extra.push("id=" + currentLocalId);
+    if (mode === "enc" && currentEncHint) extra.push(currentEncHint);
+    extra.push(words + " words");
+
+    setMeta(extra.join(" • "));
+  }
+
+  // ---- Load / Save ----
+  async function load() {
+    ignoreInput = true;
+    setStatus("Loading…");
+
+    try {
+      currentLocalId = null;
+      currentEncHint = null;
+
+      // Resume prompt only when opening base URL and last session was dirty
+      if (!location.hash) {
+        const last = localStorage.getItem(LS.lastHash) || "";
+        const wasDirty = localStorage.getItem(LS.dirty) === "1";
+
+        if (wasDirty && last) {
+          const choice = await promptResumeChoice();
+          if (choice === "resume") {
+            history.replaceState({}, "", last);
+          } else {
+            // explicit new note: clear auto-resume markers
+            localStorage.removeItem(LS.dirty);
+            localStorage.removeItem(LS.lastHash);
+          }
+        }
+      }
+
+      if (location.hash.startsWith("#id=")) {
+        const id = location.hash.slice(4);
+        const note = getLocalNote(id);
+        if (!note) throw new Error("Missing local note");
+        applyContent(note.content, note.style);
+        mode = "local";
+        currentLocalId = id;
+        setStatus("Saved");
+        updateTitle();
+        updateUiMeta();
+        pushHistorySnapshot(true);
+        dirty = false;
+        localStorage.removeItem(LS.dirty);
+        editor.focus();
+        return;
+      }
+
+      if (location.hash.startsWith("#enc=")) {
+        mode = "enc";
+        setStatus("Encrypted link");
+        updateTitle();
+        updateUiMeta();
+        await decryptIfNeeded(false);
+        editor.focus();
+        return;
+      }
+
+      if (location.hash !== "") {
+        await setFromHash(location.hash);
+        mode = "hash";
+        setStatus("Saved");
+        updateTitle();
+        updateUiMeta();
+        pushHistorySnapshot(true);
+        dirty = false;
+        localStorage.removeItem(LS.dirty);
+        editor.focus();
+        return;
+      }
+
+      // Brand new blank
+      applyContent("", null);
+      mode = "hash";
+      setStatus("Saved");
+      updateTitle();
+      updateUiMeta();
+      pushHistorySnapshot(true);
+      dirty = false;
+      localStorage.removeItem(LS.dirty);
+      editor.focus();
+    } catch (e) {
+      applyContent("", null);
+      mode = "hash";
+      setStatus("Decode error (blank)");
+      setMeta("couldn't decode this link");
+    } finally {
+      ignoreInput = false;
+    }
+  }
+
+  async function save(force) {
+    if (ignoreInput) return;
+    if (!force && saving) return;
+
+    dirty = true;
+    localStorage.setItem(LS.dirty, "1");
+    setStatus("Saving…");
+    saving = true;
+
+    try {
+      updateTitle();
+      updateUiMeta();
+
+      const sig = signature();
+      if (sig !== lastSavedSig) pushHistorySnapshot(false);
+
+      // If we're currently on an encrypted link, don't silently overwrite it with plaintext.
+      // Saving moves to local-only unless user re-encrypts.
+      if (location.hash.startsWith("#enc=")) {
+        const id = ensureLocalId();
+        setLocalNote(id, { content: editor.textContent, style: editor.getAttribute("style") });
+        const shortHash = "#id=" + id;
+        history.replaceState({}, "", shortHash);
+        safeSetLS(LS.lastHash, shortHash);
+        mode = "local";
+        currentLocalId = id;
+        setStatus("Saved (local-only)");
+        lastSavedSig = sig;
+        dirty = false;
+        localStorage.removeItem(LS.dirty);
+        updateUiMeta();
+        return;
+      }
+
+      // Prefer shareable hash if small enough
+      const hash = await getHashForCurrent();
+      if (hash.length <= MAX_HASH_LEN_SOFT) {
+        if (location.hash !== hash) history.replaceState({}, "", hash);
+        safeSetLS(LS.lastHash, hash);
+        mode = "hash";
+        setStatus("Saved");
+        lastSavedSig = sig;
+      } else {
+        // Too long -> local-only mode
+        const id = ensureLocalId();
+        setLocalNote(id, { content: editor.textContent, style: editor.getAttribute("style") });
+        const shortHash = "#id=" + id;
+        if (location.hash !== shortHash) history.replaceState({}, "", shortHash);
+        safeSetLS(LS.lastHash, shortHash);
+        mode = "local";
+        currentLocalId = id;
+        setStatus("Saved (local-only)");
+        lastSavedSig = sig;
+      }
+
+      dirty = false;
+      localStorage.removeItem(LS.dirty);
+      updateUiMeta();
+    } catch (e) {
+      setStatus("Save failed");
+      setMeta(String(e && e.message ? e.message : e));
+    } finally {
+      saving = false;
+    }
+  }
+
+  function applyContent(content, style) {
+    editor.textContent = content || "";
+    if (style) editor.setAttribute("style", style);
+    else editor.removeAttribute("style");
+  }
+
+  async function setFromHash(hash) {
+    const decoded = await decodeHash(hash);
+    const parts = decoded.split("\x00");
+    const content = parts[0] ?? "";
+    const style = parts[1] ?? "";
+    applyContent(content, style || null);
+  }
+
+  async function getHashForCurrent() {
+    const style = editor.getAttribute("style");
+    const content = editor.textContent + (style !== null ? "\x00" + style : "");
+    const encoded = await encodeHash(content);
+    return "#" + encoded;
+  }
+
+  function updateTitle() {
+    // 1) Markdown-style heading: "# Title"
+    const h = editor.textContent.match(/^\n*#\s*(.+)\n/);
+    if (h && h[1]) {
+      document.title = h[1].trim();
+      return;
+    }
+
+    // 2) Fallback: first non-empty line
+    const line = (editor.textContent.split(/\r?\n/).find(l => l.trim().length > 0) || "").trim();
+    document.title = line ? truncateTitle(line, 60) : "#hashpad";
+  }
+
+  function truncateTitle(s, n) {
+    if (s.length <= n) return s;
+    return s.slice(0, n - 1).trimEnd() + "…";
+  }
+
+  function signature() {
+    const style = editor.getAttribute("style") || "";
+    return (editor.textContent.length + ":" + style.length + ":" + editor.textContent.slice(0, 64));
+  }
+
+  // ---- History ring buffer ----
+  function pushHistorySnapshot(isLoad) {
+    try {
+      const sig = signature();
+      const hist = JSON.parse(localStorage.getItem(LS.history) || "[]");
+      const last = hist[hist.length - 1];
+      if (last && last.sig === sig) return;
+
+      hist.push({
+        t: Date.now(),
+        sig,
+        content: editor.textContent,
+        style: editor.getAttribute("style"),
+        mode,
+        note: isLoad ? "load" : "edit"
+      });
+
+      while (hist.length > HISTORY_MAX) hist.shift();
+      localStorage.setItem(LS.history, JSON.stringify(hist));
+      lastSavedSig = sig;
+    } catch (e) {}
+  }
+
+  function undoFromHistory() {
+    try {
+      const hist = JSON.parse(localStorage.getItem(LS.history) || "[]");
+      if (hist.length < 2) return;
+
+      hist.pop();
+      const prev = hist[hist.length - 1];
+      localStorage.setItem(LS.history, JSON.stringify(hist));
+
+      ignoreInput = true;
+      applyContent(prev.content, prev.style || null);
+      ignoreInput = false;
+
+      dirty = true;
+      setStatus("Undid (history)");
+      updateTitle();
+      updateUiMeta();
+      save(true);
+    } catch (e) {}
+  }
+
+  // ---- Local notes (URL-too-long fallback) ----
+  function ensureLocalId() {
+    if (location.hash.startsWith("#id=")) return location.hash.slice(4);
+    if (currentLocalId) return currentLocalId;
+    const id = randomId();
+    currentLocalId = id;
+    return id;
+  }
+
+  function getLocalNotesMap() {
+    return JSON.parse(localStorage.getItem(LS.localNotes) || "{}");
+  }
+
+  function setLocalNote(id, note) {
+    const map = getLocalNotesMap();
+    map[id] = { ...note, t: Date.now() };
+    localStorage.setItem(LS.localNotes, JSON.stringify(map));
+  }
+
+  function getLocalNote(id) {
+    const map = getLocalNotesMap();
+    return map[id] || null;
+  }
+
+  function randomId() {
+    return Math.random().toString(36).slice(2, 10) + Math.random().toString(36).slice(2, 6);
+  }
+
+  function safeSetLS(key, value) {
+    try { localStorage.setItem(key, value); } catch (e) {}
+  }
+
+  // ---- Export ----
+  function exportFile(ext, content) {
+    const title =
+      document.title && document.title !== "#hashpad"
+        ? document.title
+        : "note-" + new Date().toISOString().slice(0, 10);
+
+    const blob = new Blob([content], { type: "text/plain;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = title + "." + ext;
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+    setStatus("Exported " + title + "." + ext);
+    setTimeout(() => setStatus("Saved"), 900);
+  }
+
+  // ---- Copy link ----
+  async function copyLink(text) {
+    try {
+      await navigator.clipboard.writeText(text);
+      setStatus("Copied link");
+      setTimeout(() => setStatus("Saved"), 900);
+    } catch (e) {
+      setStatus("Copy failed");
+    }
+  }
+
+  // ---- New note ----
+  function newNote() {
+    const ok = !dirty || confirm("Start a new note? Unsaved changes will be lost.");
+    if (!ok) return;
+
+    ignoreInput = true;
+    applyContent("", null);
+    ignoreInput = false;
+
+    currentLocalId = null;
+    currentEncHint = null;
+    mode = "hash";
+
+    // Clear the URL back to the base path
+    history.replaceState({}, "", location.pathname);
+
+    // Don't auto-resume this cleared state
+    safeSetLS(LS.lastHash, "");
+
+    dirty = false;
+    localStorage.removeItem(LS.dirty);
+
+    updateTitle();
+    updateUiMeta();
+    pushHistorySnapshot(true);
+    setStatus("Saved");
+    editor.focus();
+  }
+
+  // ---- Encryption (AES-GCM + PBKDF2) ----
+  async function encryptAndShare() {
+    try {
+      await save(true);
+
+      const passphrase = prompt("Passphrase for this link? (share it separately)\n\nTip: use something memorable but strong.");
+      if (!passphrase) {
+        setStatus("Encryption canceled");
+        setTimeout(() => setStatus("Saved"), 900);
+        return;
+      }
+
+      const style = editor.getAttribute("style");
+      const plaintext = editor.textContent + (style !== null ? "\x00" + style : "");
+
+      setStatus("Encrypting…");
+
+      const payload = await encryptString(plaintext, passphrase);
+
+      // payload bytes: [1 byte version][16 salt][12 iv][cipher bytes]
+      const bytes = new Uint8Array(1 + payload.salt.length + payload.iv.length + payload.data.length);
+      bytes[0] = 1;
+      bytes.set(payload.salt, 1);
+      bytes.set(payload.iv, 1 + payload.salt.length);
+      bytes.set(payload.data, 1 + payload.salt.length + payload.iv.length);
+
+      const encHash = "#enc=" + base64UrlEncode(bytes);
+
+      history.replaceState({}, "", encHash);
+      safeSetLS(LS.lastHash, encHash);
+
+      mode = "enc";
+      currentEncHint = "passphrase required";
+      updateUiMeta();
+      setStatus("Encrypted (share passphrase separately)");
+
+      const doExport = confirm("Also download an encrypted backup file? (.txt.enc.json)");
+      if (doExport) exportEncrypted(payload, "note-" + new Date().toISOString().slice(0, 10));
+    } catch (e) {
+      setStatus("Encrypt failed");
+      setMeta(String(e && e.message ? e.message : e));
+    }
+  }
+
+  async function decryptIfNeeded(forcePrompt) {
+    if (!location.hash.startsWith("#enc=")) return;
+
+    try {
+      setStatus("Encrypted link");
+      mode = "enc";
+      currentEncHint = "passphrase required";
+      updateUiMeta();
+
+      const b64 = location.hash.slice(5);
+      const bytes = base64UrlDecodeToBytes(b64);
+
+      if (bytes.length < 1 + 16 + 12 + 1) throw new Error("Encrypted payload too short");
+      const version = bytes[0];
+      if (version !== 1) throw new Error("Unknown encrypted payload version: " + version);
+
+      const salt = bytes.subarray(1, 17);
+      const iv = bytes.subarray(17, 29);
+      const data = bytes.subarray(29);
+
+      const passphrase = prompt("This is an encrypted note.\nEnter passphrase to decrypt:");
+      if (!passphrase) {
+        if (forcePrompt) setStatus("Decryption canceled");
+        return;
+      }
+
+      setStatus("Decrypting…");
+
+      const plaintext = await decryptString({ salt, iv, data }, passphrase);
+      const parts = plaintext.split("\x00");
+      const content = parts[0] ?? "";
+      const style = parts[1] ?? "";
+
+      ignoreInput = true;
+      applyContent(content, style || null);
+      ignoreInput = false;
+
+      setStatus("Decrypted (not saved to URL)");
+      mode = "enc";
+      currentEncHint = "decrypted in-session";
+      updateTitle();
+      updateUiMeta();
+      pushHistorySnapshot(true);
+      dirty = true;
+    } catch (e) {
+      setStatus("Decryption failed");
+      setMeta("wrong passphrase or corrupted link");
+    }
+  }
+
+  async function deriveKey(passphrase, salt) {
+    const enc = new TextEncoder();
+    const baseKey = await crypto.subtle.importKey(
+      "raw",
+      enc.encode(passphrase),
+      "PBKDF2",
+      false,
+      ["deriveKey"]
+    );
+
+    return crypto.subtle.deriveKey(
+      { name: "PBKDF2", salt, iterations: 100000, hash: "SHA-256" },
+      baseKey,
+      { name: "AES-GCM", length: 256 },
+      false,
+      ["encrypt", "decrypt"]
+    );
+  }
+
+  async function encryptString(text, passphrase) {
+    const enc = new TextEncoder();
+    const salt = crypto.getRandomValues(new Uint8Array(16));
+    const iv = crypto.getRandomValues(new Uint8Array(12));
+    const key = await deriveKey(passphrase, salt);
+
+    const ciphertext = await crypto.subtle.encrypt(
+      { name: "AES-GCM", iv },
+      key,
+      enc.encode(text)
+    );
+
+    return { salt, iv, data: new Uint8Array(ciphertext) };
+  }
+
+  async function decryptString(payload, passphrase) {
+    const dec = new TextDecoder();
+    const key = await deriveKey(passphrase, payload.salt);
+
+    const plaintext = await crypto.subtle.decrypt(
+      { name: "AES-GCM", iv: payload.iv },
+      key,
+      payload.data
+    );
+
+    return dec.decode(plaintext);
+  }
+
+  function exportEncrypted(payload, baseName) {
+    const obj = {
+      v: 1,
+      salt: base64UrlEncode(payload.salt),
+      iv: base64UrlEncode(payload.iv),
+      data: base64UrlEncode(payload.data)
+    };
+
+    const blob = new Blob([JSON.stringify(obj, null, 2)], { type: "application/json;charset=utf-8" });
+    const url = URL.createObjectURL(blob);
+
+    const a = document.createElement("a");
+    a.href = url;
+    a.download = baseName + ".txt.enc.json";
+    document.body.appendChild(a);
+    a.click();
+    document.body.removeChild(a);
+
+    URL.revokeObjectURL(url);
+    setStatus("Exported " + baseName + ".txt.enc.json");
+    setTimeout(() => setStatus("Saved"), 900);
+  }
+
+  // ---- Encoding/decoding (compression when available) ----
+  async function encodeHash(string) {
+    const bytes = new TextEncoder().encode(string);
+
+    if (typeof CompressionStream !== "undefined") {
+      const stream = new CompressionStream("deflate-raw");
+      const writer = stream.writable.getWriter();
+      writer.write(bytes);
+      writer.close();
+      const buffer = await new Response(stream.readable).arrayBuffer();
+      return base64UrlEncode(new Uint8Array(buffer));
+    }
+
+    return base64UrlEncode(bytes);
+  }
+
+  async function decodeHash(hash) {
+    const b64 = hash.startsWith("#") ? hash.slice(1) : hash;
+    const bytes = base64UrlDecodeToBytes(b64);
+
+    if (typeof DecompressionStream !== "undefined") {
+      try {
+        const stream = new DecompressionStream("deflate-raw");
+        const writer = stream.writable.getWriter();
+        writer.write(bytes);
+        writer.close();
+        const buffer = await new Response(stream.readable).arrayBuffer();
+        return new TextDecoder().decode(buffer);
+      } catch (e) {
+        return new TextDecoder().decode(bytes);
+      }
+    }
+
+    return new TextDecoder().decode(bytes);
+  }
+
+  // ---- Base64 helpers ----
+  function base64UrlEncode(uint8) {
+    const b64 = bytesToBase64(uint8);
+    return b64.replace(/\+/g, "-").replace(/\//g, "_").replace(/=+$/g, "");
+  }
+
+  function base64UrlDecodeToBytes(b64url) {
+    let b64 = b64url.replace(/-/g, "+").replace(/_/g, "/");
+    while (b64.length % 4) b64 += "=";
+    return base64ToBytes(b64);
+  }
+
+  function bytesToBase64(bytes) {
+    let binary = "";
+    const chunk = 0x8000;
+    for (let i = 0; i < bytes.length; i += chunk) {
+      const sub = bytes.subarray(i, i + chunk);
+      binary += String.fromCharCode.apply(null, sub);
+    }
+    return btoa(binary);
+  }
+
+  function base64ToBytes(b64) {
+    const binary = atob(b64);
+    const len = binary.length;
+    const bytes = new Uint8Array(len);
+    for (let i = 0; i < len; i++) bytes[i] = binary.charCodeAt(i);
+    return bytes;
+  }
+
+  // ---- Debounce ----
+  function debounce(ms, fn) {
+    let timer;
+    return (...args) => {
+      clearTimeout(timer);
+      timer = setTimeout(() => fn(...args), ms);
+    };
+  }
+
+  // ---- Plain text insertion helper ----
+  function insertTextAtCursor(text) {
+    const sel = window.getSelection();
+    if (!sel || sel.rangeCount === 0) {
+      editor.textContent += text;
+      return;
+    }
+    const range = sel.getRangeAt(0);
+    range.deleteContents();
+    range.insertNode(document.createTextNode(text));
+    range.collapse(false);
+    sel.removeAllRanges();
+    sel.addRange(range);
+  }
+</script>

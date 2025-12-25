@@ -1,0 +1,158 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>#hashpad — about</title>
+
+  <style>
+    * { margin: 0; padding: 0; box-sizing: border-box; }
+
+    html {
+      color-scheme: light dark;
+      background: #fff;
+      color: #161616;
+      font: 17px/1.6 system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    @media (prefers-color-scheme: dark) {
+      html { background: #000; color: #fff; }
+    }
+
+    body {
+      max-width: 760px;
+      padding: 32px 20px 80px;
+      margin: 0 auto;
+    }
+
+    header {
+      margin-bottom: 32px;
+    }
+
+    h1 {
+      font-size: 32px;
+      font-weight: 700;
+      margin-bottom: 8px;
+    }
+
+    .tagline {
+      opacity: 0.75;
+    }
+
+    section {
+      margin-top: 32px;
+    }
+
+    h2 {
+      font-size: 20px;
+      margin-bottom: 8px;
+    }
+
+    p, li {
+      margin-top: 8px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 8px;
+    }
+
+    code {
+      font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      font-size: 0.95em;
+    }
+
+    a {
+      color: inherit;
+      text-decoration: underline;
+    }
+
+    .cta {
+      margin-top: 40px;
+      padding: 20px;
+      border: 1px solid color-mix(in oklab, CanvasText, transparent 80%);
+      border-radius: 12px;
+    }
+
+    .cta a {
+      font-weight: 600;
+    }
+
+    footer {
+      margin-top: 64px;
+      opacity: 0.6;
+      font-size: 14px;
+    }
+  </style>
+</head>
+<body>
+
+  <header>
+    <h1>#hashpad</h1>
+    <div class="tagline">Plain text notes that live in the URL.</div>
+  </header>
+
+  <section>
+    <p>
+      <strong>#hashpad</strong> is a minimalist, client-side notepad where the entire
+      document is stored in the <code>#hash</code> portion of the URL.
+    </p>
+
+    <p>
+      What you write is automatically saved, compressed, and embedded directly
+      into the link. Copy the URL and you’ve copied the note.
+    </p>
+  </section>
+
+  <section>
+    <h2>Why</h2>
+    <p>
+      Most note apps require accounts, sync, servers, and trust.
+      #hashpad removes all of that.
+    </p>
+
+    <ul>
+      <li>No server</li>
+      <li>No account</li>
+      <li>No tracking</li>
+      <li>No lock-in</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>How it works</h2>
+    <ul>
+      <li>You type into a plain-text editor.</li>
+      <li>The text is compressed in your browser.</li>
+      <li>The compressed data is stored in the URL.</li>
+      <li>Sharing the link shares the note.</li>
+    </ul>
+
+    <p>
+      If a note becomes too large to fit safely in a URL, #hashpad switches to
+      local-only storage in your browser instead.
+    </p>
+  </section>
+
+  <section>
+    <h2>Privacy</h2>
+    <ul>
+      <li>Shareable links are readable by anyone with the URL.</li>
+      <li>Encrypted links store only ciphertext in the URL.</li>
+      <li>Local-only notes never leave your browser.</li>
+    </ul>
+  </section>
+
+  <section class="cta">
+    <p>
+      Ready to write?
+      <a href="/">Open #hashpad</a>
+    </p>
+  </section>
+
+  <footer>
+    <p>#hashpad — plain text • no server • no account</p>
+  </footer>
+
+</body>
+</html>
