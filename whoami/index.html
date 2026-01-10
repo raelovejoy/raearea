@@ -4,9 +4,10 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>/whoami</title>
-  <meta name="description" content="Rae Lovejoy — a curious, systems-minded person exploring the intersections of technology, art, and everyday life." />
+  <meta name="description" content="Rae Lovejoy — a curious, systems-minded human exploring the intersections of technology, art, and everyday life." />
 
-  <link rel="icon" href="/favicon.png" type="image/x-icon">
+  <!-- Technical: correct favicon MIME type for a PNG -->
+  <link rel="icon" href="/favicon.png" type="image/png">
 
   <!-- Self-hosted fonts -->
   <style>
@@ -59,7 +60,32 @@
       text-decoration: underline;
       text-underline-offset: 0.15em;
     }
-    a:hover, a:focus-visible { color: var(--hover); }
+    a:hover { color: var(--hover); }
+
+    /* Technical: stronger keyboard focus visibility */
+    a:focus-visible {
+      color: var(--hover);
+      outline: 2px solid var(--highlight);
+      outline-offset: 3px;
+      border-radius: 4px;
+    }
+
+    /* Technical: skip link for keyboard/screen reader users */
+    .skip-link {
+      position: absolute;
+      left: -999px;
+      top: 0;
+      background: rgba(0,0,0,0.75);
+      border: 1px solid var(--card-border);
+      padding: 0.6rem 0.8rem;
+      border-radius: 10px;
+      color: var(--text);
+      z-index: 9999;
+    }
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
 
     header { text-align: center; padding: 3rem 1rem 1rem; }
 
@@ -75,6 +101,16 @@
       text-align: center;
       margin-bottom: 2rem;
     }
+
+    /* Technical: semantic list styling for nav (replaces the div-based nav) */
+    .nav-primary {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: inline-block;
+      text-align: left;
+    }
+    .nav-primary li { margin: 0.25rem 0; }
 
     .nav-secondary {
       opacity: 0.75;
@@ -94,6 +130,14 @@
       font-size: 2.1rem;
       margin-top: 0;
       margin-bottom: 1rem;
+    }
+
+    /* Technical: replace inline heading styles with a class */
+    .section-subtitle {
+      font-family: "VT323", monospace;
+      font-size: 1.6rem;
+      margin-top: 2rem;
+      margin-bottom: 0.8rem;
     }
 
     .tagline {
@@ -117,30 +161,44 @@
 
     @media (max-width: 600px) {
       h2.section-title { font-size: 1.8rem; }
+      .section-subtitle { font-size: 1.45rem; }
     }
   </style>
 </head>
 
-<body>
-  <header>
-    <a href="/"><img src="/index_files/rae2.png" alt="Rae logo" class="logo"></a>
+<!-- Technical: fix broken #top anchor (and remove duplicate <body>) -->
+<body id="top">
+  <!-- Technical: skip link target is #content -->
+  <a class="skip-link" href="#content">Skip to content</a>
 
-    <nav>
-      <div>
-        $ <strong>cd</strong> <a href="https://raelog.net">blog</a> /
-        $ <strong>cd</strong> <a href="/whoami" aria-current="page"><strong>whoami</strong></a> /
-        $ <strong>cd</strong> <a href="/contact">contact</a>
-      </div>
+  <header>
+    <a href="/" aria-label="Home"><img src="/index_files/rae2.png" alt="Rae logo" class="logo"></a>
+
+    <!-- Technical: semantic nav + aria-label -->
+    <nav aria-label="Site">
+      <ul class="nav-primary">
+        <li>
+          $ <strong>cd</strong> <a href="https://raelog.net">blog</a> /
+        </li>
+        <li>
+          $ <strong>cd</strong> <a href="/whoami" aria-current="page"><strong>whoami</strong></a> /
+        </li>
+        <li>
+          $ <strong>cd</strong> <a href="/contact">contact</a>
+        </li>
+      </ul>
 
       <div class="nav-secondary">
         @ <a rel="me" href="https://kolektiva.social/@rae">mastodon</a> /
-        <a href="https://pixelfed.social/@rae">pixelfed</a> /
+        <!-- Technical: add rel="me" here too -->
+        <a rel="me" href="https://pixelfed.social/@rae">pixelfed</a> /
         <a href="https://github.com/raelovejoy">github</a>
       </div>
     </nav>
   </header>
 
-  <main>
+  <!-- Technical: add id for skip link target -->
+  <main id="content">
     <h2 class="section-title">/whoami</h2>
 
     <p class="tagline">
@@ -149,15 +207,17 @@
       ideas, and everyday life.
     </p>
 
-    <h3 class="section-title" style="font-size: 1.6rem;">What I'm doing right now</h3>
+    <h3 class="section-subtitle">What I'm doing right now</h3>
     <ul>
       <li>refining my homelab + self-hosted tools</li>
+      <li>building and refining personal web dev projects and expiriments (like this)</li>
+      <li>working across many small GitHub projects, often exploratory or infrastructure-adjacent.</li>
       <li>writing small notes, zines, and reflective pieces</li>
       <li>walking, biking, making things by hand</li>
-      <li>exploring solarpunk + liberation-aligned tech ideas</li>
+      <li>exploring open source and liberation-aligned tech ideas</li>
     </ul>
 
-    <h3 class="section-title" style="font-size: 1.6rem;">What I care about</h3>
+    <h3 class="section-subtitle">What I care about</h3>
     <p>
       I'm drawn to systems — technical, social, ecological, internal — and how they shape
       the ways we relate and live. I value curiosity, cooperation, thoughtful design, and
@@ -165,7 +225,7 @@
       and building with intention.
     </p>
 
-    <h3 class="section-title" style="font-size: 1.6rem;">Creative + technical interests</h3>
+    <h3 class="section-subtitle">Creative + technical interests</h3>
     <ul>
       <li>Linux, self-hosting, resilient networks</li>
       <li>writing, zines, visual/system design</li>
@@ -174,7 +234,7 @@
       <li>systems thinking + future-oriented ideas</li>
     </ul>
 
-    <h3 class="section-title" style="font-size: 1.6rem;">If you want to see what I make</h3>
+    <h3 class="section-subtitle">If you want to see what I make</h3>
     <p>
       I keep a small, evolving studio space here (like a playground for ideas and technical experiments):
       <strong><a href="https://dev11.systems">dev11.systems</a></strong>
