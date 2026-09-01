@@ -1,2 +1,14 @@
-# Ignore macOS .DS_Store files
+# Dependencies
+node_modules/
+
+# OS/editor noise
 .DS_Store
+*.swp
+
+# Local environment
+.env
+.env.*
+!.env.example
+
+# Logs
+npm-debug.log*

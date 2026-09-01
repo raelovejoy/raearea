@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Rae Lovejoy — technologist, generalist, writer, maker, and systems thinker." />
+  <meta name="color-scheme" content="dark" />
+  <title>/whoami — Rae Lovejoy</title>
+  <link rel="icon" href="/favicon.png" type="image/png" />
+
+  <style>
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("/whoami/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "VT323";
+      src: url("/whoami/assets/fonts/VT323-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg-a: #120725;
+      --bg-b: #241044;
+      --bg-c: #321238;
+      --text: #eaf8ff;
+      --muted: #b7bdca;
+      --link: #70f8ff;
+      --hover: #ffd0f4;
+      --accent: #ff6fcc;
+      --border: rgba(255, 255, 255, 0.14);
+      --panel: rgba(0, 0, 0, 0.18);
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: linear-gradient(135deg, var(--bg-a), var(--bg-b), var(--bg-c));
+      background-attachment: fixed;
+      color: var(--text);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      scroll-behavior: smooth;
+    }
+
+    body {
+      min-height: 100%;
+      margin: 0;
+      line-height: 1.7;
+      font-size: 1rem;
+    }
+
+    a {
+      color: var(--link);
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 1px;
+    }
+
+    a:hover { color: var(--hover); }
+
+    a:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -9999px;
+      top: 0;
+      z-index: 1000;
+      padding: 0.65rem 0.8rem;
+      background: #050505;
+      border: 1px solid var(--border);
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.75rem 1.5rem 0;
+    }
+
+    .site-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-bottom: 1.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo img {
+      display: block;
+      width: 150px;
+      max-width: 35vw;
+      height: auto;
+    }
+
+    nav {
+      text-align: right;
+      font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    nav a { white-space: nowrap; }
+
+    .elsewhere {
+      color: var(--muted);
+      font-size: 0.82rem;
+    }
+
+    main {
+      width: min(100% - 3rem, var(--max));
+      margin: 2.5rem auto 4rem;
+    }
+
+    article { padding: 0.2rem 0; }
+
+    h1,
+    h2 {
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-weight: 400;
+      letter-spacing: 0.01em;
+    }
+
+    h1 {
+      margin: 0 0 1.1rem;
+      font-size: clamp(2.8rem, 9vw, 4.5rem);
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 0 18px rgba(112, 248, 255, 0.22);
+    }
+
+    h2 {
+      margin: 3.2rem 0 1rem;
+      font-size: clamp(1.85rem, 5vw, 2.35rem);
+      line-height: 1.1;
+      color: #fff;
+    }
+
+    p { margin: 0 0 1.15rem; }
+
+    ul {
+      margin: 0.7rem 0 1.4rem;
+      padding-left: 1.35rem;
+    }
+
+    li { margin: 0.55rem 0; }
+    strong { color: #fff; }
+
+    hr {
+      margin: 3.2rem 0 1.6rem;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    sub {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
+      text-align: center;
+    }
+
+    @media (max-width: 640px) {
+      header { padding-top: 2rem; }
+
+      .site-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav { text-align: left; }
+      main { width: min(100% - 2rem, var(--max)); }
+    }
+  </style>
+</head>
+<body id="top">
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <header>
+    <div class="site-head">
+      <a class="logo" href="/" aria-label="Rae area home">
+        <img src="/index_files/raearea.png" alt="Rae area" />
+      </a>
+
+      <nav aria-label="Site navigation">
+        <div>
+          <a href="/">/</a> ·
+          <a href="/whoami" aria-current="page">/whoami</a> ·
+          <a href="https://raelog.net/">raelog</a> ·
+          <a href="/contact">/contact</a>
+        </div>
+        <div class="elsewhere">
+          @ <a rel="me" href="https://kolektiva.social/@raelovejoy">mastodon</a> ·
+          <a rel="me" href="https://pixelfed.social/raelovejoy">pixelfed</a> ·
+          <a href="https://github.com/raelovejoy">github</a>
+        </div>
+      </nav>
+    </div>
+  </header>
+
+  <main id="content">
+    <article>
+<!--CONTENT-->
+    </article>
+  </main>
+
+  <footer>
+    <a href="#top">↑ top</a> · this page is generated from <code>whoami/whoami.md</code>
+  </footer>
+</body>
+</html>
