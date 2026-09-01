@@ -92,5 +92,5 @@ if (!template.includes("<!--CONTENT-->")) {
 }
 
 const output = template.replace("<!--CONTENT-->", renderMarkdown(markdown));
-fs.writeFileSync(outputPath, `${output}\n`);
+fs.writeFileSync(outputPath, output);
 console.log(`[whoami] built ${path.relative(process.cwd(), outputPath)}`);
