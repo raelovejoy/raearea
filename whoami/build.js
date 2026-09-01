@@ -69,6 +69,16 @@ function renderMarkdown(markdown) {
       continue;
     }
 
+    const disclosureTag =
+      /^<\/?details(?:\s[^>]*)?>$/.test(trimmed) ||
+      /^<summary>.*<\/summary>$/.test(trimmed);
+    if (disclosureTag) {
+      flushParagraph();
+      closeList();
+      out.push(trimmed);
+      continue;
+    }
+
     if (/^<sub>.*<\/sub>$/.test(trimmed)) {
       flushParagraph();
       closeList();

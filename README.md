@@ -27,6 +27,10 @@ The site is intentionally lightweight: mostly static HTML, a custom domain, and 
 
 `whoami/whoami.md` is the source of truth.
 
+The small renderer supports headings, paragraphs, unordered lists, bold text,
+inline code, links, horizontal rules, and native `<details>` / `<summary>`
+disclosures for the page's optional deeper sections.
+
 ```bash
 npm run build
 ```

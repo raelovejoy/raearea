@@ -1,56 +1,89 @@
 # /whoami
 
-Hi. I'm **Rae Lovejoy** (they/he), a technologist, generalist, writer, and maker based in San Francisco.
-
-I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures. A lot of my work begins with some version of: **Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?**
+Hi, I'm **Rae** (they/he). I'm a curious, systems-minded generalist based in San Francisco. Most of my free time goes into exploring how things connect—in technology, art, ideas, community, and everyday life.
 
 This site is a mesh of signals. A recursive self-description. A living document. **Not a brand.**
 
-## $ whatis practice
+## $ right now
 
-- **Technical:** Linux, networking, self-hosting, security, homelabs, local-first tools, automation, hardware, and resilient infrastructure.
-- **Creative:** writing, zines, photography, sound, visual experiments, storytelling, and strange little web things.
-- **Material:** electronics, sewing, 3D printing, carpentry, bicycles, repair, reuse, and making things with whatever is available.
-- **Systems:** tracing relationships across technical, social, ecological, political, emotional, and conceptual layers rather than pretending they are separate problems.
-- **Community:** treating care, mutual aid, discoverability, shared knowledge, governance, and infrastructure as things people can deliberately build together.
-- **Recursive:** returning, revising, connecting, forking, recombining. Most things here are unfinished on purpose.
+- refining my homelab, network, and self-hosted tools
+- learning more about IT, networking, and security
+- writing, worldbuilding, and turning notes into connected projects
+- making, repairing, organizing, and occasionally finishing things
 
-## $ whatis current-threads
+## $ what I care about
 
-These are not really separate lanes. They overlap, nest inside one another, and keep exchanging parts.
+I'm drawn to systems—technical, social, ecological, internal—and how they shape the ways we relate and live. I value curiosity, cooperation, thoughtful design, autonomy, connection, community, and humane approaches to technology.
 
-- **[Root Sequence](https://rootsequence.systems/)** — the larger ecology: notes, frameworks, zines, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.
-- **Community Infrastructure** — modular, adaptable infrastructure for real communities: software, shared hardware, local/trusted AI, governance, legal adaptability, mutual aid, community discovery, and systems that can work with or without formal institutions.
+## $ go deeper
+
+The short version above is still the whole answer. The rest is context, if you want it.
+
+<details>
+<summary>$ whatis generalist</summary>
+
+Generalist is the least-wrong shorthand I've found. I move between IT systems, code, networks, and security; writing, zines, photography, sound, visual work, and speculative futures; and material practices like electronics, sewing, 3D printing, carpentry, bicycles, repair, and reuse.
+
+I don't really experience these as separate lanes. The borders feel more administrative than real. Each skill or medium is another way to understand and reshape how people, machines, ideas, and environments interact.
+
+</details>
+
+<details>
+<summary>$ whatis systems-lens</summary>
+
+I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.
+
+A lot of my work begins with some version of: **Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?**
+
+I like making connections that were already there but easy to miss. Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects.
+
+</details>
+
+<details>
+<summary>$ whatis project-ecology</summary>
+
+These aren't really separate projects. They overlap, nest inside one another, and keep exchanging parts.
+
+- **[Root Sequence](https://rootsequence.systems/)** — the larger ecology: notes, frameworks, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.
+- **No One Noticed / Coherent World** — speculative fiction and systems design in the same universe, exploring what happens when humans stop treating the present as the edge of possibility.
 - **[Museum of Ordinary Life](https://museumofordinarylife.org/)** — an archive for the objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems that make up ordinary life while they are still ordinary.
-- **No One Noticed / Coherent World** — speculative fiction and systems design meeting in the same universe: imagining what happens when humans stop treating the present social configuration as the edge of possibility.
+- **Community Infrastructure** — modular, adaptable infrastructure for real communities: software, shared hardware, trusted local AI, governance, legal adaptability, mutual aid, and community discovery.
 - **Being Humane / Being Humane Atlas** — mapping cause and effect, power, accountability, vulnerability, responsibility, and more humane ways of structuring systems.
 - **[Liberation Mass](https://github.com/Root-Sequence/liberation-mass)** — experiments around ritual, solidarity, reflection, connection, and liberation without requiring hierarchy or dogma.
 - **Homelab + local infrastructure** — where a lot of the abstract ideas get stress-tested against actual computers, networks, failures, constraints, and maintenance.
-- **[raelog](https://raelog.net/)** — notes and writing that do not always belong inside a project repository.
+- **[raelog](https://raelog.net/)** — notes and writing that don't always belong inside a project repository.
 
-## $ whatis orientation
+</details>
 
-- Curiosity before certainty.
-- Cooperation over domination.
-- Community and mutual aid as infrastructure, not afterthoughts.
-- Technology that is understandable, adaptable, repairable, and locally controllable when useful.
-- Complexity without flattening everything into false binaries or neat categories.
-- Accountability that follows power and consequence instead of socializing vulnerability while privatizing responsibility.
-- Intelligence as something to cultivate and share, not merely own, rank, or extract from.
-- Nature as something with value beyond what humans can turn it into.
-- Liberation as a direction and relationship: unfinished, relational, recursive, and incompatible with somebody else's domination.
-- Building small things that can connect into larger things without requiring a central authority to make them meaningful.
+<details>
+<summary>$ whatis orientation</summary>
 
-## $ why
+- curiosity before certainty
+- cooperation over domination
+- community and mutual aid as infrastructure, not afterthoughts
+- technology that is understandable, adaptable, repairable, and locally controllable when useful
+- complexity without flattening everything into false binaries or neat categories
+- accountability that follows power and consequence instead of socializing vulnerability while privatizing responsibility
+- intelligence as something to cultivate and share, not merely own, rank, or extract from
+- nature as something with value beyond what humans can turn it into
+- liberation as an unfinished, relational, recursive direction incompatible with somebody else's domination
+- building small things that can connect into larger things without requiring a central authority to make them meaningful
 
-I like making connections that were already there but easy to miss.
+</details>
 
-Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects. The medium changes; the underlying impulse usually does not.
+<details>
+<summary>$ why</summary>
 
-I'm interested in the gap between **the world we inherited** and **the worlds humans are demonstrably capable of making**.
+The medium changes; the underlying impulse usually doesn't.
+
+I'm interested in the gap between **the world we inherited** and **the worlds humans are demonstrably capable of making**. Most things here are unfinished on purpose: returning, revising, connecting, forking, and recombining are part of the practice.
+
+</details>
 
 ## $ find rae
 
+- [dev11.systems](https://dev11.systems/) — a small, evolving studio space for ideas and technical experiments
+- [Root Sequence](https://rootsequence.systems/)
 - [GitHub](https://github.com/raelovejoy)
 - [Mastodon](https://kolektiva.social/@raelovejoy)
 - [Pixelfed](https://pixelfed.social/raelovejoy)

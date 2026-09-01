@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rae Lovejoy — technologist, generalist, writer, maker, and systems thinker." />
+  <meta name="description" content="Rae — a curious, systems-minded generalist exploring technology, art, community, and everyday life." />
   <meta name="color-scheme" content="dark" />
   <title>/whoami — Rae Lovejoy</title>
   <link rel="icon" href="/favicon.png" type="image/png" />
@@ -160,6 +160,57 @@
     li { margin: 0.55rem 0; }
     strong { color: #fff; }
 
+    details {
+      margin: 0.85rem 0;
+      padding: 0 1.1rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 0.6rem;
+    }
+
+    summary {
+      position: relative;
+      padding: 0.9rem 2.5rem 0.9rem 0;
+      color: var(--link);
+      cursor: pointer;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(1.45rem, 4vw, 1.8rem);
+      line-height: 1.2;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: var(--muted);
+      content: "[+]";
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      transform: translateY(-50%);
+    }
+
+    details[open] { padding-bottom: 0.15rem; }
+
+    details[open] summary {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    details[open] summary::after { content: "[−]"; }
+
+    summary:hover { color: var(--hover); }
+
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    details > :last-child { margin-bottom: 1rem; }
+
     hr {
       margin: 3.2rem 0 1.6rem;
       border: 0;
@@ -191,6 +242,10 @@
 
       nav { text-align: left; }
       main { width: min(100% - 2rem, var(--max)); }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
     }
   </style>
 </head>

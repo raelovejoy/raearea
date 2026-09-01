@@ -3,7 +3,7 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Rae Lovejoy — technologist, generalist, writer, maker, and systems thinker." />
+  <meta name="description" content="Rae — a curious, systems-minded generalist exploring technology, art, community, and everyday life." />
   <meta name="color-scheme" content="dark" />
   <title>/whoami — Rae Lovejoy</title>
   <link rel="icon" href="/favicon.png" type="image/png" />
@@ -160,6 +160,57 @@
     li { margin: 0.55rem 0; }
     strong { color: #fff; }
 
+    details {
+      margin: 0.85rem 0;
+      padding: 0 1.1rem;
+      background: var(--panel);
+      border: 1px solid var(--border);
+      border-radius: 0.6rem;
+    }
+
+    summary {
+      position: relative;
+      padding: 0.9rem 2.5rem 0.9rem 0;
+      color: var(--link);
+      cursor: pointer;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(1.45rem, 4vw, 1.8rem);
+      line-height: 1.2;
+      list-style: none;
+    }
+
+    summary::-webkit-details-marker { display: none; }
+
+    summary::after {
+      position: absolute;
+      top: 50%;
+      right: 0;
+      color: var(--muted);
+      content: "[+]";
+      font-family: "IBM Plex Mono", monospace;
+      font-size: 0.85rem;
+      transform: translateY(-50%);
+    }
+
+    details[open] { padding-bottom: 0.15rem; }
+
+    details[open] summary {
+      margin-bottom: 1rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    details[open] summary::after { content: "[−]"; }
+
+    summary:hover { color: var(--hover); }
+
+    summary:focus-visible {
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
+      border-radius: 4px;
+    }
+
+    details > :last-child { margin-bottom: 1rem; }
+
     hr {
       margin: 3.2rem 0 1.6rem;
       border: 0;
@@ -192,6 +243,10 @@
       nav { text-align: left; }
       main { width: min(100% - 2rem, var(--max)); }
     }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
   </style>
 </head>
 <body id="top">
@@ -222,49 +277,68 @@
   <main id="content">
     <article>
 <h1>/whoami</h1>
-<p>Hi. I'm <strong>Rae Lovejoy</strong> (they/he), a technologist, generalist, writer, and maker based in San Francisco.</p>
-<p>I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures. A lot of my work begins with some version of: <strong>Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?</strong></p>
+<p>Hi, I'm <strong>Rae</strong> (they/he). I'm a curious, systems-minded generalist based in San Francisco. Most of my free time goes into exploring how things connect—in technology, art, ideas, community, and everyday life.</p>
 <p>This site is a mesh of signals. A recursive self-description. A living document. <strong>Not a brand.</strong></p>
-<h2>$ whatis practice</h2>
+<h2>$ right now</h2>
 <ul>
-  <li><strong>Technical:</strong> Linux, networking, self-hosting, security, homelabs, local-first tools, automation, hardware, and resilient infrastructure.</li>
-  <li><strong>Creative:</strong> writing, zines, photography, sound, visual experiments, storytelling, and strange little web things.</li>
-  <li><strong>Material:</strong> electronics, sewing, 3D printing, carpentry, bicycles, repair, reuse, and making things with whatever is available.</li>
-  <li><strong>Systems:</strong> tracing relationships across technical, social, ecological, political, emotional, and conceptual layers rather than pretending they are separate problems.</li>
-  <li><strong>Community:</strong> treating care, mutual aid, discoverability, shared knowledge, governance, and infrastructure as things people can deliberately build together.</li>
-  <li><strong>Recursive:</strong> returning, revising, connecting, forking, recombining. Most things here are unfinished on purpose.</li>
+  <li>refining my homelab, network, and self-hosted tools</li>
+  <li>learning more about IT, networking, and security</li>
+  <li>writing, worldbuilding, and turning notes into connected projects</li>
+  <li>making, repairing, organizing, and occasionally finishing things</li>
 </ul>
-<h2>$ whatis current-threads</h2>
-<p>These are not really separate lanes. They overlap, nest inside one another, and keep exchanging parts.</p>
+<h2>$ what I care about</h2>
+<p>I'm drawn to systems—technical, social, ecological, internal—and how they shape the ways we relate and live. I value curiosity, cooperation, thoughtful design, autonomy, connection, community, and humane approaches to technology.</p>
+<h2>$ go deeper</h2>
+<p>The short version above is still the whole answer. The rest is context, if you want it.</p>
+<details>
+<summary>$ whatis generalist</summary>
+<p>Generalist is the least-wrong shorthand I've found. I move between IT systems, code, networks, and security; writing, zines, photography, sound, visual work, and speculative futures; and material practices like electronics, sewing, 3D printing, carpentry, bicycles, repair, and reuse.</p>
+<p>I don't really experience these as separate lanes. The borders feel more administrative than real. Each skill or medium is another way to understand and reshape how people, machines, ideas, and environments interact.</p>
+</details>
+<details>
+<summary>$ whatis systems-lens</summary>
+<p>I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.</p>
+<p>A lot of my work begins with some version of: <strong>Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?</strong></p>
+<p>I like making connections that were already there but easy to miss. Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects.</p>
+</details>
+<details>
+<summary>$ whatis project-ecology</summary>
+<p>These aren't really separate projects. They overlap, nest inside one another, and keep exchanging parts.</p>
 <ul>
-  <li><strong><a href="https://rootsequence.systems/">Root Sequence</a></strong> — the larger ecology: notes, frameworks, zines, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.</li>
-  <li><strong>Community Infrastructure</strong> — modular, adaptable infrastructure for real communities: software, shared hardware, local/trusted AI, governance, legal adaptability, mutual aid, community discovery, and systems that can work with or without formal institutions.</li>
+  <li><strong><a href="https://rootsequence.systems/">Root Sequence</a></strong> — the larger ecology: notes, frameworks, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.</li>
+  <li><strong>No One Noticed / Coherent World</strong> — speculative fiction and systems design in the same universe, exploring what happens when humans stop treating the present as the edge of possibility.</li>
   <li><strong><a href="https://museumofordinarylife.org/">Museum of Ordinary Life</a></strong> — an archive for the objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems that make up ordinary life while they are still ordinary.</li>
-  <li><strong>No One Noticed / Coherent World</strong> — speculative fiction and systems design meeting in the same universe: imagining what happens when humans stop treating the present social configuration as the edge of possibility.</li>
+  <li><strong>Community Infrastructure</strong> — modular, adaptable infrastructure for real communities: software, shared hardware, trusted local AI, governance, legal adaptability, mutual aid, and community discovery.</li>
   <li><strong>Being Humane / Being Humane Atlas</strong> — mapping cause and effect, power, accountability, vulnerability, responsibility, and more humane ways of structuring systems.</li>
   <li><strong><a href="https://github.com/Root-Sequence/liberation-mass">Liberation Mass</a></strong> — experiments around ritual, solidarity, reflection, connection, and liberation without requiring hierarchy or dogma.</li>
   <li><strong>Homelab + local infrastructure</strong> — where a lot of the abstract ideas get stress-tested against actual computers, networks, failures, constraints, and maintenance.</li>
-  <li><strong><a href="https://raelog.net/">raelog</a></strong> — notes and writing that do not always belong inside a project repository.</li>
+  <li><strong><a href="https://raelog.net/">raelog</a></strong> — notes and writing that don't always belong inside a project repository.</li>
 </ul>
-<h2>$ whatis orientation</h2>
+</details>
+<details>
+<summary>$ whatis orientation</summary>
 <ul>
-  <li>Curiosity before certainty.</li>
-  <li>Cooperation over domination.</li>
-  <li>Community and mutual aid as infrastructure, not afterthoughts.</li>
-  <li>Technology that is understandable, adaptable, repairable, and locally controllable when useful.</li>
-  <li>Complexity without flattening everything into false binaries or neat categories.</li>
-  <li>Accountability that follows power and consequence instead of socializing vulnerability while privatizing responsibility.</li>
-  <li>Intelligence as something to cultivate and share, not merely own, rank, or extract from.</li>
-  <li>Nature as something with value beyond what humans can turn it into.</li>
-  <li>Liberation as a direction and relationship: unfinished, relational, recursive, and incompatible with somebody else's domination.</li>
-  <li>Building small things that can connect into larger things without requiring a central authority to make them meaningful.</li>
+  <li>curiosity before certainty</li>
+  <li>cooperation over domination</li>
+  <li>community and mutual aid as infrastructure, not afterthoughts</li>
+  <li>technology that is understandable, adaptable, repairable, and locally controllable when useful</li>
+  <li>complexity without flattening everything into false binaries or neat categories</li>
+  <li>accountability that follows power and consequence instead of socializing vulnerability while privatizing responsibility</li>
+  <li>intelligence as something to cultivate and share, not merely own, rank, or extract from</li>
+  <li>nature as something with value beyond what humans can turn it into</li>
+  <li>liberation as an unfinished, relational, recursive direction incompatible with somebody else's domination</li>
+  <li>building small things that can connect into larger things without requiring a central authority to make them meaningful</li>
 </ul>
-<h2>$ why</h2>
-<p>I like making connections that were already there but easy to miss.</p>
-<p>Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects. The medium changes; the underlying impulse usually does not.</p>
-<p>I'm interested in the gap between <strong>the world we inherited</strong> and <strong>the worlds humans are demonstrably capable of making</strong>.</p>
+</details>
+<details>
+<summary>$ why</summary>
+<p>The medium changes; the underlying impulse usually doesn't.</p>
+<p>I'm interested in the gap between <strong>the world we inherited</strong> and <strong>the worlds humans are demonstrably capable of making</strong>. Most things here are unfinished on purpose: returning, revising, connecting, forking, and recombining are part of the practice.</p>
+</details>
 <h2>$ find rae</h2>
 <ul>
+  <li><a href="https://dev11.systems/">dev11.systems</a> — a small, evolving studio space for ideas and technical experiments</li>
+  <li><a href="https://rootsequence.systems/">Root Sequence</a></li>
   <li><a href="https://github.com/raelovejoy">GitHub</a></li>
   <li><a href="https://kolektiva.social/@raelovejoy">Mastodon</a></li>
   <li><a href="https://pixelfed.social/raelovejoy">Pixelfed</a></li>
