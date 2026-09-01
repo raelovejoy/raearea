@@ -3,13 +3,11 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <title>/whoami</title>
-  <meta name="description" content="Rae Lovejoy — a curious, systems-minded human exploring the intersections of technology, art, and everyday life." />
+  <meta name="description" content="Rae Lovejoy — technologist, generalist, writer, maker, and systems thinker." />
+  <meta name="color-scheme" content="dark" />
+  <title>/whoami — Rae Lovejoy</title>
+  <link rel="icon" href="/favicon.png" type="image/png" />
 
-  <!-- Technical: correct favicon MIME type for a PNG -->
-  <link rel="icon" href="/favicon.png" type="image/png">
-
-  <!-- Self-hosted fonts -->
   <style>
     @font-face {
       font-family: "IBM Plex Mono";
@@ -18,233 +16,268 @@
       font-style: normal;
       font-display: swap;
     }
+
     @font-face {
       font-family: "VT323";
-      src: url("/whoami/assets/fonts/VT323-Regular.woff2") format("woff2");
+      src: url("/whoami/assets/fonts/VT323-Regular.ttf") format("truetype");
       font-weight: 400;
       font-style: normal;
       font-display: swap;
     }
 
     :root {
-      --background: linear-gradient(135deg, #14082d, #231047, #2f1140);
-      --text: #e6f8ff;
-      --link: #66ffff;
-      --hover: #ffccff;
-      --highlight: #ff66cc;
-      --card-bg: rgba(0,0,0,0.22);
-      --card-border: rgba(255,255,255,0.14);
+      --bg-a: #120725;
+      --bg-b: #241044;
+      --bg-c: #321238;
+      --text: #eaf8ff;
+      --muted: #b7bdca;
+      --link: #70f8ff;
+      --hover: #ffd0f4;
+      --accent: #ff6fcc;
+      --border: rgba(255, 255, 255, 0.14);
+      --panel: rgba(0, 0, 0, 0.18);
+      --max: 860px;
     }
 
     * { box-sizing: border-box; }
 
     html {
-      background: var(--background);
+      min-height: 100%;
+      background: linear-gradient(135deg, var(--bg-a), var(--bg-b), var(--bg-c));
       background-attachment: fixed;
       color: var(--text);
-      margin: 0;
-      padding: env(safe-area-inset-top, 0) env(safe-area-inset-right, 0)
-               env(safe-area-inset-bottom, 0) env(safe-area-inset-left, 0);
-      font-family: "IBM Plex Mono", monospace;
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      scroll-behavior: smooth;
     }
 
     body {
+      min-height: 100%;
       margin: 0;
-      line-height: 1.65;
+      line-height: 1.7;
       font-size: 1rem;
-      background: transparent;
     }
 
     a {
       color: var(--link);
-      text-decoration: underline;
-      text-underline-offset: 0.15em;
+      text-underline-offset: 0.16em;
+      text-decoration-thickness: 1px;
     }
+
     a:hover { color: var(--hover); }
 
-    /* Technical: stronger keyboard focus visibility */
     a:focus-visible {
-      color: var(--hover);
-      outline: 2px solid var(--highlight);
-      outline-offset: 3px;
+      outline: 2px solid var(--accent);
+      outline-offset: 4px;
       border-radius: 4px;
     }
 
-    /* Technical: skip link for keyboard/screen reader users */
     .skip-link {
       position: absolute;
-      left: -999px;
+      left: -9999px;
       top: 0;
-      background: rgba(0,0,0,0.75);
-      border: 1px solid var(--card-border);
-      padding: 0.6rem 0.8rem;
-      border-radius: 10px;
-      color: var(--text);
-      z-index: 9999;
+      z-index: 1000;
+      padding: 0.65rem 0.8rem;
+      background: #050505;
+      border: 1px solid var(--border);
     }
+
     .skip-link:focus {
       left: 1rem;
       top: 1rem;
     }
 
-    header { text-align: center; padding: 3rem 1rem 1rem; }
+    header {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 2.75rem 1.5rem 0;
+    }
 
-    img.logo {
-      width: 240px;
-      max-width: 90%;
+    .site-head {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 1.5rem;
+      padding-bottom: 1.35rem;
+      border-bottom: 1px solid var(--border);
+    }
+
+    .logo img {
       display: block;
-      margin: 0 auto 1.2rem;
+      width: 150px;
+      max-width: 35vw;
+      height: auto;
     }
 
     nav {
-      font-size: 1rem;
-      text-align: center;
-      margin-bottom: 2rem;
-    }
-
-    /* Technical: semantic list styling for nav (replaces the div-based nav) */
-    .nav-primary {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: inline-block;
-      text-align: left;
-    }
-    .nav-primary li { margin: 0.25rem 0; }
-
-    .nav-secondary {
-      opacity: 0.75;
-      display: inline-block;
-      margin-top: 0.4rem;
+      text-align: right;
       font-size: 0.9rem;
+      line-height: 1.8;
+    }
+
+    nav a { white-space: nowrap; }
+
+    .elsewhere {
+      color: var(--muted);
+      font-size: 0.82rem;
     }
 
     main {
-      max-width: 850px;
-      margin: 2.5rem auto;
-      padding: 0 1.5rem 3rem;
+      width: min(100% - 3rem, var(--max));
+      margin: 2.5rem auto 4rem;
     }
 
-    h2.section-title {
-      font-family: "VT323", monospace;
-      font-size: 2.1rem;
-      margin-top: 0;
-      margin-bottom: 1rem;
+    article { padding: 0.2rem 0; }
+
+    h1,
+    h2 {
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-weight: 400;
+      letter-spacing: 0.01em;
     }
 
-    /* Technical: replace inline heading styles with a class */
-    .section-subtitle {
-      font-family: "VT323", monospace;
-      font-size: 1.6rem;
-      margin-top: 2rem;
-      margin-bottom: 0.8rem;
+    h1 {
+      margin: 0 0 1.1rem;
+      font-size: clamp(2.8rem, 9vw, 4.5rem);
+      line-height: 1;
+      color: #fff;
+      text-shadow: 0 0 18px rgba(112, 248, 255, 0.22);
     }
 
-    .tagline {
-      border-left: 3px solid var(--highlight);
-      padding-left: 0.8rem;
-      margin-bottom: 1.4rem;
-      opacity: 0.95;
-      font-size: 1.05rem;
+    h2 {
+      margin: 3.2rem 0 1rem;
+      font-size: clamp(1.85rem, 5vw, 2.35rem);
+      line-height: 1.1;
+      color: #fff;
     }
 
-    ul { padding-left: 1.4rem; margin-top: 0.4rem; }
+    p { margin: 0 0 1.15rem; }
 
-    .footer-note {
-      opacity: 0.65;
+    ul {
+      margin: 0.7rem 0 1.4rem;
+      padding-left: 1.35rem;
+    }
+
+    li { margin: 0.55rem 0; }
+    strong { color: #fff; }
+
+    hr {
+      margin: 3.2rem 0 1.6rem;
+      border: 0;
+      border-top: 1px solid var(--border);
+    }
+
+    sub {
+      color: var(--muted);
+      font-size: 0.8rem;
+    }
+
+    footer {
+      max-width: var(--max);
+      margin: 0 auto;
+      padding: 0 1.5rem 2.5rem;
+      color: var(--muted);
+      font-size: 0.8rem;
       text-align: center;
-      margin-top: 3rem;
-      font-size: 0.9rem;
     }
 
-    .back { text-align: center; margin-top: 3rem; }
+    @media (max-width: 640px) {
+      header { padding-top: 2rem; }
 
-    @media (max-width: 600px) {
-      h2.section-title { font-size: 1.8rem; }
-      .section-subtitle { font-size: 1.45rem; }
+      .site-head {
+        align-items: flex-start;
+        flex-direction: column;
+        gap: 1rem;
+      }
+
+      nav { text-align: left; }
+      main { width: min(100% - 2rem, var(--max)); }
     }
   </style>
 </head>
-
-<!-- Technical: fix broken #top anchor (and remove duplicate <body>) -->
 <body id="top">
-  <!-- Technical: skip link target is #content -->
   <a class="skip-link" href="#content">Skip to content</a>
 
   <header>
-    <a href="/" aria-label="Home"><img src="/index_files/rae2.png" alt="Rae logo" class="logo"></a>
+    <div class="site-head">
+      <a class="logo" href="/" aria-label="Rae area home">
+        <img src="/index_files/raearea.png" alt="Rae area" />
+      </a>
 
-    <!-- Technical: semantic nav + aria-label -->
-    <nav aria-label="Site">
-      <ul class="nav-primary">
-        <li>
-          $ <strong>cd</strong> <a href="https://raelog.net">blog</a> /
-        </li>
-        <li>
-          $ <strong>cd</strong> <a href="/whoami" aria-current="page"><strong>whoami</strong></a> /
-        </li>
-        <li>
-          $ <strong>cd</strong> <a href="/contact">contact</a>
-        </li>
-      </ul>
-
-      <div class="nav-secondary">
-        @ <a rel="me" href="https://kolektiva.social/@rae">mastodon</a> /
-        <!-- Technical: add rel="me" here too -->
-        <a rel="me" href="https://pixelfed.social/@rae">pixelfed</a> /
-        <a href="https://github.com/raelovejoy">github</a>
-      </div>
-    </nav>
+      <nav aria-label="Site navigation">
+        <div>
+          <a href="/">/</a> ·
+          <a href="/whoami" aria-current="page">/whoami</a> ·
+          <a href="https://raelog.net/">raelog</a> ·
+          <a href="/contact">/contact</a>
+        </div>
+        <div class="elsewhere">
+          @ <a rel="me" href="https://kolektiva.social/@raelovejoy">mastodon</a> ·
+          <a rel="me" href="https://pixelfed.social/raelovejoy">pixelfed</a> ·
+          <a href="https://github.com/raelovejoy">github</a>
+        </div>
+      </nav>
+    </div>
   </header>
 
-  <!-- Technical: add id for skip link target -->
   <main id="content">
-    <h2 class="section-title">/whoami</h2>
-
-    <p class="tagline">
-      Hi, I'm Rae (they/he). I'm a curious, systems-minded person based in San Francisco.
-      Most of my free time goes into exploring how things connect — in technology, art,
-      ideas, and everyday life.
-    </p>
-
-    <h3 class="section-subtitle">What I'm doing right now</h3>
-    <ul>
-      <li>refining my homelab + self-hosted tools</li>
-      <li>building and refining personal web dev projects and expiriments (like this)</li>
-      <li>working across many small GitHub projects, often exploratory or infrastructure-adjacent.</li>
-      <li>writing small notes, zines, and reflective pieces</li>
-      <li>walking, biking, making things by hand</li>
-      <li>exploring open source and liberation-aligned tech ideas</li>
-    </ul>
-
-    <h3 class="section-subtitle">What I care about</h3>
-    <p>
-      I'm drawn to systems — technical, social, ecological, internal — and how they shape
-      the ways we relate and live. I value curiosity, cooperation, thoughtful design, and
-      humane approaches to technology. Much of what I do centers on autonomy, connection, community,
-      and building with intention.
-    </p>
-
-    <h3 class="section-subtitle">Creative + technical interests</h3>
-    <ul>
-      <li>Linux, self-hosting, resilient networks</li>
-      <li>writing, zines, visual/system design</li>
-      <li>photography, sound, small media experiments</li>
-      <li>DIY/making (electronics, sewing, 3D printing, carpentry, etc.)</li>
-      <li>systems thinking + future-oriented ideas</li>
-    </ul>
-
-    <h3 class="section-subtitle">If you want to see what I make</h3>
-    <p>
-      I keep a small, evolving studio space here (like a playground for ideas and technical experiments):
-      <strong><a href="https://dev11.systems">dev11.systems</a></strong>
-    </p>
-
-    <p class="footer-note"><em>last updated: 2025-12-02 </em></p>
-
-    <div class="back">
-      <a href="#top" style="color: var(--link); text-decoration: none;">↑ back to top</a>
-    </div>
+    <article>
+<h1>/whoami</h1>
+<p>Hi. I'm <strong>Rae Lovejoy</strong> (they/he), a technologist, generalist, writer, and maker based in San Francisco.</p>
+<p>I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures. A lot of my work begins with some version of: <strong>Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?</strong></p>
+<p>This site is a mesh of signals. A recursive self-description. A living document. <strong>Not a brand.</strong></p>
+<h2>$ whatis practice</h2>
+<ul>
+  <li><strong>Technical:</strong> Linux, networking, self-hosting, security, homelabs, local-first tools, automation, hardware, and resilient infrastructure.</li>
+  <li><strong>Creative:</strong> writing, zines, photography, sound, visual experiments, storytelling, and strange little web things.</li>
+  <li><strong>Material:</strong> electronics, sewing, 3D printing, carpentry, bicycles, repair, reuse, and making things with whatever is available.</li>
+  <li><strong>Systems:</strong> tracing relationships across technical, social, ecological, political, emotional, and conceptual layers rather than pretending they are separate problems.</li>
+  <li><strong>Community:</strong> treating care, mutual aid, discoverability, shared knowledge, governance, and infrastructure as things people can deliberately build together.</li>
+  <li><strong>Recursive:</strong> returning, revising, connecting, forking, recombining. Most things here are unfinished on purpose.</li>
+</ul>
+<h2>$ whatis current-threads</h2>
+<p>These are not really separate lanes. They overlap, nest inside one another, and keep exchanging parts.</p>
+<ul>
+  <li><strong><a href="https://rootsequence.systems/">Root Sequence</a></strong> — the larger ecology: notes, frameworks, zines, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.</li>
+  <li><strong>Community Infrastructure</strong> — modular, adaptable infrastructure for real communities: software, shared hardware, local/trusted AI, governance, legal adaptability, mutual aid, community discovery, and systems that can work with or without formal institutions.</li>
+  <li><strong><a href="https://museumofordinarylife.org/">Museum of Ordinary Life</a></strong> — an archive for the objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems that make up ordinary life while they are still ordinary.</li>
+  <li><strong>No One Noticed / Coherent World</strong> — speculative fiction and systems design meeting in the same universe: imagining what happens when humans stop treating the present social configuration as the edge of possibility.</li>
+  <li><strong>Being Humane / Being Humane Atlas</strong> — mapping cause and effect, power, accountability, vulnerability, responsibility, and more humane ways of structuring systems.</li>
+  <li><strong><a href="https://github.com/Root-Sequence/liberation-mass">Liberation Mass</a></strong> — experiments around ritual, solidarity, reflection, connection, and liberation without requiring hierarchy or dogma.</li>
+  <li><strong>Homelab + local infrastructure</strong> — where a lot of the abstract ideas get stress-tested against actual computers, networks, failures, constraints, and maintenance.</li>
+  <li><strong><a href="https://raelog.net/">raelog</a></strong> — notes and writing that do not always belong inside a project repository.</li>
+</ul>
+<h2>$ whatis orientation</h2>
+<ul>
+  <li>Curiosity before certainty.</li>
+  <li>Cooperation over domination.</li>
+  <li>Community and mutual aid as infrastructure, not afterthoughts.</li>
+  <li>Technology that is understandable, adaptable, repairable, and locally controllable when useful.</li>
+  <li>Complexity without flattening everything into false binaries or neat categories.</li>
+  <li>Accountability that follows power and consequence instead of socializing vulnerability while privatizing responsibility.</li>
+  <li>Intelligence as something to cultivate and share, not merely own, rank, or extract from.</li>
+  <li>Nature as something with value beyond what humans can turn it into.</li>
+  <li>Liberation as a direction and relationship: unfinished, relational, recursive, and incompatible with somebody else's domination.</li>
+  <li>Building small things that can connect into larger things without requiring a central authority to make them meaningful.</li>
+</ul>
+<h2>$ why</h2>
+<p>I like making connections that were already there but easy to miss.</p>
+<p>Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects. The medium changes; the underlying impulse usually does not.</p>
+<p>I'm interested in the gap between <strong>the world we inherited</strong> and <strong>the worlds humans are demonstrably capable of making</strong>.</p>
+<h2>$ find rae</h2>
+<ul>
+  <li><a href="https://github.com/raelovejoy">GitHub</a></li>
+  <li><a href="https://kolektiva.social/@raelovejoy">Mastodon</a></li>
+  <li><a href="https://pixelfed.social/raelovejoy">Pixelfed</a></li>
+  <li><a href="https://raelog.net/">raelog</a></li>
+  <li><a href="/contact">/contact</a></li>
+</ul>
+<hr>
+<sub>Last updated: September 1, 2026</sub>
+    </article>
   </main>
+
+  <footer>
+    <a href="#top">↑ top</a> · this page is generated from <code>whoami/whoami.md</code>
+  </footer>
 </body>
 </html>
