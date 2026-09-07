@@ -3,14 +3,12 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>[Rae area]</title>
+  <title>[rae area]</title>
 
-  <!-- Prevent search engines from indexing this page -->
   <meta name="robots" content="noindex, nofollow, noarchive">
   <meta name="ai" content="noai">
   <meta name="openai-site-verification" content="noai">
-
-  <meta name="description" content="[Rae area]">
+  <meta name="description" content="rae area — systems, networks, creative work, and humane infrastructure.">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
@@ -38,12 +36,10 @@
       text-align: left;
     }
 
-    .logo {
-      margin-bottom: 2.25rem;
-    }
+    .logo { margin-bottom: 2.25rem; }
 
     .logo img {
-      width: 180px;
+      width: 140px;
       max-width: 40vw;
       opacity: 0.95;
       display: block;
@@ -75,8 +71,12 @@
       text-underline-offset: 2px;
     }
 
-    a:hover {
-      text-decoration: none;
+    a:hover { text-decoration: none; }
+
+    a:focus-visible {
+      outline: 2px solid var(--fg);
+      outline-offset: 3px;
+      border-radius: 2px;
     }
 
     .links-secondary {
@@ -117,54 +117,44 @@
     }
 
     @media (max-width: 720px) {
-      .hero {
-        grid-template-columns: 1fr;
-      }
+      .hero { grid-template-columns: 1fr; }
     }
   </style>
 </head>
 <body>
-
-  <div class="wrap">
-
-    <!-- logo -->
+  <main class="wrap">
     <div class="logo">
-      <a href="/"><img src="index_files/raearea.png" alt="[Rae area]"></a>
+      <a href="/"><img src="/index_files/raearea.png" alt="rae area"></a>
     </div>
 
-    <!-- map -->
     <div class="label">map</div>
     <ul>
-      <li><a href="/whoami">/whoami</a> — profile & work</li>
+      <li><a href="https://r43.tech" target="_blank" rel="noopener noreferrer">r43</a> — root index</li>
+      <li><a href="/whoami">/whoami</a> — profile, practice & current threads</li>
       <li><a href="https://raelog.net" target="_blank" rel="noopener noreferrer">raelog.net</a> — writing</li>
       <li><a href="/contact">/contact</a> — get in touch</li>
     </ul>
 
-    <!-- socials -->
     <div class="label">elsewhere</div>
     <ul class="links-secondary">
       <li>
-        @ <a rel="me" href="https://kolektiva.social/@rae" target="_blank">mastodon</a> /
-        <a href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
+        @ <a rel="me" href="https://kolektiva.social/@raelovejoy" target="_blank">mastodon</a> /
+        <a rel="me" href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
         <a href="https://github.com/raelovejoy" target="_blank">github</a>
       </li>
     </ul>
 
-    <!-- hero section w/ restored bio -->
     <section class="hero">
       <div class="hero-img">
-        <img src="index_files/rle.gif" alt="animated illustration">
+        <img src="/index_files/rle.gif" alt="animated illustration">
       </div>
-
       <div class="hero-text">
         <p>
-          Weaving through technology, philosophy, art, nature, and human systems to explore,
+          Weaving through technology, philosophy, art, nature, community, and human systems to explore,
           connect, and reimagine the patterns that shape our world.
         </p>
       </div>
     </section>
-
-  </div>
-
+  </main>
 </body>
 </html>
