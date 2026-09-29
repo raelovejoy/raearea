@@ -49,3 +49,7 @@ The generated site lives directly in the repository root, so Pages can publish t
 ## Design principle
 
 `raearea.net` is a map, not a portfolio CMS. The homepage prioritizes primary routes and current projects; personal context lives in `/whoami`, and implementation/meta details live in `/colophon`.
+
+## Writing
+
+Public site copy follows the repository rules in `AGENTS.md`, based on the anti-AI-slop rules from `realrossmanngroup/no_ai_slop_writing_rules`. The goal is plain, specific writing that preserves Rae's voice rather than imitating Rossmann's.
