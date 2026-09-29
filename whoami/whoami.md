@@ -1,6 +1,8 @@
 # /whoami
 
-Hi, I'm **Rae** (they/he). I'm a curious, systems-minded generalist based in San Francisco. Most of my free time goes into exploring how things connect—in technology, art, ideas, community, and everyday life.
+Hi, I'm **Rae** (they/he). I'm a systems-minded generalist, synthesizer of ideas, occasional builder, and compulsive connector of things based in San Francisco. I like connecting ideas, people, cables, designs, words, worlds, dots—in technology, art, community, infrastructure, and everyday life.
+
+I tend to move between fields rather than stay inside one lane: learning enough to notice useful relationships, following those relationships toward the people, disciplines, and evidence that understand each part more deeply, and sometimes building something from what I find. **Synthesis isn't a substitute for expertise.** What interests me is what becomes visible when different kinds of knowledge can actually meet without being flattened into one thing.
 
 This site is a mesh of signals. A recursive self-description. A living document. **Not a brand.**
 
@@ -22,7 +24,9 @@ The short version above is still the whole answer. The rest is context, if you w
 <details>
 <summary>$ whatis generalist</summary>
 
-Generalist is the least-wrong shorthand I've found. I move between IT systems, code, networks, and security; writing, zines, photography, sound, visual work, and speculative futures; and material practices like electronics, sewing, 3D printing, carpentry, bicycles, repair, and reuse.
+Generalist is the least-wrong shorthand I've found. **Synthesizer** may be closer to how I actually move through the world: I collect fragments from different domains, notice relationships between them, and try to make those relationships useful without pretending that broad curiosity makes me the specialist in every room.
+
+I move between IT systems, code, networks, and security; writing, zines, photography, sound, visual work, and speculative futures; and material practices like electronics, sewing, 3D printing, carpentry, bicycles, repair, and reuse.
 
 I don't really experience these as separate lanes. The borders feel more administrative than real. Each skill or medium is another way to understand and reshape how people, machines, ideas, and environments interact.
 
@@ -32,6 +36,8 @@ I don't really experience these as separate lanes. The borders feel more adminis
 <summary>$ whatis systems-lens</summary>
 
 I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.
+
+I'm often as interested in the **relationships between things** as the things themselves: dependencies, interfaces, feedback loops, histories, translations, flows, constraints, and the weird little bridges between domains that are easy to miss.
 
 A lot of my work begins with some version of: **Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?**
 
@@ -92,4 +98,4 @@ I'm interested in the gap between **the world we inherited** and **the worlds hu
 
 ---
 
-<sub>Last updated: September 1, 2026</sub>
+<sub>Last updated: September 28, 2026</sub>
