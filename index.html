@@ -142,6 +142,15 @@
       padding: clamp(3.2rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
     }
 
+    .intro h1 {
+      margin: 0 0 0.8rem;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(1.7rem, 3.2vw, 2.15rem);
+      font-weight: 400;
+      line-height: 1;
+      color: var(--soft);
+    }
+
     .intro p {
       margin: 0;
       color: #d8d8d8;
@@ -286,7 +295,8 @@
     </header>
 
     <main id="content">
-      <section class="intro" aria-label="Introduction">
+      <section class="intro" aria-labelledby="home-title">
+        <h1 id="home-title" class="p-name">rae lovejoy /</h1>
         <p class="p-note">
           Weaving through technology, philosophy, art, nature, community, and human systems to explore,
           connect, and reimagine the patterns that shape our world.
