@@ -241,14 +241,18 @@
     }
 
     .project-map-link {
-      margin: 1rem 0 0;
-      font-size: 0.76rem;
-      color: var(--soft);
+      margin: 2.75rem 0 0;
     }
 
     .project-map-link a {
-      color: var(--soft);
-      text-decoration-color: #555;
+      display: inline-block;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      line-height: 1;
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: #777;
+      text-underline-offset: 0.15em;
     }
 
     .project-map-link a:hover {
@@ -394,7 +398,7 @@
         </dl>
 
         <p class="project-map-link">
-          <a href="https://github.com/Root-Sequence/root-sequence/blob/main/ECOSYSTEM.md">full Root Sequence ecosystem map →</a>
+          <a href="https://github.com/Root-Sequence/root-sequence/blob/main/ECOSYSTEM.md">Root Sequence ecosystem map →</a>
         </p>
       </section>
     </main>
