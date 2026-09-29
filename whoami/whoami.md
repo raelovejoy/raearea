@@ -37,23 +37,23 @@ I don't really experience these as separate lanes. The borders feel more adminis
 
 I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.
 
-I'm often as interested in the **relationships between things** as the things themselves: dependencies, interfaces, feedback loops, histories, translations, flows, constraints, and the weird little bridges between domains that are easy to miss.
+I'm often as interested in the **relationships between things** as the things themselves: dependencies, interfaces, feedback loops, histories, translations, flows, constraints, and the many intricate, nuanced bridges between domains that are easy to miss.
 
 A lot of my work begins with some version of: **Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?**
 
-I like making connections that were already there but easy to miss. Sometimes that becomes a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three other projects.
+I like making connections that were already there but easy to miss. Sometimes that's a server, a script, a diagram, a community system, an archive, a story, a zine, a website, or a half-finished note that eventually turns into three (or 30+) other projects.
 
 </details>
 
 <details>
 <summary>$ whatis project-ecology</summary>
 
-These aren't really separate projects. They overlap, nest inside one another, and keep exchanging parts.
+These aren't really separate projects. There is overlap, nesting inside one another, and the constant exchanging of parts.
 
 - **[Root Sequence](https://rootsequence.systems/)** — the larger ecology: notes, frameworks, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.
 - **No One Noticed / Coherent World** — speculative fiction and systems design in the same universe, exploring what happens when humans stop treating the present as the edge of possibility.
 - **[Museum of Ordinary Life](https://museumofordinarylife.org/)** — an archive for the objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems that make up ordinary life while they are still ordinary.
-- **Community Infrastructure** — modular, adaptable infrastructure for real communities: software, shared hardware, trusted local AI, governance, legal adaptability, mutual aid, and community discovery.
+- **Community Infrastructure** — modular, adaptable infrastructure for real communities: software, shared hardware, trusted local/ethical AI, governance, legal adaptability, mutual aid, and community discovery.
 - **Being Humane / Being Humane Atlas** — mapping cause and effect, power, accountability, vulnerability, responsibility, and more humane ways of structuring systems.
 - **[Liberation Mass](https://github.com/Root-Sequence/liberation-mass)** — experiments around ritual, solidarity, reflection, connection, and liberation without requiring hierarchy or dogma.
 - **Homelab + local infrastructure** — where a lot of the abstract ideas get stress-tested against actual computers, networks, failures, constraints, and maintenance.
