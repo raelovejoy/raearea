@@ -165,6 +165,12 @@
       text-decoration-color: currentColor;
     }
 
+    .primary .primary-main {
+      color: var(--fg);
+      text-decoration-color: var(--fg);
+      font-weight: 600;
+    }
+
     .intro {
       max-width: 760px;
       padding: clamp(3.2rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
@@ -309,8 +315,8 @@
       </a>
 
       <nav class="primary" aria-label="Primary routes">
-        <a href="/whoami">/whoami</a>
         <a href="#projects">projects</a>
+        <a class="primary-main" href="/whoami">/whoami</a>
         <a href="/contact">/contact</a>
         <a href="/colophon">/colophon</a>
       </nav>
