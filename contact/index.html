@@ -1,205 +1,339 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>[contact]---[Rae area]</title>
-    <!-- Prevent search engines from indexing this page -->
-    <meta name="robots" content="noindex, nofollow, noarchive">
-    <meta name="ai" content="noai">
-    <meta name="openai-site-verification" content="noai">
-    <meta name="description" content="Contact Rae">
-    <link rel="icon" type="image/png" href="/favicon.png">
-    <style>
-        body {
-            background: #0a0a0a;
-            color: #fafafa;
-            margin: 0;
-            padding-top: 60px;
-            font-family: 'Courier New', Courier, monospace;
-            text-align: center;
-        }
-        #body_content {
-            max-width: 750px;
-            margin: 0 auto;
-            position: relative;
-            text-align: center;
-            padding: 0 20px;
-        }
-        .image-container {
-            margin: 10px 0;
-            display: inline-block;
-        }
-        .image-container a {
-            display: block;
-            padding: 5px;
-        }
-        .image-container a img {
-            height: 65px;
-            width: auto;
-            border: none;
-            filter: none;
-            transition: filter 0.3s ease, background-color 0.3s ease;
-        }
-        .image-container a:hover {
-            background-color: #fff;
-        }
-        .image-container a:hover img {
-            filter: invert(1);
-        }
-        .page-links {
-            margin-top: 10px;
-            text-align: center;
-            color: #fafafa;
-            font-size: 1.2em;
-        }
-        .page-links a {
-            color: #fafafa;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        .links {
-            margin-top: 5px;
-            text-align: center;
-            color: #bbbbbb;
-            font-size: 0.9em;
-        }
-        .links a {
-            color: #bbbbbb;
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
-        a:visited {
-            color: #cfcfcf;
-        }
-        a:hover {
-            color: #ffffff;
-        }
-        .spacer {
-            height: 20px;
-        }
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/contact — [rae area]</title>
 
-        .contact-methods {
-            margin-top: 20px;
-            padding: 20px;
-            background-color: #1a1a1a;
-            border-radius: 10px;
-            text-align: left;
-            line-height: 1.6;
-            font-size: 1em;
-        }
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="ai" content="noai">
+  <meta name="openai-site-verification" content="noai">
+  <meta name="description" content="Contact Rae Lovejoy.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090909">
 
-        .contact-methods h2 {
-            margin-bottom: 10px;
-        }
+  <link rel="canonical" href="https://raearea.net/contact/">
+  <link rel="author" href="/whoami">
+  <link rel="icon" type="image/png" href="/favicon.png">
 
-        .contact-methods ul {
-            list-style: none;
-            padding: 0;
-        }
+  <style>
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("/whoami/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
-        .contact-methods li {
-            margin-bottom: 15px;
-        }
+    @font-face {
+      font-family: "VT323";
+      src: url("/whoami/assets/fonts/VT323-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
 
-        .contact-methods a {
-            color: #bbbbbb; /* Same link color as the rest of the site */
-            text-decoration: none;
-            transition: color 0.3s ease;
-        }
+    :root {
+      --bg: #090909;
+      --fg: #eeeeee;
+      --soft: #b5b5b5;
+      --dim: #767676;
+      --line: #282828;
+      --line-bright: #444;
+      --link: #84f6ff;
+      --pink: #ff8ad8;
+      --max: 860px;
+    }
 
-        .contact-methods a:visited {
-            color: #cfcfcf;
-        }
+    * { box-sizing: border-box; }
 
-        .contact-methods a:hover {
-            color: #ffffff;
-        }
+    html {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
 
-        /* Media Queries for responsiveness */
-        @media (max-width: 768px) {
-            body {
-                padding-top: 40px;
-            }
-            .page-links {
-                font-size: 1.1em;
-            }
-            .spacer {
-                height: 10px;
-            }
-            .contact-methods {
-                font-size: 0.9em;
-            }
-        }
+    body {
+      min-height: 100%;
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+    }
 
-        @media (max-width: 480px) {
-            body {
-                font-size: 16px;
-                padding-top: 30px;
-            }
-            .page-links {
-                font-size: 1em;
-            }
-            .spacer {
-                height: 10px;
-            }
-            .contact-methods {
-                font-size: 0.85em;
-            }
-        }
-    </style>
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      text-decoration-color: #666;
+    }
 
-    <script type="text/javascript">
-        // Function to obfuscate email
-        function obfuscateEmail(user, domain, tld) {
-            return user + '@' + domain + '.' + tld;
-        }
+    a:hover {
+      color: var(--link);
+      text-decoration-color: currentColor;
+    }
 
-        // Insert obfuscated email after page load
-        document.addEventListener("DOMContentLoaded", function () {
-            var email = obfuscateEmail('rae', 'raelovejoy', 'com'); // Replace with actual email user, domain, and TLD
-            document.getElementById('email-link').innerHTML = email;
-            document.getElementById('email-link').setAttribute('href', 'mailto:' + email);
-        });
-    </script>
+    a:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -10000px;
+      top: 0;
+      z-index: 100;
+      padding: 0.6rem 0.8rem;
+      background: #000;
+      color: #fff;
+      border: 1px solid var(--line-bright);
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .page {
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    .site-head {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: end;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo img {
+      display: block;
+      width: 145px;
+      max-width: 40vw;
+      height: auto;
+    }
+
+    .primary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.4rem 1rem;
+      font-size: 0.78rem;
+    }
+
+    .primary a {
+      color: var(--soft);
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+
+    .primary a[aria-current="page"] {
+      color: var(--fg);
+      border-bottom-color: var(--fg);
+    }
+
+    main {
+      padding-top: 3.25rem;
+    }
+
+    h1,
+    h2 {
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-weight: 400;
+    }
+
+    h1 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(3rem, 8vw, 4.8rem);
+      line-height: 1;
+    }
+
+    .lede {
+      max-width: 43rem;
+      margin: 0 0 3rem;
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 1.2rem 0 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.8rem;
+    }
+
+    dl {
+      margin: 0;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: minmax(8rem, 0.28fr) 1fr;
+      gap: 1rem;
+      padding: 0.8rem 0;
+      border-bottom: 1px dotted var(--line);
+      font-size: 0.8rem;
+    }
+
+    dt,
+    dd {
+      margin: 0;
+    }
+
+    dt {
+      color: var(--dim);
+    }
+
+    dd {
+      color: var(--soft);
+    }
+
+    dd strong {
+      color: var(--fg);
+      font-weight: 400;
+    }
+
+    .secondary {
+      display: block;
+      margin-top: 0.2rem;
+      color: var(--dim);
+      font-size: 0.72rem;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem 2rem;
+      margin-top: 2.5rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 0.72rem;
+    }
+
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+    }
+
+    .social a {
+      color: var(--soft);
+    }
+
+    .etc {
+      color: #6f6f6f;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 1.5rem, var(--max));
+        padding-top: 2rem;
+      }
+
+      .site-head {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      .primary {
+        justify-content: flex-start;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --fg: #000;
+        --soft: #333;
+        --dim: #555;
+        --line: #bbb;
+        --link: #000;
+      }
+
+      body { background: #fff; }
+      .primary { display: none; }
+      a { text-decoration: underline; }
+    }
+  </style>
 </head>
+
 <body>
-    <div id="body_content">
-        <!-- Image Section (Logo) -->
-        <div class="image-container">
-            <a href="/" title="Go to homepage">
-                <img src="../index_files/raearea.png" alt="rae area logo">
-            </a>
-        </div>
+  <a class="skip-link" href="#content">Skip to content</a>
 
-        <!-- Page Links (Larger Text) -->
-        <div class="page-links">
-            <p><a href="https://raearea.net/blog" title="Visit Rae's blog" aria-label="Rae's blog">blog</a> / 
-               <a href="https://raearea.net/whoami" title="Who is Rae?" aria-label="whoisrae">whoami</a> / 
-               <a href="https://raearea.net/archive" title="Visit Rae's Archives" aria-label="Rae's archives">archive</a> / 
-               <a href="https://raearea.net/contact" title="Contact Rae" aria-label="Contact Rae"><strong>contact</strong></a></p>
-        </div>
+  <div class="page">
+    <header class="site-head">
+      <a class="logo" href="/" aria-label="rae area home">
+        <img src="/index_files/raearea.png" alt="rae area">
+      </a>
 
-        <!-- Social Links (Darker Section) -->
-        <div class="links">
-            <p>@ <a rel="me" href="https://kolektiva.social/@rae" title="Mastodon profile" aria-label="Rae's posts on Mastodon">mastodon</a> / 
-               <a href="https://pixelfed.social/raelovejoy" title="Photos on Pixelfed" aria-label="Rae's photos on Pixelfed">pixelfed</a> / 
-               <a href="https://github.com/raelovejoy" title="GitHub page" aria-label="Rae's GitHub page">github</a></p>
-        </div>
+      <nav class="primary" aria-label="Primary routes">
+        <a href="/whoami">/whoami</a>
+        <a href="/#projects">projects</a>
+        <a href="/contact" aria-current="page">/contact</a>
+        <a href="/colophon">/colophon</a>
+      </nav>
+    </header>
 
-        <!-- Spacer (Reduced Space) -->
-        <div class="spacer"></div>
+    <main id="content">
+      <h1>/contact</h1>
+      <p class="lede">Email and Signal are the easiest ways to reach me.</p>
 
-        <!-- Contact Methods Section -->
-        <div class="contact-methods">
-            <h2>[contact]</h2>
-            <ul>
-                <li><strong>Email:</strong> <a id="email-link" href="#">[Email protected]</a></li>
-                <li><strong>Signal:</strong> <a href=https://signal.me/#eu/-vpszDHcQ9jp5lguX86eFWVZwipyAz6Y7cz-N9o9ezh0XbOiGdhAwL5alzyWZBOt" title="Message Rae on Signal">Message Rae on Signal (r43.10)</a></li>
-                <li><strong>Meshtastic:</strong> <a href="https://meshtastic.org/" title="My Meshtastic [short/long] name" aria-label="My Meshtastic [short/long] name">R43/R43LVJY</a></li>
-                <li><strong>PGP Key:</strong> <a href="../index_files/Rae_9AFEE525.asc" title="Download Rae's PGP key">Download PGP Key</a></li>
-            </ul>
-        </div>
-    </div>
+      <section aria-labelledby="contact-methods">
+        <h2 id="contact-methods">contact /</h2>
+
+        <dl>
+          <div class="row">
+            <dt>email</dt>
+            <dd>
+              <strong><a href="mailto:rae@raelovejoy.com">rae@raelovejoy.com</a></strong>
+            </dd>
+          </div>
+
+          <div class="row">
+            <dt>signal</dt>
+            <dd>
+              <strong><a href="https://signal.me/#eu/-vpszDHcQ9jp5lguX86eFWVZwipyAz6Y7cz-N9o9ezh0XbOiGdhAwL5alzyWZBOt">message me on Signal</a></strong>
+              <span class="secondary">username: r43.10</span>
+            </dd>
+          </div>
+
+          <div class="row">
+            <dt>pgp</dt>
+            <dd>
+              <strong><a href="/index_files/Rae_9AFEE525.asc" download>download public key</a></strong>
+              <span class="secondary">existing key; I may replace/update this later</span>
+            </dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="social" aria-label="Elsewhere">
+        <a rel="me" href="https://github.com/raelovejoy">github</a>
+        <a rel="me" href="https://kolektiva.social/@raelovejoy">mastodon</a>
+        <a rel="me" href="https://pixelfed.social/raelovejoy">pixelfed</a>
+      </nav>
+
+      <span class="etc">etc etc etc</span>
+    </footer>
+  </div>
 </body>
 </html>
