@@ -52,4 +52,4 @@ The generated site lives directly in the repository root, so Pages can publish t
 
 ## Writing
 
-Public site copy follows the repository rules in `AGENTS.md`, based on the anti-AI-slop rules from `realrossmanngroup/no_ai_slop_writing_rules`. The goal is plain, specific writing that preserves Rae's voice rather than imitating Rossmann's.
+For future public copy edits, see `AGENTS.md`. It applies anti-AI-slop checks from `realrossmanngroup/no_ai_slop_writing_rules` while preserving Rae's existing voice and wording. Existing pages are not automatically rewritten to match the guide.
