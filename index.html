@@ -165,12 +165,6 @@
       text-decoration-color: currentColor;
     }
 
-    .primary .primary-main {
-      color: var(--fg);
-      text-decoration-color: var(--fg);
-      font-weight: 600;
-    }
-
     .intro {
       max-width: 760px;
       padding: clamp(3.2rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
@@ -181,6 +175,23 @@
       color: #d8d8d8;
       font-size: clamp(1.05rem, 2.2vw, 1.28rem);
       line-height: 1.8;
+    }
+
+    .whoami-door {
+      display: inline-block;
+      margin-top: 1.55rem;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(2rem, 4.5vw, 2.8rem);
+      line-height: 1;
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: #777;
+      text-underline-offset: 0.15em;
+    }
+
+    .whoami-door:hover {
+      color: var(--link);
+      text-decoration-color: currentColor;
     }
 
     .section-label {
@@ -316,7 +327,7 @@
 
       <nav class="primary" aria-label="Primary routes">
         <a href="#projects">projects</a>
-        <a class="primary-main" href="/whoami">/whoami</a>
+        <a href="/whoami">/whoami</a>
         <a href="/contact">/contact</a>
         <a href="/colophon">/colophon</a>
       </nav>
@@ -328,6 +339,7 @@
           Weaving through technology, philosophy, art, nature, community, and human systems to explore,
           connect, and reimagine the patterns that shape our world.
         </p>
+        <a class="whoami-door" href="/whoami">/whoami →</a>
       </section>
 
       <section class="projects" id="projects" aria-labelledby="projects-title">
