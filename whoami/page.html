@@ -87,43 +87,79 @@
     }
 
     header {
-      max-width: var(--max);
+      width: min(100% - 2.5rem, 980px);
       margin: 0 auto;
-      padding: 2.75rem 1.5rem 0;
+      padding: 3.25rem 0 0;
     }
 
     .site-head {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 1.5rem;
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: end;
       padding-bottom: 1.35rem;
       border-bottom: 1px solid var(--border);
     }
 
-    .logo img {
+    .logo-swap {
+      position: relative;
       display: block;
-      width: 150px;
-      max-width: 35vw;
+      width: 160px;
+      max-width: 42vw;
+    }
+
+    .logo-swap img {
+      display: block;
+      width: 100%;
       height: auto;
     }
 
-    nav {
-      text-align: right;
-      font-size: 0.9rem;
-      line-height: 1.8;
+    .logo-easter {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      object-fit: contain;
+      pointer-events: none;
     }
 
-    nav a { white-space: nowrap; }
+    @media (hover: hover) and (pointer: fine) {
+      .logo:hover .logo-main,
+      .logo:focus-visible .logo-main {
+        opacity: 0;
+      }
 
-    nav a[aria-current="page"] {
-      font-weight: 700;
-      color: var(--text);
+      .logo:hover .logo-easter,
+      .logo:focus-visible .logo-easter {
+        opacity: 1;
+      }
     }
 
-    .elsewhere {
+    .primary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.4rem 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .primary a {
       color: var(--muted);
-      font-size: 0.82rem;
+      text-decoration: underline;
+      text-decoration-color: rgba(255,255,255,0.32);
+      text-underline-offset: 0.18em;
+      text-decoration-thickness: 1px;
+      white-space: nowrap;
+    }
+
+    .primary a:hover {
+      color: var(--hover);
+      text-decoration-color: currentColor;
+    }
+
+    .primary a[aria-current="page"] {
+      color: var(--text);
+      text-decoration-color: var(--text);
+      font-weight: 700;
     }
 
     main {
@@ -236,16 +272,22 @@
       text-align: center;
     }
 
-    @media (max-width: 640px) {
-      header { padding-top: 2rem; }
+    @media (max-width: 720px) {
+      header {
+        width: min(100% - 1.5rem, 980px);
+        padding-top: 2rem;
+      }
 
       .site-head {
-        align-items: flex-start;
-        flex-direction: column;
+        grid-template-columns: 1fr;
+        align-items: start;
         gap: 1rem;
       }
 
-      nav { text-align: left; }
+      .primary {
+        justify-content: flex-start;
+      }
+
       main { width: min(100% - 2rem, var(--max)); }
     }
 
@@ -259,22 +301,18 @@
 
   <header>
     <div class="site-head">
-      <a class="logo" href="/" aria-label="Rae area home">
-        <img src="/index_files/raearea.png" alt="Rae area" />
+      <a class="logo" href="/" aria-label="rae area home">
+        <span class="logo-swap">
+          <img class="logo-main" src="/index_files/raearea.png" alt="rae area">
+          <img class="logo-easter" src="/index_files/rle.gif" alt="" aria-hidden="true">
+        </span>
       </a>
 
-      <nav aria-label="Site navigation">
-        <div>
-          <a href="/">/</a> ·
-          <a href="/whoami" aria-current="page">/whoami</a> ·
-          <a href="https://raelog.net/">raelog</a> ·
-          <a href="/contact">/contact</a>
-        </div>
-        <div class="elsewhere">
-          @ <a rel="me" href="https://kolektiva.social/@raelovejoy">mastodon</a> ·
-          <a rel="me" href="https://pixelfed.social/raelovejoy">pixelfed</a> ·
-          <a href="https://github.com/raelovejoy">github</a>
-        </div>
+      <nav class="primary" aria-label="Primary routes">
+        <a href="/#projects">projects</a>
+        <a href="/whoami" aria-current="page">/whoami</a>
+        <a href="/contact">/contact</a>
+        <a href="/colophon">/colophon</a>
       </nav>
     </div>
   </header>
