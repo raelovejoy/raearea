@@ -1,10 +1,10 @@
 # /whoami
 
-Hi, I'm **Rae** (they/he). I'm a systems-minded generalist, synthesizer of ideas, occasional builder, and compulsive connector of things based in San Francisco. I like connecting ideas, people, cables, designs, words, worlds, and dots. Most of the time that means moving between technology, art, community, infrastructure, and everyday life.
+Hi, I'm **Rae** (they/he). I'm a systems-minded generalist, synthesizer of ideas, occasional builder, and compulsive connector of things based in San Francisco. I like connecting ideas, people, cables, designs, words, worlds, dots—in technology, art, community, infrastructure, and everyday life.
 
-I move between fields instead of staying inside one lane. I learn enough to notice useful relationships, then follow them toward people, disciplines, and evidence with deeper expertise. Sometimes I build from what I find. I care about what becomes visible when different kinds of knowledge meet without being flattened together.
+I tend to move between fields rather than stay inside one lane: learning enough to notice useful relationships, following those relationships toward the people, disciplines, and evidence that understand each part more deeply, and sometimes building something from what I find. **Synthesis isn't a substitute for expertise.** What interests me is what becomes visible when different kinds of knowledge can actually meet without being flattened into one thing.
 
-A mesh of signals, recursive self-description, and living document.
+This site is a mesh of signals. A recursive self-description. A living document. **Not a brand.**
 
 ## $ right now
 
@@ -15,16 +15,16 @@ A mesh of signals, recursive self-description, and living document.
 
 ## $ what I care about
 
-I'm drawn to technical, social, ecological, and internal systems, especially how they shape the ways we relate and live. I care about curiosity, cooperation, autonomy, connection, community, and technology people can understand, repair, adapt, and control.
+I'm drawn to systems—technical, social, ecological, internal—and how they shape the ways we relate and live. I value curiosity, cooperation, thoughtful design, autonomy, connection, community, and humane approaches to technology.
 
-## $ more context
+## $ go deeper
 
-The short version above is enough. The rest is context if you want it.
+The short version above is still the whole answer. The rest is context, if you want it.
 
 <details>
 <summary>$ whatis generalist</summary>
 
-Generalist is the least-wrong shorthand I've found. **Synthesizer** may be closer to how I work: I collect fragments from different domains, notice relationships between them, and try to make those relationships useful without pretending broad curiosity makes me the specialist in every room.
+Generalist is the least-wrong shorthand I've found. **Synthesizer** may be closer to how I actually move through the world: I collect fragments from different domains, notice relationships between them, and try to make those relationships useful without pretending that broad curiosity makes me the specialist in every room.
 
 I move between IT systems, code, networks, and security; writing, zines, photography, sound, visual work, and speculative futures; and material practices like electronics, sewing, 3D printing, carpentry, bicycles, repair, and reuse.
 
@@ -35,9 +35,9 @@ I don't really experience these as separate lanes. The borders feel more adminis
 <details>
 <summary>$ whatis systems-lens</summary>
 
-I follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.
+I tend to follow systems across their supposed boundaries: networks and infrastructure, communities and institutions, archives and everyday objects, ecology and political economy, art and speculative futures.
 
-I'm often as interested in the **relationships between things** as the things themselves: dependencies, interfaces, feedback loops, histories, translations, flows, constraints, and bridges between domains.
+I'm often as interested in the **relationships between things** as the things themselves: dependencies, interfaces, feedback loops, histories, translations, flows, constraints, and the many intricate, nuanced bridges between domains that are easy to miss.
 
 A lot of my work begins with some version of: **Why is it like this? What connects to what? What would this look like if it were more humane, cooperative, resilient, and liberatory?**
 
@@ -48,16 +48,16 @@ I like making connections that were already there but easy to miss. Sometimes th
 <details>
 <summary>$ whatis project-ecology</summary>
 
-These projects overlap, nest inside one another, and keep exchanging parts.
+These aren't really separate projects. There is overlap, nesting inside one another, and the constant exchanging of parts.
 
-- **[Root Sequence](https://rootsequence.systems/)**: notes, frameworks, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.
-- **No One Noticed / Coherent World**: speculative fiction and systems design in the same universe, exploring what happens when humans stop treating the present as the edge of possibility.
-- **[Museum of Ordinary Life](https://museumofordinarylife.org/)**: an archive for ordinary objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems while they are still ordinary.
-- **Community Infrastructure**: software, shared hardware, trusted local AI, governance, mutual aid, community knowledge, and resilience.
-- **Being Human(e) / Being Humane Atlas**: cause and effect, power, accountability, vulnerability, responsibility, and humane systems.
-- **[Liberation Mass](https://github.com/Root-Sequence/liberation-mass)**: gathering, reflection, solidarity, mutual aid, ritual, participation, and collective meaning.
-- **Homelab + local infrastructure**: where abstract ideas meet actual computers, networks, failures, constraints, and maintenance.
-- **[raelog](https://raelog.net/)**: notes and writing that don't always belong inside a project repository.
+- **[Root Sequence](https://rootsequence.systems/)** — the larger ecology: notes, frameworks, systems work, experiments, and projects about connection, care, infrastructure, liberation, and what else might be possible.
+- **No One Noticed / Coherent World** — speculative fiction and systems design in the same universe, exploring what happens when humans stop treating the present as the edge of possibility.
+- **[Museum of Ordinary Life](https://museumofordinarylife.org/)** — an archive for the objects, interfaces, spaces, routines, sounds, paperwork, stories, and invisible systems that make up ordinary life while they are still ordinary.
+- **Community Infrastructure** — modular, adaptable infrastructure for real communities: software, shared hardware, trusted local/ethical AI, governance, legal adaptability, mutual aid, and community discovery.
+- **Being Humane / Being Humane Atlas** — mapping cause and effect, power, accountability, vulnerability, responsibility, and more humane ways of structuring systems.
+- **[Liberation Mass](https://github.com/Root-Sequence/liberation-mass)** — experiments around ritual, solidarity, reflection, connection, and liberation without requiring hierarchy or dogma.
+- **Homelab + local infrastructure** — where a lot of the abstract ideas get stress-tested against actual computers, networks, failures, constraints, and maintenance.
+- **[raelog](https://raelog.net/)** — notes and writing that don't always belong inside a project repository.
 
 </details>
 
@@ -78,17 +78,17 @@ These projects overlap, nest inside one another, and keep exchanging parts.
 </details>
 
 <details>
-<summary>$ why I keep doing this</summary>
+<summary>$ why</summary>
 
 The medium changes; the underlying impulse usually doesn't.
 
-I'm interested in the gap between **the world we inherited** and **the worlds humans are demonstrably capable of making**. Most things here are unfinished on purpose. Returning, revising, connecting, forking, and recombining are part of the practice.
+I'm interested in the gap between **the world we inherited** and **the worlds humans are demonstrably capable of making**. Most things here are unfinished on purpose: returning, revising, connecting, forking, and recombining are part of the practice.
 
 </details>
 
 ## $ find rae
 
-- [dev11.systems](https://dev11.systems/): software, hardware, infrastructure, and technical experiments
+- [dev11.systems](https://dev11.systems/) — a small, evolving studio space for ideas and technical experiments
 - [Root Sequence](https://rootsequence.systems/)
 - [GitHub](https://github.com/raelovejoy)
 - [Mastodon](https://kolektiva.social/@raelovejoy)
