@@ -9,152 +9,336 @@
   <meta name="ai" content="noai">
   <meta name="openai-site-verification" content="noai">
   <meta name="description" content="rae area — systems, networks, creative work, and humane infrastructure.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="canonical" href="https://raearea.net/">
+  <link rel="author" href="/whoami">
   <link rel="icon" type="image/png" href="/favicon.png">
 
   <style>
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("/whoami/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "VT323";
+      src: url("/whoami/assets/fonts/VT323-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
     :root {
-      --bg: #0a0a0a;
-      --fg: #f5f5f5;
-      --fg-soft: #b8b8b8;
-      --accent-soft: #888;
-      --border-soft: #222;
+      --bg: #090909;
+      --fg: #eeeeee;
+      --soft: #b5b5b5;
+      --dim: #767676;
+      --line: #282828;
+      --line-bright: #444;
+      --link: #84f6ff;
+      --pink: #ff8ad8;
+      --max: 980px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+      scroll-behavior: smooth;
     }
 
     body {
+      min-height: 100%;
+      margin: 0;
       background: var(--bg);
       color: var(--fg);
-      margin: 0;
-      padding: 2.5rem 1.75rem 3rem;
-      font-family: system-ui, sans-serif;
-      display: flex;
-      justify-content: center;
-    }
-
-    .wrap {
-      width: 100%;
-      max-width: 720px;
-      text-align: left;
-    }
-
-    .logo { margin-bottom: 2.25rem; }
-
-    .logo img {
-      width: 140px;
-      max-width: 40vw;
-      opacity: 0.95;
-      display: block;
-    }
-
-    .label {
-      font-size: 0.78rem;
-      text-transform: uppercase;
-      letter-spacing: 0.18em;
-      opacity: 0.55;
-      margin-top: 1.25rem;
-    }
-
-    ul {
-      list-style: none;
-      padding: 0;
-      margin: 0.2rem 0 0.6rem;
-    }
-
-    li {
-      margin: 0.18rem 0;
-      font-size: 0.96rem;
+      line-height: 1.65;
     }
 
     a {
-      color: var(--fg);
-      text-decoration: underline;
+      color: inherit;
       text-decoration-thickness: 1px;
-      text-underline-offset: 2px;
+      text-underline-offset: 0.18em;
+      text-decoration-color: #666;
     }
 
-    a:hover { text-decoration: none; }
+    a:hover {
+      color: var(--link);
+      text-decoration-color: currentColor;
+    }
 
     a:focus-visible {
-      outline: 2px solid var(--fg);
-      outline-offset: 3px;
-      border-radius: 2px;
+      outline: 2px solid var(--pink);
+      outline-offset: 4px;
     }
 
-    .links-secondary {
-      color: var(--fg-soft);
-      font-size: 0.92rem;
+    .skip-link {
+      position: absolute;
+      left: -10000px;
+      top: 0;
+      z-index: 100;
+      padding: 0.6rem 0.8rem;
+      background: #000;
+      color: #fff;
+      border: 1px solid var(--line-bright);
     }
 
-    .links-secondary a {
-      color: var(--fg-soft);
-      text-decoration: none;
-      border-bottom: 1px dotted var(--border-soft);
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
     }
 
-    .links-secondary a:hover {
-      color: var(--fg);
-      border-bottom-color: var(--accent-soft);
+    .page {
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto;
+      padding: 3.25rem 0 4rem;
     }
 
-    .hero {
-      margin-top: 2.75rem;
-      border-top: 1px solid var(--border-soft);
-      padding-top: 1.75rem;
+    .site-head {
       display: grid;
-      grid-template-columns: minmax(0, 2fr) minmax(0, 3fr);
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: end;
+      padding-bottom: 1.35rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo img {
+      display: block;
+      width: 160px;
+      max-width: 42vw;
+      height: auto;
+    }
+
+    .primary {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.4rem 1.1rem;
+      font-size: 0.8rem;
+    }
+
+    .primary a {
+      color: var(--soft);
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+
+    .primary a:hover {
+      color: var(--link);
+      border-bottom-color: currentColor;
+    }
+
+    .intro {
+      max-width: 760px;
+      padding: clamp(3.2rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
+    }
+
+    .intro p {
+      margin: 0;
+      color: #d8d8d8;
+      font-size: clamp(1.05rem, 2.2vw, 1.28rem);
+      line-height: 1.8;
+    }
+
+    .section-label {
+      color: var(--dim);
+      font-size: 0.7rem;
+      letter-spacing: 0.14em;
+      text-transform: uppercase;
+    }
+
+    .projects {
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+    }
+
+    .project-list {
+      margin: 1rem 0 0;
+      border-top: 1px solid var(--line);
+    }
+
+    .project {
+      display: grid;
+      grid-template-columns: minmax(11rem, 0.45fr) 1fr;
       gap: 1.5rem;
-      align-items: center;
+      padding: 1rem 0;
+      border-bottom: 1px solid var(--line);
     }
 
-    .hero-img img {
-      width: 100%;
-      border-radius: 8px;
+    .project dt,
+    .project dd {
+      margin: 0;
     }
 
-    .hero-text {
-      font-size: 0.98rem;
-      line-height: 1.7;
-      color: #d6d6d6;
+    .project dt {
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: 1.55rem;
+      line-height: 1.05;
+    }
+
+    .project dd {
+      color: var(--soft);
+      font-size: 0.8rem;
+      line-height: 1.55;
+    }
+
+    .project a {
+      text-decoration-color: #555;
+    }
+
+    footer {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      align-items: baseline;
+      gap: 1rem 2rem;
+      margin-top: 4rem;
+      padding-top: 1.25rem;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 0.72rem;
+    }
+
+    .social {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.4rem 1rem;
+    }
+
+    .social a {
+      color: var(--soft);
+    }
+
+    .etc {
+      color: #6f6f6f;
+      font-size: 0.68rem;
+      letter-spacing: 0.04em;
     }
 
     @media (max-width: 720px) {
-      .hero { grid-template-columns: 1fr; }
+      .page {
+        width: min(100% - 1.5rem, var(--max));
+        padding-top: 2rem;
+      }
+
+      .site-head {
+        grid-template-columns: 1fr;
+        align-items: start;
+        gap: 1rem;
+      }
+
+      .primary {
+        justify-content: flex-start;
+      }
+
+      .project {
+        grid-template-columns: 1fr;
+        gap: 0.3rem;
+      }
+    }
+
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --fg: #000;
+        --soft: #333;
+        --dim: #555;
+        --line: #bbb;
+        --line-bright: #777;
+        --link: #000;
+      }
+
+      body { background: #fff; }
+      .primary { display: none; }
+      a { text-decoration: underline; }
     }
   </style>
 </head>
-<body>
-  <main class="wrap">
-    <div class="logo">
-      <a href="/"><img src="/index_files/raearea.png" alt="rae area"></a>
-    </div>
 
-    <div class="label">map</div>
-    <ul>
-      <li><a href="https://r43.tech" target="_blank" rel="noopener noreferrer">r43</a> — root index</li>
-      <li><a href="/whoami">/whoami</a> — profile, practice & current threads</li>
-      <li><a href="https://raelog.net" target="_blank" rel="noopener noreferrer">raelog.net</a> — writing</li>
-      <li><a href="/contact">/contact</a> — get in touch</li>
-    </ul>
+<body class="h-card">
+  <a class="skip-link" href="#content">Skip to content</a>
 
-    <div class="label">elsewhere</div>
-    <ul class="links-secondary">
-      <li>
-        @ <a rel="me" href="https://kolektiva.social/@raelovejoy" target="_blank">mastodon</a> /
-        <a rel="me" href="https://pixelfed.social/raelovejoy" target="_blank">pixelfed</a> /
-        <a href="https://github.com/raelovejoy" target="_blank">github</a>
-      </li>
-    </ul>
+  <div class="page">
+    <header class="site-head">
+      <a class="logo u-url" href="https://raearea.net/" aria-label="rae area home">
+        <img src="/index_files/raearea.png" alt="rae area">
+      </a>
 
-    <section class="hero">
-      <div class="hero-img">
-        <img src="/index_files/rle.gif" alt="animated illustration">
-      </div>
-      <div class="hero-text">
-        <p>
+      <nav class="primary" aria-label="Primary routes">
+        <a href="/whoami">/whoami</a>
+        <a href="#projects">projects</a>
+        <a href="/contact">/contact</a>
+        <a href="/colophon">/colophon</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <section class="intro" aria-label="Introduction">
+        <p class="p-note">
           Weaving through technology, philosophy, art, nature, community, and human systems to explore,
           connect, and reimagine the patterns that shape our world.
         </p>
-      </div>
-    </section>
-  </main>
+      </section>
+
+      <section class="projects" id="projects" aria-labelledby="projects-title">
+        <div class="section-label" id="projects-title">projects / places</div>
+
+        <dl class="project-list">
+          <div class="project">
+            <dt><a href="https://rootsequence.systems/">Root Sequence</a></dt>
+            <dd>systems research, connected projects, experiments, frameworks, and possible futures.</dd>
+          </div>
+
+          <div class="project">
+            <dt><a href="https://dev11.systems/">dev11</a></dt>
+            <dd>software, hardware, infrastructure, and small technical experiments.</dd>
+          </div>
+
+          <div class="project">
+            <dt><a href="https://museumofordinarylife.org/">Museum of Ordinary Life</a></dt>
+            <dd>documenting ordinary objects, spaces, interfaces, routines, and stories while they are still ordinary.</dd>
+          </div>
+
+          <div class="project">
+            <dt><a href="https://noonenoticed.world/">No One Noticed</a> / Coherent World</dt>
+            <dd>speculative fiction, systems design, simulation, and worldbuilding.</dd>
+          </div>
+
+          <div class="project">
+            <dt>Community Infrastructure</dt>
+            <dd>modular infrastructure for communication, coordination, mutual aid, memory, and community control.</dd>
+          </div>
+
+          <div class="project">
+            <dt><a href="https://github.com/Root-Sequence/beinghumane-guide">Being Human(e)</a></dt>
+            <dd>care, power, responsibility, consequences, accessibility, and humane systems.</dd>
+          </div>
+        </dl>
+      </section>
+    </main>
+
+    <footer>
+      <nav class="social" aria-label="Elsewhere">
+        <a class="u-url" rel="me" href="https://github.com/raelovejoy">github</a>
+        <a class="u-url" rel="me" href="https://kolektiva.social/@raelovejoy">mastodon</a>
+        <a class="u-url" rel="me" href="https://pixelfed.social/raelovejoy">pixelfed</a>
+      </nav>
+
+      <span class="etc">etc etc etc</span>
+    </footer>
+  </div>
 </body>
 </html>

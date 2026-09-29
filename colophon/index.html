@@ -1,0 +1,350 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>/colophon — [rae area]</title>
+
+  <meta name="robots" content="noindex, nofollow, noarchive">
+  <meta name="description" content="Colophon for raearea.net: how the site is built, hosted, and kept small.">
+  <meta name="color-scheme" content="dark">
+  <meta name="theme-color" content="#090909">
+
+  <link rel="canonical" href="https://raearea.net/colophon/">
+  <link rel="author" href="/whoami">
+  <link rel="icon" type="image/png" href="/favicon.png">
+
+  <style>
+    @font-face {
+      font-family: "IBM Plex Mono";
+      src: url("/whoami/assets/fonts/IBMPlexMono-Regular.woff2") format("woff2");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    @font-face {
+      font-family: "VT323";
+      src: url("/whoami/assets/fonts/VT323-Regular.ttf") format("truetype");
+      font-weight: 400;
+      font-style: normal;
+      font-display: swap;
+    }
+
+    :root {
+      --bg: #090909;
+      --fg: #eeeeee;
+      --soft: #b5b5b5;
+      --dim: #767676;
+      --line: #282828;
+      --link: #84f6ff;
+      --pink: #ff8ad8;
+      --max: 860px;
+    }
+
+    * { box-sizing: border-box; }
+
+    html {
+      min-height: 100%;
+      background: var(--bg);
+      color: var(--fg);
+      font-family: "IBM Plex Mono", ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+    }
+
+    body {
+      margin: 0;
+      background: var(--bg);
+      color: var(--fg);
+      line-height: 1.7;
+    }
+
+    a {
+      color: inherit;
+      text-decoration-thickness: 1px;
+      text-underline-offset: 0.18em;
+      text-decoration-color: #666;
+    }
+
+    a:hover {
+      color: var(--link);
+      text-decoration-color: currentColor;
+    }
+
+    a:focus-visible {
+      outline: 2px solid var(--pink);
+      outline-offset: 4px;
+    }
+
+    .skip-link {
+      position: absolute;
+      left: -10000px;
+      top: 0;
+      background: #000;
+      color: #fff;
+      border: 1px solid #444;
+      padding: 0.6rem 0.8rem;
+    }
+
+    .skip-link:focus {
+      left: 1rem;
+      top: 1rem;
+    }
+
+    .page {
+      width: min(100% - 2.5rem, var(--max));
+      margin: 0 auto;
+      padding: 3rem 0 4rem;
+    }
+
+    header {
+      display: grid;
+      grid-template-columns: auto 1fr;
+      gap: 2rem;
+      align-items: end;
+      padding-bottom: 1.25rem;
+      border-bottom: 1px solid var(--line);
+    }
+
+    .logo img {
+      display: block;
+      width: 145px;
+      max-width: 40vw;
+      height: auto;
+    }
+
+    nav {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: flex-end;
+      gap: 0.4rem 1rem;
+      font-size: 0.78rem;
+    }
+
+    nav a {
+      color: var(--soft);
+      text-decoration: none;
+      border-bottom: 1px solid #555;
+    }
+
+    main {
+      padding-top: 3.25rem;
+    }
+
+    h1,
+    h2 {
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-weight: 400;
+    }
+
+    h1 {
+      margin: 0 0 0.8rem;
+      font-size: clamp(3rem, 8vw, 4.8rem);
+      line-height: 1;
+    }
+
+    .lede {
+      max-width: 43rem;
+      margin: 0 0 3rem;
+      color: var(--soft);
+      font-size: 0.9rem;
+    }
+
+    section {
+      padding: 1.2rem 0 2rem;
+      border-top: 1px solid var(--line);
+    }
+
+    h2 {
+      margin: 0 0 1rem;
+      font-size: 1.8rem;
+    }
+
+    dl {
+      margin: 0;
+    }
+
+    .row {
+      display: grid;
+      grid-template-columns: minmax(9rem, 0.32fr) 1fr;
+      gap: 1rem;
+      padding: 0.58rem 0;
+      border-bottom: 1px dotted var(--line);
+      font-size: 0.78rem;
+    }
+
+    dt,
+    dd {
+      margin: 0;
+    }
+
+    dt {
+      color: var(--fg);
+    }
+
+    dd {
+      color: var(--soft);
+    }
+
+    code {
+      font: inherit;
+      color: #d9d9d9;
+    }
+
+    .links {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+    }
+
+    .links li {
+      margin: 0.45rem 0;
+      font-size: 0.8rem;
+    }
+
+    footer {
+      display: flex;
+      justify-content: space-between;
+      gap: 1rem;
+      margin-top: 2rem;
+      padding-top: 1.2rem;
+      border-top: 1px solid var(--line);
+      color: var(--dim);
+      font-size: 0.7rem;
+    }
+
+    @media (max-width: 680px) {
+      .page {
+        width: min(100% - 1.5rem, var(--max));
+        padding-top: 2rem;
+      }
+
+      header {
+        grid-template-columns: 1fr;
+        gap: 1rem;
+      }
+
+      nav {
+        justify-content: flex-start;
+      }
+
+      .row {
+        grid-template-columns: 1fr;
+        gap: 0.1rem;
+      }
+    }
+
+    @media print {
+      :root {
+        --bg: #fff;
+        --fg: #000;
+        --soft: #333;
+        --dim: #555;
+        --line: #bbb;
+        --link: #000;
+      }
+
+      body { background: #fff; }
+      nav { display: none; }
+      a { text-decoration: underline; }
+    }
+  </style>
+</head>
+
+<body>
+  <a class="skip-link" href="#content">Skip to content</a>
+
+  <div class="page">
+    <header>
+      <a class="logo" href="/" aria-label="rae area home">
+        <img src="/index_files/raearea.png" alt="rae area">
+      </a>
+
+      <nav aria-label="Primary routes">
+        <a href="/whoami">/whoami</a>
+        <a href="/#projects">projects</a>
+        <a href="/contact">/contact</a>
+        <a href="/colophon" aria-current="page">/colophon</a>
+      </nav>
+    </header>
+
+    <main id="content">
+      <h1>/colophon</h1>
+      <p class="lede">
+        Notes on how this site is made, hosted, and kept small.
+      </p>
+
+      <section aria-labelledby="build-title">
+        <h2 id="build-title">build</h2>
+        <dl>
+          <div class="row">
+            <dt>site</dt>
+            <dd>Mostly static HTML and CSS.</dd>
+          </div>
+          <div class="row">
+            <dt>hosting</dt>
+            <dd>GitHub Pages with the custom domain <code>raearea.net</code>.</dd>
+          </div>
+          <div class="row">
+            <dt>/whoami</dt>
+            <dd>Written in Markdown and rendered to committed HTML by a small Node.js script using built-in modules.</dd>
+          </div>
+          <div class="row">
+            <dt>client-side JS</dt>
+            <dd>Not required by the homepage or <code>/whoami</code>.</dd>
+          </div>
+          <div class="row">
+            <dt>fonts</dt>
+            <dd>IBM Plex Mono and VT323, self-hosted.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="web-title">
+        <h2 id="web-title">web stuff</h2>
+        <dl>
+          <div class="row">
+            <dt>markup</dt>
+            <dd>Semantic HTML where it is useful; ordinary links and document structure before custom interface behavior.</dd>
+          </div>
+          <div class="row">
+            <dt>accessibility</dt>
+            <dd>Keyboard-visible focus, skip links, responsive layouts, reduced-motion handling where motion exists, and print styles on newer pages.</dd>
+          </div>
+          <div class="row">
+            <dt>analytics</dt>
+            <dd>No analytics script is currently included in the site source.</dd>
+          </div>
+          <div class="row">
+            <dt>indexing</dt>
+            <dd>The homepage currently asks search engines not to index, follow, or archive it.</dd>
+          </div>
+        </dl>
+      </section>
+
+      <section aria-labelledby="files-title">
+        <h2 id="files-title">other doors</h2>
+        <ul class="links">
+          <li><a href="/whoami/whoami.md" type="text/markdown">whoami.md</a> — source text for <code>/whoami</code></li>
+          <li><a href="/hello.txt" type="text/plain">hello.txt</a> — an old-fashioned plain-text hello</li>
+          <li><a href="/.well-known/agent-contact.json" type="application/json">agent-contact.json</a> — machine-readable public agent-contact artifact</li>
+          <li><a href="/agent-hello.txt" type="text/plain">agent-hello.txt</a> — human-readable context for that experiment</li>
+          <li><a href="https://github.com/raelovejoy/raearea">source</a> — this site's repository</li>
+        </ul>
+      </section>
+
+      <section aria-labelledby="notes-title">
+        <h2 id="notes-title">notes</h2>
+        <p class="lede">
+          The site changes when there is a reason for it to change. It does not need a framework, CMS,
+          design system, or build pipeline merely because those things exist.
+        </p>
+      </section>
+    </main>
+
+    <footer>
+      <a href="/">← home</a>
+      <span>etc etc etc</span>
+    </footer>
+  </div>
+</body>
+</html>

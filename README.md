@@ -16,6 +16,7 @@ The site is intentionally lightweight: mostly static HTML, a custom domain, and 
 │   ├── index.html          # generated output; committed for Pages
 │   └── assets/
 ├── contact/                # contact page
+├── colophon/               # how the site is built / hosted
 ├── hello/                  # hello page
 ├── hashpad/                # #hashpad experiment
 ├── index_files/            # shared images/assets
@@ -47,4 +48,4 @@ The generated site lives directly in the repository root, so Pages can publish t
 
 ## Design principle
 
-`raearea.net` is a map, not a portfolio CMS. The homepage stays deliberately sparse; deeper context lives in `/whoami`, project sites, repositories, and writing elsewhere.
+`raearea.net` is a map, not a portfolio CMS. The homepage prioritizes primary routes and current projects; personal context lives in `/whoami`, and implementation/meta details live in `/colophon`.
