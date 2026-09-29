@@ -4,7 +4,7 @@ Hi, I'm **Rae** (they/he). I'm a systems-minded generalist, synthesizer of ideas
 
 I tend to move between fields rather than stay inside one lane: learning enough to notice useful relationships, following those relationships toward the people, disciplines, and evidence that understand each part more deeply, and sometimes building something from what I find. **Synthesis isn't a substitute for expertise.** What interests me is what becomes visible when different kinds of knowledge can actually meet without being flattened into one thing.
 
-This site is where some of those threads meet.
+A mesh of signals, recursive self-description, and living document.
 
 ## $ right now
 
