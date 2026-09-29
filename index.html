@@ -111,11 +111,37 @@
       border-bottom: 1px solid var(--line);
     }
 
-    .logo img {
+    .logo-swap {
+      position: relative;
       display: block;
       width: 160px;
       max-width: 42vw;
+    }
+
+    .logo-swap img {
+      display: block;
+      width: 100%;
       height: auto;
+    }
+
+    .logo-easter {
+      position: absolute;
+      inset: 0;
+      opacity: 0;
+      object-fit: contain;
+      pointer-events: none;
+    }
+
+    @media (hover: hover) and (pointer: fine) {
+      .logo:hover .logo-main,
+      .logo:focus-visible .logo-main {
+        opacity: 0;
+      }
+
+      .logo:hover .logo-easter,
+      .logo:focus-visible .logo-easter {
+        opacity: 1;
+      }
     }
 
     .primary {
@@ -128,27 +154,20 @@
 
     .primary a {
       color: var(--soft);
-      text-decoration: none;
-      border-bottom: 1px solid #555;
+      text-decoration: underline;
+      text-decoration-color: #555;
+      text-underline-offset: 0.18em;
+      border-bottom: 0;
     }
 
     .primary a:hover {
       color: var(--link);
-      border-bottom-color: currentColor;
+      text-decoration-color: currentColor;
     }
 
     .intro {
       max-width: 760px;
       padding: clamp(3.2rem, 8vw, 6rem) 0 clamp(3rem, 7vw, 5rem);
-    }
-
-    .intro h1 {
-      margin: 0 0 0.8rem;
-      font-family: "VT323", "IBM Plex Mono", monospace;
-      font-size: clamp(3rem, 8vw, 4.8rem);
-      font-weight: 400;
-      line-height: 1;
-      color: var(--fg);
     }
 
     .intro p {
@@ -283,7 +302,10 @@
   <div class="page">
     <header class="site-head">
       <a class="logo u-url" href="https://raearea.net/" aria-label="rae area home">
-        <img src="/index_files/raearea.png" alt="rae area">
+        <span class="logo-swap">
+          <img class="logo-main" src="/index_files/raearea.png" alt="rae area">
+          <img class="logo-easter" src="/index_files/rle.gif" alt="" aria-hidden="true">
+        </span>
       </a>
 
       <nav class="primary" aria-label="Primary routes">
@@ -295,8 +317,7 @@
     </header>
 
     <main id="content">
-      <section class="intro" aria-labelledby="home-title">
-        <h1 id="home-title" class="p-name">rae lovejoy /</h1>
+      <section class="intro" aria-label="Introduction">
         <p class="p-note">
           Weaving through technology, philosophy, art, nature, community, and human systems to explore,
           connect, and reimagine the patterns that shape our world.
