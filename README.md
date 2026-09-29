@@ -1,6 +1,6 @@
 # raearea.net
 
-Source for **[raearea.net](https://raearea.net/)** — Rae Lovejoy's personal web space, profile, and small collection of web experiments.
+Source for **[raearea.net](https://raearea.net/)**: Rae Lovejoy's personal web space, profile, and small collection of web experiments.
 
 The site is intentionally lightweight: mostly static HTML, a custom domain, and a small Markdown-to-HTML build step for `/whoami`.
 
