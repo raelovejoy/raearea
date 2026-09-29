@@ -173,12 +173,13 @@
       <h1>#hashpad</h1>
 
       <p>
-        <strong>#hashpad</strong> is a client-side plain-text notepad. When the note fits,
-        the document lives in the <code>#hash</code> part of the URL.
+        <strong>#hashpad</strong> is a plain-text notepad where the document lives in
+        the <code>#hash</code> part of the URL.
       </p>
 
       <p>
-        Text saves automatically and compresses in your browser. Copy the URL to copy the note.
+        What you write is saved automatically, compressed, and stored directly in
+        the link. Copy the URL and you've copied the note.
       </p>
 
       <hr>
@@ -192,7 +193,8 @@
       </ul>
 
       <p>
-        There is no account or note backend. Encoding, compression, and local storage happen in your browser.
+        There is no server, no account, and no backend.
+        Everything happens locally in your browser.
       </p>
 
       <hr>
@@ -201,17 +203,18 @@
 
       <h3>Shareable (URL)</h3>
       <p>
-        If the note fits, its full contents are stored in the URL.
+        If the note is small enough, it is fully stored in the URL.
+        This is the default and most portable mode.
       </p>
 
       <h3>Local-only</h3>
       <p>
-        If the note becomes too large for the URL, #hashpad stores it in this browser
-        and the URL contains a short ID instead.
+        If the note becomes too large for a URL, #hashpad switches to local-only mode.
+        The content is stored in your browser and the URL contains a short ID instead.
       </p>
 
       <p>
-        Local-only notes cannot be shared by URL. Export them to move them elsewhere.
+        Local-only notes cannot be shared unless exported.
       </p>
 
       <h3>Encrypted</h3>
@@ -263,7 +266,7 @@
         <li><code>.md</code> for Markdown</li>
       </ul>
 
-      <p>For long-term storage, export the note as <code>.txt</code> or <code>.md</code>.</p>
+      <p>Exporting is recommended for long-term storage.</p>
 
       <hr>
 
@@ -271,10 +274,10 @@
       <ul>
         <li>Shareable links are readable by anyone with the URL.</li>
         <li>Encrypted links are unreadable without the passphrase.</li>
-        <li>Local-only notes are stored in this browser.</li>
+        <li>Local-only notes live only in your browser.</li>
       </ul>
 
-      <p class="dim">#hashpad · plain text • no account • no note backend</p>
+      <p class="dim">#hashpad — plain text • no server • no account</p>
     </article>
   </div>
 </div>
