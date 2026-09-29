@@ -240,6 +240,26 @@
       text-decoration-color: #555;
     }
 
+    .project-map-link {
+      margin: 2.75rem 0 0;
+    }
+
+    .project-map-link a {
+      display: inline-block;
+      font-family: "VT323", "IBM Plex Mono", monospace;
+      font-size: clamp(1.9rem, 4vw, 2.6rem);
+      line-height: 1;
+      color: var(--fg);
+      text-decoration: underline;
+      text-decoration-color: #777;
+      text-underline-offset: 0.15em;
+    }
+
+    .project-map-link a:hover {
+      color: var(--link);
+      text-decoration-color: currentColor;
+    }
+
     footer {
       display: flex;
       flex-wrap: wrap;
@@ -376,6 +396,10 @@
             <dd>care, power, responsibility, consequences, accessibility, and humane systems.</dd>
           </div>
         </dl>
+
+        <p class="project-map-link">
+          <a href="https://github.com/Root-Sequence/root-sequence/blob/main/ECOSYSTEM.md">Root Sequence ecosystem map →</a>
+        </p>
       </section>
     </main>
 
