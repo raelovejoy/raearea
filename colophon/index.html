@@ -39,7 +39,8 @@
       --line: #282828;
       --link: #84f6ff;
       --pink: #ff8ad8;
-      --max: 860px;
+      --max: 980px;
+      --content-max: 860px;
     }
 
     * { box-sizing: border-box; }
@@ -161,6 +162,8 @@
     }
 
     main {
+      width: min(100%, var(--content-max));
+      margin: 0 auto;
       padding-top: 3.25rem;
     }
 
@@ -236,6 +239,9 @@
     }
 
     footer {
+      width: min(100%, var(--content-max));
+      margin-left: auto;
+      margin-right: auto;
       display: flex;
       justify-content: space-between;
       gap: 1rem;
