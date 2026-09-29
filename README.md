@@ -1,6 +1,6 @@
 # raearea.net
 
-Source for **[raearea.net](https://raearea.net/)** — Rae Lovejoy's personal web space, profile, and small collection of web experiments.
+Source for **[raearea.net](https://raearea.net/)**: Rae Lovejoy's personal web space, profile, and small collection of web experiments.
 
 The site is intentionally lightweight: mostly static HTML, a custom domain, and a small Markdown-to-HTML build step for `/whoami`.
 
@@ -49,3 +49,7 @@ The generated site lives directly in the repository root, so Pages can publish t
 ## Design principle
 
 `raearea.net` is a map, not a portfolio CMS. The homepage prioritizes primary routes and current projects; personal context lives in `/whoami`, and implementation/meta details live in `/colophon`.
+
+## Writing
+
+For future public copy edits, see `AGENTS.md`. It applies anti-AI-slop checks from `realrossmanngroup/no_ai_slop_writing_rules` while preserving Rae's existing voice and wording. Existing pages are not automatically rewritten to match the guide.
